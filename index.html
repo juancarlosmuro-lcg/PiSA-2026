@@ -1,0 +1,2126 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Pieza de inteligencia estratégica preparada para Grupo PiSA · London Consulting Group">
+<title>PiSA · Análisis preparado por London Consulting Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!--
+  Tipografía: el design system de LCG especifica Manrope (títulos y cuerpo) + DIN 2014 (cifras y metadata).
+  Los archivos DIN 2014 disponibles en el proyecto son builds demo de Fontspring con cobertura de glifos
+  incompleta y no pueden usarse en producción. --font-numeric queda apuntando a Manrope con
+  font-variant-numeric: tabular-nums. Al licenciar DIN 2014 basta cambiar --font-numeric y cargar la familia.
+-->
+<style>
+:root{
+  --green-900:#073E38; --green-800:#085E54; --green-700:#0A7568; --green-600:#039271;
+  --green-500:#03B585; --green-400:#2FCB9E; --green-300:#7FE0C0; --green-200:#BAF4E9; --green-100:#DFF9F0;
+  --lime:#C9E265;
+  --neutral-0:#FFFEFC; --cream:#F2EEEB; --n100:#E9E3DC; --n200:#DCD4C9; --n300:#C2B8AB;
+  --n400:#9A9086; --n500:#756C63; --n600:#574F49; --n700:#3D3733; --n800:#272320; --n900:#171512;
+  --warn:#C98A1F; --warn-bg:#FBEED9; --err:#C0503F; --info:#2E7FB8;
+  --font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;
+  --font-numeric:"Manrope","Helvetica Neue",Arial,sans-serif;
+  --maxw:1180px;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--cream);color:var(--n800);
+  font-family:var(--font-sans);font-size:16.5px;line-height:1.55;
+  font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{margin:0;line-height:1.1;letter-spacing:-0.02em;text-wrap:balance}
+p{margin:0}
+a{color:var(--green-700);text-underline-offset:2px}
+button{font:inherit;cursor:pointer;color:inherit}
+:focus-visible{outline:2.5px solid var(--green-500);outline-offset:3px;border-radius:3px}
+img{max-width:100%;display:block}
+.num{font-family:var(--font-numeric);font-variant-numeric:tabular-nums}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- HUB ---------- */
+#hub{
+  min-height:100dvh;background:var(--green-900);color:var(--cream);
+  position:relative;overflow:hidden;
+  padding:calc(env(safe-area-inset-top,0px) + 26px) 20px 72px;
+}
+#hub::before,#hub::after{content:"";position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
+#hub::before{width:760px;height:760px;top:-340px;right:-260px;
+  background:radial-gradient(circle at 35% 35%,rgba(3,181,133,.55),rgba(201,226,101,.20) 45%,transparent 70%)}
+#hub::after{width:680px;height:680px;bottom:-320px;left:-240px;
+  background:radial-gradient(circle at 50% 50%,rgba(186,244,233,.30),rgba(3,181,133,.14) 50%,transparent 72%)}
+.hub-inner{max-width:var(--maxw);margin:0 auto;position:relative;z-index:2}
+.hub-top{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.lockup{width:250px;max-width:52vw;color:var(--cream);line-height:0}
+.lockup svg{width:100%;height:auto}
+.claim{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--green-300);margin-top:10px;font-weight:600}
+.addressee{margin-top:16px;font-size:13.8px;color:var(--green-200);line-height:1.5;text-align:right;max-width:330px}
+.addressee b{color:var(--neutral-0);font-weight:700;font-size:15.5px;display:block}
+.addressee .org{color:var(--green-300);font-size:12.4px;font-weight:500}
+.addressee .dt{display:block;margin-top:9px;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--green-300);font-weight:700}
+.hub-h1{margin-top:44px;font-size:clamp(29px,5.2vw,56px);font-weight:300;max-width:21ch;line-height:1.04;color:var(--neutral-0)}
+.hub-h1 em{font-style:normal;font-weight:700;color:var(--green-300);display:block}
+.hub-lede{margin-top:20px;max-width:66ch;font-size:17px;color:var(--green-100);opacity:.94}
+.priv{display:inline-flex;align-items:center;gap:8px;margin-top:26px;border:1px solid rgba(186,244,233,.35);
+  border-radius:999px;padding:5px 13px;font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--green-200)}
+.priv i{width:6px;height:6px;border-radius:50%;background:var(--lime);display:block}
+
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin-top:40px}
+.kpi{background:rgba(255,254,252,.055);border:1px solid rgba(186,244,233,.20);border-radius:14px;padding:18px 18px 15px}
+.kpi .v{font-family:var(--font-numeric);font-size:38px;font-weight:300;line-height:1;color:var(--neutral-0);letter-spacing:-0.03em}
+.kpi .v sup{font-size:.42em;font-weight:700;vertical-align:super;margin-left:2px;letter-spacing:0}
+.kpi .v small{font-size:.52em;font-weight:600;letter-spacing:-0.01em}
+.kpi .l{margin-top:11px;font-size:13.5px;color:var(--green-100);line-height:1.42}
+.kpi .s{margin-top:10px;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--green-300);font-weight:600;line-height:1.35}
+
+.idx-head{margin-top:56px;display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  border-top:1px solid rgba(186,244,233,.22);padding-top:22px}
+.idx-head h2{font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--green-200);font-weight:700}
+.idx-head span{font-size:13px;color:var(--green-300)}
+.grid-idx{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:11px;margin-top:18px}
+.tile{
+  text-align:left;background:rgba(255,254,252,.05);border:1px solid rgba(186,244,233,.18);
+  border-radius:13px;padding:16px 16px 18px;transition:background .18s var(--ease),border-color .18s var(--ease),transform .18s var(--ease);
+  display:flex;flex-direction:column;gap:7px;min-height:118px;color:var(--cream)
+}
+.tile:hover{background:rgba(3,181,133,.16);border-color:var(--green-400);transform:translateY(-2px)}
+.tile .n{font-family:var(--font-numeric);font-size:12px;font-weight:700;color:var(--lime);letter-spacing:.08em}
+.tile .t{font-size:16.5px;font-weight:700;line-height:1.2;color:var(--neutral-0)}
+.tile .d{font-size:12.8px;color:var(--green-200);line-height:1.4;opacity:.92}
+.tile.live .t::after{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--lime);
+  margin-left:8px;vertical-align:middle;animation:pulse 1.9s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.72)}}
+.tile.cta{
+  grid-column:span 2;background:linear-gradient(115deg,var(--green-700) 0%,var(--green-500) 48%,var(--lime) 135%);
+  border-color:transparent;color:#04302B
+}
+.tile.cta .n{color:#04302B;opacity:.7}
+.tile.cta .t,.tile.cta .d{color:#04302B}
+.tile.cta:hover{transform:translateY(-2px);background:linear-gradient(115deg,var(--green-600) 0%,var(--green-400) 48%,var(--lime) 130%)}
+.hub-foot{margin-top:34px;font-size:12.2px;color:var(--green-300);max-width:94ch;line-height:1.55;
+  border-top:1px solid rgba(186,244,233,.18);padding-top:18px}
+
+/* ---------- SECTION SHELL ---------- */
+.view{display:none}
+.view.on{display:block;animation:fade .26s var(--ease)}
+@keyframes fade{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.view.on{animation:none}*{transition:none!important}}
+
+.bar{position:sticky;top:0;z-index:40;background:rgba(242,238,235,.94);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--n200);padding-top:env(safe-area-inset-top,0px)}
+.bar-in{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:12px;padding:10px 20px}
+.bar-btn{background:var(--neutral-0);border:1px solid var(--n200);border-radius:8px;padding:7px 13px;
+  font-size:13px;font-weight:700;color:var(--n700);display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+.bar-btn:hover{border-color:var(--green-500);color:var(--green-700)}
+.bar-btn[disabled]{opacity:.32;pointer-events:none}
+.bar-title{flex:1;min-width:0;font-size:13px;color:var(--n500);font-weight:600;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-left:1px solid var(--n200);padding-left:12px}
+.bar-title b{color:var(--n800);font-weight:800}
+.bar-title .num{color:var(--green-600);margin-right:6px}
+.bar-nav{display:flex;gap:6px}
+.bar-nav .bar-btn{padding:7px 10px}
+@media(max-width:700px){.bar-title{display:none}}
+
+main{max-width:var(--maxw);margin:0 auto;padding:30px 20px 24px}
+.eyebrow{font-family:var(--font-numeric);font-size:11.5px;letter-spacing:.17em;text-transform:uppercase;
+  color:var(--green-600);font-weight:700;display:flex;align-items:center;gap:10px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--n200)}
+h2.sec{font-size:clamp(25px,4vw,38px);font-weight:700;margin-top:14px;max-width:25ch}
+.lede{margin-top:14px;font-size:17.5px;color:var(--n600);max-width:76ch;line-height:1.55}
+.body{margin-top:26px;display:grid;gap:22px}
+p.tx{font-size:16px;color:var(--n700);max-width:78ch;line-height:1.62}
+p.tx + p.tx{margin-top:-6px}
+h3.sub{font-size:19px;font-weight:700;margin-top:6px}
+.small{font-size:13px;color:var(--n500);line-height:1.5}
+.cap{font-size:12.2px;color:var(--n500);line-height:1.5;margin-top:10px}
+.foot{margin-top:46px;border-top:1px solid var(--n200);padding-top:20px;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+/* ---------- COMPONENTS ---------- */
+.panel{background:var(--neutral-0);border:1px solid var(--n200);border-radius:14px;padding:22px}
+.panel.dark{background:var(--green-900);border-color:transparent;color:var(--cream)}
+.panel.dark h3,.panel.dark h2{color:var(--neutral-0)}
+.panel.dark p{color:var(--green-100)}
+.panel.mesh{background:linear-gradient(125deg,var(--green-900) 0%,var(--green-700) 42%,var(--green-500) 80%,var(--lime) 140%);color:#fff;border:0}
+.panel.sunken{background:var(--n100);border-color:var(--n200)}
+
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:14px}
+.g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+
+/* card con pestaña */
+.tab{position:relative;background:var(--neutral-0);border:1px solid var(--n200);border-radius:0 12px 12px 12px;
+  padding:26px 20px 20px;margin-top:26px}
+.tab > .lab{position:absolute;top:-26px;left:-1px;height:26px;display:inline-flex;align-items:center;gap:7px;
+  padding:0 13px;border-radius:9px 9px 0 0;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:800}
+.tab.hecho > .lab{background:var(--green-800);color:var(--green-200)}
+.tab.senal > .lab{background:var(--green-200);color:var(--green-800)}
+.tab.hip > .lab{background:var(--lime);color:#31400F}
+.tab.imp > .lab{background:var(--n200);color:var(--n700)}
+.tab.hecho{border-top-color:var(--green-800)}
+.tab.senal{border-top-color:var(--green-400)}
+.tab.hip{border-top-color:var(--lime)}
+.tab h4{font-size:17px;font-weight:700;line-height:1.28}
+.tab p{margin-top:9px;font-size:14.8px;color:var(--n600);line-height:1.55}
+.tab .src{margin-top:12px;font-size:11.5px;color:var(--n400);line-height:1.45}
+.tab .k{font-family:var(--font-numeric);font-size:11px;font-weight:800;color:var(--green-600);letter-spacing:.1em}
+
+/* cifra grande */
+.big{font-family:var(--font-numeric);font-weight:300;font-size:clamp(46px,8vw,78px);line-height:.92;
+  letter-spacing:-0.045em;color:var(--green-800)}
+.big sup{font-size:.32em;font-weight:700;vertical-align:super;letter-spacing:0;margin-left:3px}
+.big.on-dark{color:var(--neutral-0)}
+
+/* stat tiles */
+.stat{border-radius:13px;padding:18px 17px 15px;display:flex;flex-direction:column;gap:6px;min-height:150px}
+.stat .v{font-family:var(--font-numeric);font-weight:300;font-size:clamp(32px,5vw,44px);line-height:1;letter-spacing:-0.04em}
+.stat .v sup{font-size:.36em;font-weight:700;vertical-align:super;margin-left:2px;letter-spacing:0}
+.stat .v small{font-size:.55em;font-weight:600}
+.stat .l{font-size:13.5px;line-height:1.4;font-weight:600;margin-top:4px}
+.stat .s{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-top:auto;padding-top:10px;opacity:.75;line-height:1.35}
+.stat.mint{background:var(--green-200);color:var(--green-900)}
+.stat.cream{background:var(--neutral-0);color:var(--n800);border:1px solid var(--n200)}
+.stat.dark{background:var(--green-800);color:var(--cream)}
+.stat.dark .v{color:#fff}
+.stat.lime{background:var(--lime);color:#31400F}
+
+/* pill bars */
+.pills{display:flex;align-items:flex-end;gap:16px;height:230px;padding:34px 4px 0}
+.pillwrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:9px;height:100%;justify-content:flex-end;min-width:0}
+.pill{width:100%;max-width:62px;border-radius:999px 999px 5px 5px;
+  background:linear-gradient(180deg,var(--green-400),var(--green-700));position:relative}
+.pill.neg{background:linear-gradient(180deg,var(--n300),var(--n400))}
+.pill.hi{background:linear-gradient(180deg,var(--lime),var(--green-500))}
+.pill span{position:absolute;top:-24px;left:50%;transform:translateX(-50%);font-family:var(--font-numeric);
+  font-size:13.5px;font-weight:700;color:var(--n700);white-space:nowrap}
+.pilllab{font-size:11.8px;color:var(--n500);text-align:center;line-height:1.3;font-weight:600}
+
+/* table */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--n200);border-radius:12px;background:var(--neutral-0)}
+table{border-collapse:collapse;width:100%;min-width:680px;font-size:14px}
+th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--n100);vertical-align:top;line-height:1.45}
+thead th{background:var(--green-800);color:var(--green-200);font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+  font-weight:800;position:sticky;top:0;border-bottom:0}
+tbody tr:last-child td{border-bottom:0}
+tbody tr.me{background:var(--green-100)}
+tbody tr.me td:first-child{font-weight:800;color:var(--green-800)}
+td.nd{color:var(--n400);font-style:italic}
+.scrollhint{font-size:11.5px;color:var(--n400);margin-top:7px}
+
+/* chain */
+.chain{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--n200);border-radius:12px;overflow:hidden;background:var(--neutral-0)}
+.chain > div{padding:14px 13px;border-right:1px solid var(--n100);min-width:0}
+.chain > div:last-child{border-right:0;background:var(--green-100)}
+.chain .h{font-size:10px;letter-spacing:.11em;text-transform:uppercase;font-weight:800;color:var(--green-600);margin-bottom:7px}
+.chain .b{font-size:13.4px;line-height:1.42;color:var(--n700)}
+@media(max-width:760px){.chain{grid-template-columns:1fr}.chain>div{border-right:0;border-bottom:1px solid var(--n100)}}
+
+/* quadrant / bubbles */
+.plot{position:relative;background:var(--neutral-0);border:1px solid var(--n200);border-radius:14px;
+  padding:30px 26px 46px 56px;aspect-ratio:16/11;min-height:340px}
+.plot .axX,.plot .axY{position:absolute;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--n400);font-weight:700}
+.plot .axX{bottom:16px;left:56px;right:26px;display:flex;justify-content:space-between}
+.plot .axY{top:30px;bottom:46px;left:16px;writing-mode:vertical-rl;transform:rotate(180deg);display:flex;justify-content:space-between}
+.plot .field{position:absolute;inset:30px 26px 46px 56px;border-left:1px solid var(--n200);border-bottom:1px solid var(--n200)}
+.plot .field::before,.plot .field::after{content:"";position:absolute;background:var(--n100)}
+.plot .field::before{left:0;right:0;top:50%;height:1px}
+.plot .field::after{top:0;bottom:0;left:50%;width:1px}
+.bub{position:absolute;transform:translate(-50%,50%);display:flex;align-items:center;justify-content:center;
+  border-radius:50%;font-size:11px;font-weight:800;text-align:center;line-height:1.1;padding:4px}
+.bub.a{background:radial-gradient(circle at 32% 30%,var(--green-300),var(--green-600) 72%);color:#fff}
+.bub.b{background:radial-gradient(circle at 32% 30%,var(--lime),var(--green-500) 78%);color:#0d3b2f}
+.bub.c{background:radial-gradient(circle at 32% 30%,var(--green-200),var(--green-400) 76%);color:var(--green-900)}
+.bub.d{background:radial-gradient(circle at 32% 30%,var(--n200),var(--n400) 76%);color:#fff}
+.bub.me{background:radial-gradient(circle at 30% 28%,var(--green-500),var(--green-900) 82%);color:#fff;box-shadow:0 0 0 3px var(--lime)}
+
+/* timeline */
+.tl{position:relative;padding-left:26px}
+.tl::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;
+  background:linear-gradient(180deg,var(--green-500),var(--green-200))}
+.tl .ev{position:relative;padding:0 0 22px}
+.tl .ev::before{content:"";position:absolute;left:-26px;top:5px;width:14px;height:14px;border-radius:50%;
+  background:var(--cream);border:3px solid var(--green-500)}
+.tl .ev.key::before{background:var(--lime);border-color:var(--green-700)}
+.tl .d{font-family:var(--font-numeric);font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--green-600);font-weight:800}
+.tl .t{font-size:15.5px;font-weight:700;margin-top:3px;line-height:1.3}
+.tl .x{font-size:13.6px;color:var(--n600);margin-top:4px;line-height:1.5}
+.tl .s{font-size:11px;color:var(--n400);margin-top:5px}
+
+/* misc */
+.callout{background:linear-gradient(120deg,var(--green-900),var(--green-700) 65%,var(--green-600) 115%);
+  color:var(--cream);border-radius:14px;padding:22px 22px;position:relative;overflow:hidden}
+.callout::after{content:"";position:absolute;width:280px;height:280px;right:-110px;top:-130px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,226,101,.35),transparent 68%);filter:blur(24px)}
+.callout h4{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--lime);font-weight:800}
+.callout p{margin-top:10px;font-size:16.5px;line-height:1.55;position:relative;z-index:2;color:var(--green-100)}
+.callout p b{color:#fff}
+
+.note{border-left:3px solid var(--warn);background:var(--warn-bg);border-radius:0 10px 10px 0;padding:14px 16px;font-size:14px;color:var(--n700);line-height:1.5}
+.note.cool{border-left-color:var(--green-500);background:var(--green-100)}
+
+.dots{display:grid;grid-template-columns:repeat(8,1fr);gap:5px;width:132px}
+.dots i{display:block;aspect-ratio:1;border-radius:50%;background:var(--green-500)}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:4px 11px;font-size:11px;
+  letter-spacing:.08em;text-transform:uppercase;font-weight:800}
+.chip.hecho{background:var(--green-800);color:var(--green-200)}
+.chip.senal{background:var(--green-200);color:var(--green-800)}
+.chip.hip{background:var(--lime);color:#31400F}
+.chip.imp{background:var(--n200);color:var(--n700)}
+
+.srcs{display:grid;gap:9px;font-size:13.2px}
+.srcs > div{display:grid;grid-template-columns:34px 1fr;gap:11px;padding-bottom:9px;border-bottom:1px solid var(--n100)}
+.srcs .id{font-family:var(--font-numeric);font-weight:800;color:var(--green-600);font-size:12px}
+.srcs .m{color:var(--n500);display:block;margin-top:2px;font-size:12px;line-height:1.45}
+.srcs a{word-break:break-word}
+
+/* cases */
+.case{background:var(--neutral-0);border:1px solid var(--n200);border-radius:16px;overflow:hidden}
+.case .top{padding:18px 20px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;border-bottom:1px solid var(--n100);background:var(--cream)}
+.case .nm{font-size:21px;font-weight:800;color:var(--green-800);letter-spacing:-0.02em;line-height:1.1}
+.case .nm small{display:block;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--n500);font-weight:700;margin-top:5px;letter-spacing:.1em}
+.case .roi{margin-left:auto;text-align:right}
+.case .roi .v{font-family:var(--font-numeric);font-size:44px;font-weight:300;line-height:1;color:var(--green-700);letter-spacing:-0.04em}
+.case .roi .v sup{font-size:.40em;font-weight:700;vertical-align:super;margin-left:2px}
+.case .roi .l{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--n500);font-weight:700;margin-top:4px}
+.case .roi.nd .v{font-size:15px;font-weight:700;color:var(--n400);font-style:italic;letter-spacing:0;max-width:19ch;line-height:1.3}
+.case .bd{padding:18px 20px}
+.case .bd p{font-size:14.4px;color:var(--n700);line-height:1.5}
+.case .acts{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:9px;padding:9px 15px;font-size:13.5px;
+  font-weight:700;text-decoration:none;border:1px solid var(--n200);background:var(--cream);color:var(--n700)}
+.btn:hover{border-color:var(--green-500);color:var(--green-700)}
+.btn.p{background:var(--green-700);color:#fff;border-color:transparent}
+.btn.p:hover{background:var(--green-800);color:#fff}
+
+/* prediag */
+.inp{background:var(--neutral-0);border:1px solid var(--n200);border-radius:12px;padding:17px;display:flex;gap:14px}
+.inp .no{font-family:var(--font-numeric);font-size:26px;font-weight:300;color:var(--green-400);line-height:1;flex:0 0 auto;letter-spacing:-0.03em}
+.inp h4{font-size:15.5px;font-weight:700;line-height:1.25}
+.inp p{margin-top:7px;font-size:13.8px;color:var(--n600);line-height:1.5}
+
+/* hypothesis cards */
+.hyp{background:var(--neutral-0);border:1px solid var(--n200);border-radius:12px;overflow:hidden}
+.hyp .hd{background:var(--green-800);color:#fff;padding:13px 16px;display:flex;gap:11px;align-items:flex-start}
+.hyp .hd .id{font-family:var(--font-numeric);font-size:12px;font-weight:800;color:var(--lime);flex:0 0 auto;padding-top:2px}
+.hyp .hd h4{font-size:15.2px;font-weight:700;line-height:1.3;color:#fff}
+.hyp dl{margin:0;padding:15px 16px;display:grid;gap:11px}
+.hyp dt{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--green-600);font-weight:800}
+.hyp dd{margin:3px 0 0;font-size:13.8px;color:var(--n700);line-height:1.5}
+
+/* scenario cards */
+.scen{background:var(--neutral-0);border:1px solid var(--n200);border-radius:12px;padding:19px;border-top:4px solid}
+.scen.base{border-top-color:var(--green-500)}
+.scen.acc{border-top-color:var(--lime)}
+.scen.pre{border-top-color:var(--warn)}
+.scen h4{font-size:16.5px;font-weight:700}
+.scen .k{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--n400)}
+.scen p{margin-top:9px;font-size:14px;color:var(--n600);line-height:1.5}
+.scen .imp{margin-top:13px;padding-top:12px;border-top:1px solid var(--n100);font-size:13.8px;color:var(--n800);line-height:1.5}
+.scen .imp b{color:var(--green-700)}
+
+/* bifurcation */
+.bif{background:var(--neutral-0);border:1px solid var(--n200);border-radius:12px;padding:18px}
+.bif h4{font-size:16px;font-weight:700}
+.bif .q{font-size:13.6px;color:var(--n500);margin-top:6px;line-height:1.45}
+.bif .opts{display:grid;gap:10px;margin-top:14px}
+.bif .opt{border-radius:9px;padding:13px 14px;font-size:13.6px;line-height:1.5}
+.bif .opt.a{background:var(--green-100);color:var(--green-900)}
+.bif .opt.b{background:var(--n100);color:var(--n700)}
+.bif .opt b{display:block;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;margin-bottom:5px;opacity:.75}
+
+/* quote */
+.qt{background:var(--neutral-0);border:1px solid var(--n200);border-left:4px solid var(--green-500);
+  border-radius:0 12px 12px 0;padding:20px 22px}
+.qt p{font-size:17.5px;line-height:1.5;color:var(--n800);font-weight:500}
+.qt .who{margin-top:13px;font-size:12.5px;color:var(--n500);line-height:1.45}
+.qt .who b{color:var(--green-700);font-weight:800}
+
+/* restriction diagram */
+.rest{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:stretch;
+  border:1px solid var(--n200);border-radius:14px;overflow:hidden;background:var(--neutral-0)}
+.rest .col{padding:20px 18px}
+.rest .col.l{background:var(--green-100)}
+.rest .col.r{background:var(--neutral-0)}
+.rest .arrow{display:flex;align-items:center;justify-content:center;padding:0 14px;background:var(--n100);
+  font-size:26px;color:var(--green-600);font-weight:300}
+.rest .k{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--green-600)}
+.rest h4{font-size:17px;font-weight:700;margin-top:8px;line-height:1.25}
+.rest ul{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:7px}
+.rest li{font-size:13.6px;color:var(--n600);line-height:1.45;padding-left:17px;position:relative}
+.rest li::before{content:"";position:absolute;left:0;top:7px;width:7px;height:7px;border-radius:2px;background:var(--green-400)}
+.rest .col.r li::before{background:var(--lime)}
+@media(max-width:760px){.rest{grid-template-columns:1fr}.rest .arrow{padding:10px;transform:rotate(90deg)}}
+
+/* ---------- consola agéntica ---------- */
+.console{background:var(--green-900);border-radius:18px;overflow:hidden;position:relative;color:var(--cream)}
+.console::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(186,244,233,.055) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(186,244,233,.055) 1px,transparent 1px);
+  background-size:38px 38px;mask-image:radial-gradient(ellipse at 22% 0%,#000 0%,transparent 78%)}
+.console::after{content:"";position:absolute;width:560px;height:560px;right:-220px;bottom:-280px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,226,101,.22),rgba(3,181,133,.14) 45%,transparent 72%);filter:blur(60px);pointer-events:none}
+.console-top{position:relative;z-index:2;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:16px 22px;border-bottom:1px solid rgba(186,244,233,.16)}
+.console-top .tag{font-family:var(--font-numeric);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
+  font-weight:800;color:var(--green-300)}
+.console-top .live{display:inline-flex;align-items:center;gap:7px;font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;font-weight:800;color:var(--lime);margin-left:auto}
+.console-top .live i{width:8px;height:8px;border-radius:50%;background:var(--lime);animation:pulse 1.9s ease-in-out infinite}
+.console-body{position:relative;z-index:2;display:grid;grid-template-columns:292px 1fr;min-height:490px}
+.agent-list{border-right:1px solid rgba(186,244,233,.16);padding:12px;display:flex;flex-direction:column;gap:6px}
+.agent-btn{display:flex;gap:11px;align-items:flex-start;text-align:left;background:transparent;border:1px solid transparent;
+  border-radius:11px;padding:12px 13px;color:var(--green-100);transition:background .16s var(--ease),border-color .16s var(--ease);width:100%}
+.agent-btn:hover{background:rgba(255,254,252,.06)}
+.agent-btn .n{font-family:var(--font-numeric);font-size:11px;font-weight:800;color:var(--green-400);padding-top:3px;flex:0 0 auto}
+.agent-btn .t{font-size:14.4px;font-weight:700;line-height:1.24;color:var(--neutral-0)}
+.agent-btn .c{font-size:11px;color:var(--green-300);margin-top:3px;display:block;letter-spacing:.04em}
+.agent-btn[aria-selected="true"]{background:rgba(3,181,133,.20);border-color:var(--green-400)}
+.agent-btn[aria-selected="true"] .n{color:var(--lime)}
+.agent-detail{padding:22px 24px 24px;display:flex;flex-direction:column}
+.agent-detail h3{font-size:clamp(20px,2.6vw,27px);font-weight:700;color:var(--neutral-0);max-width:23ch}
+.agent-detail .sum{margin-top:10px;font-size:14.6px;color:var(--green-100);max-width:64ch;line-height:1.55}
+.flow{margin-top:22px;display:grid;gap:0}
+.step{display:grid;grid-template-columns:106px 1fr;gap:14px;padding:0 0 16px;position:relative}
+.step::before{content:"";position:absolute;left:12px;top:22px;bottom:-4px;width:2px;background:rgba(186,244,233,.22)}
+.step:last-child::before{display:none}
+.step .k{display:flex;align-items:center;gap:9px}
+.step .k i{width:26px;height:26px;border-radius:50%;flex:0 0 auto;display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-numeric);font-size:10.5px;font-weight:800;background:rgba(186,244,233,.14);color:var(--green-200);font-style:normal}
+.step .k span{font-size:9.8px;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:var(--green-300)}
+.step .v{font-size:14.8px;line-height:1.5;color:var(--cream);padding-top:3px}
+.step.is-agent .k i{background:var(--lime);color:#31400F}
+.step.is-agent .k span{color:var(--lime)}
+.step.is-agent .v{color:#fff;font-weight:600}
+.step.is-result .k i{background:var(--green-500);color:#04302B}
+.step.is-result .k span{color:var(--green-300)}
+.pre{margin-top:auto;padding-top:16px;border-top:1px solid rgba(186,244,233,.18)}
+.pre .lb{font-size:9.8px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--lime)}
+.pre p{margin-top:7px;font-size:13.6px;color:var(--green-100);line-height:1.5;max-width:72ch}
+.anim > *{animation:stepin .34s var(--ease) both}
+.anim > *:nth-child(2){animation-delay:.05s}
+.anim > *:nth-child(3){animation-delay:.1s}
+.anim > *:nth-child(4){animation-delay:.15s}
+.anim > *:nth-child(5){animation-delay:.2s}
+@keyframes stepin{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.anim > *{animation:none}}
+@media(max-width:860px){
+  .console-body{grid-template-columns:1fr;min-height:0}
+  .agent-list{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid rgba(186,244,233,.16);
+    padding:10px;gap:8px;scrollbar-width:thin}
+  .agent-btn{flex:0 0 auto;width:auto;min-width:172px;flex-direction:column;gap:4px}
+  .agent-btn .t{font-size:13.6px}
+  .agent-detail{padding:20px 18px 22px}
+  .step{grid-template-columns:1fr;gap:6px}
+  .step::before{display:none}
+  .step .v{padding-left:35px}
+}
+
+/* CTA */
+.cta-wrap{background:linear-gradient(125deg,var(--green-900) 0%,var(--green-700) 40%,var(--green-500) 82%,var(--lime) 145%);
+  border-radius:18px;padding:34px 28px;color:#fff;position:relative;overflow:hidden}
+.cta-wrap h3{font-size:clamp(24px,4vw,34px);font-weight:300;max-width:24ch;color:#fff;line-height:1.12}
+.cta-wrap h3 b{font-weight:700}
+.cta-wrap p{margin-top:16px;max-width:64ch;font-size:16px;color:rgba(255,255,255,.93);line-height:1.6}
+.cta-acts{display:flex;gap:11px;flex-wrap:wrap;margin-top:26px}
+.cta-acts .btn{background:#fff;color:var(--green-800);border:0;padding:12px 20px;font-size:14.5px}
+.cta-acts .btn.s{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.45)}
+.sig{margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,.3);font-size:14px;line-height:1.6;color:#fff}
+.sig b{font-size:16.5px}
+.sig a{color:#fff}
+.sig .r{color:rgba(255,255,255,.85)}
+
+@media(max-width:620px){
+  .tile.cta{grid-column:span 1}
+  .grid-idx{grid-template-columns:1fr}
+  main{padding:22px 16px 20px}
+  .bar-in{padding:9px 16px}
+  #hub{padding-left:16px;padding-right:16px}
+  .addressee{text-align:left;max-width:none}
+  .pills{height:196px;gap:9px}
+  .plot{padding:24px 14px 42px 44px;min-height:290px;aspect-ratio:auto;height:390px}
+  .plot .field{inset:24px 14px 42px 44px}
+  .plot .axX{left:44px;right:14px}
+  .plot .axY{left:10px;top:24px;bottom:42px}
+  .case .roi{margin-left:0;text-align:left;width:100%}
+  .pilllab{font-size:9.8px;letter-spacing:-0.01em}
+  .pills{gap:6px}
+  .pill span{font-size:11.5px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================= HUB ============================= -->
+<section id="hub" class="view on" tabindex="-1" aria-label="Portada e índice">
+  <div class="hub-inner">
+    <div class="hub-top">
+      <div>
+        <div class="lockup" role="img" aria-label="London Consulting Group"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1530 218"><g fill="currentColor"><path d="M1270.26,108.99c0-60.2-48.44-108.99-108.2-108.99s-108.2,48.79-108.2,108.99,48.44,109,108.2,109,108.2-48.79,108.2-109Z"/><path d="M463.78,108.99c0-60.2-48.44-108.99-108.2-108.99s-108.2,48.79-108.2,108.99,48.44,109,108.2,109,108.2-48.79,108.2-109Z"/><path d="M828.58,217.99c59.76,0,108.2-48.79,108.2-109S888.34,0,828.58,0"/><path d="M217.98,217.99H9.8c-5.41,0-9.8-4.39-9.8-9.8V0"/><path d="M493.33,0h208.17c5.41,0,9.8,4.39,9.8,9.8v208.19"/><path d="M1299.56,0h208.17c5.41,0,9.8,4.39,9.8,9.8v208.19"/></g></svg></div>
+        <div style="font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--green-200);margin-top:12px;font-weight:600">Consulting Group</div>
+        <div class="claim">Shape Your Business</div>
+      </div>
+      <div class="addressee">
+        Preparado para
+        <b>Alejandro Troya</b>
+        <span class="org">Chief Corporate Officer · PiSA Farmacéutica</span>
+        <span class="org">Con copia para Heriberto Castañeda, Director General</span>
+        <span class="dt">Guadalajara · 13 de octubre de 2026</span>
+      </div>
+    </div>
+
+    <h1 class="hub-h1">El reto de PiSA no es producir.<em>Es decidir qué produce primero.</em></h1>
+    <p class="hub-lede">
+      Once negocios con lógicas económicas incompatibles comparten una misma base industrial, una misma red
+      logística y un mismo ERP. El 1 de enero de 2027 ese arbitraje interno se vuelve una obligación contractual
+      y legal, con treinta días de margen. Esto es lo que encontramos en fuentes públicas, y lo que no pudimos
+      encontrar.
+    </p>
+    <span class="priv"><i></i> Documento privado · no indexado</span>
+
+    <div class="kpis">
+      <div class="kpi">
+        <div class="v num">46<sup>h</sup></div>
+        <div class="l">Jornada legal máxima semanal desde el 1 de enero de 2027, sobre una manufactura que opera de forma continua</div>
+        <div class="s">DOF · 1 de mayo de 2026</div>
+      </div>
+      <div class="kpi">
+        <div class="v num">31<small> ene 2027</small></div>
+        <div class="l">Fecha límite de la primera entrega del régimen Birmex 2027-2028, topada al 5% de las piezas asignadas</div>
+        <div class="s">Fallo Birmex · 25 de septiembre de 2026</div>
+      </div>
+      <div class="kpi">
+        <div class="v num">375</div>
+        <div class="l">Claves adjudicadas a un solo proveedor, bajo vigilancia especial de la autoridad desde el primer trimestre de 2027</div>
+        <div class="s">Birmex vía SuMédico · 26 de septiembre de 2026</div>
+      </div>
+      <div class="kpi">
+        <div class="v num">110.8<sup>mil mdp</sup></div>
+        <div class="l">Pagos pendientes conciliados del gobierno con la industria farmacéutica al 30 de junio de 2026</div>
+        <div class="s">Segundo Informe de Gobierno · septiembre de 2026</div>
+      </div>
+    </div>
+
+    <div class="idx-head">
+      <h2>Índice · 14 secciones</h2>
+      <span>Dos minutos de lectura cada una. Un clic para entrar, un clic para volver.</span>
+    </div>
+    <div class="grid-idx">
+      <button class="tile" data-go="s1"><span class="n num">01</span><span class="t">La tesis</span><span class="d">Dónde está hoy la restricción y por qué cambió de lugar</span></button>
+      <button class="tile" data-go="s2"><span class="n num">02</span><span class="t">Hallazgos</span><span class="d">Seis hechos y señales con fuente y fecha</span></button>
+      <button class="tile" data-go="s3"><span class="n num">03</span><span class="t">El mercado cambió</span><span class="d">Lo que se movió en el abasto público entre 2023 y 2026</span></button>
+      <button class="tile" data-go="s4"><span class="n num">04</span><span class="t">PiSA cambió</span><span class="d">Línea de tiempo de la compañía, 2023 a 2026</span></button>
+      <button class="tile" data-go="s5"><span class="n num">05</span><span class="t">Once economías</span><span class="d">El portafolio y la base industrial que comparten</span></button>
+      <button class="tile" data-go="s6"><span class="n num">06</span><span class="t">Benchmark</span><span class="d">Cinco variables antes que cinco empresas</span></button>
+      <button class="tile" data-go="s7"><span class="n num">07</span><span class="t">Señales de liderazgo</span><span class="d">Lo que la dirección ha dicho en público, textual</span></button>
+      <button class="tile" data-go="s8"><span class="n num">08</span><span class="t">El 1 de enero</span><span class="d">Tres relojes que vencen en la misma semana</span></button>
+      <button class="tile live" data-go="s9"><span class="n num">09</span><span class="t">IA y agentes</span><span class="d">Siete decisiones repetitivas, con su condición previa de datos</span></button>
+      <button class="tile" data-go="s10"><span class="n num">10</span><span class="t">Datos y gobernanza</span><span class="d">Tres preguntas que no se responden desde fuera</span></button>
+      <button class="tile" data-go="s11"><span class="n num">11</span><span class="t">Outlook 2026-2029</span><span class="d">Tres escenarios, sin pronósticos inventados</span></button>
+      <button class="tile" data-go="s12"><span class="n num">12</span><span class="t">Hipótesis</span><span class="d">Seis, redactadas para poder ser refutadas</span></button>
+      <button class="tile" data-go="s13"><span class="n num">13</span><span class="t">Prediagnóstico</span><span class="d">Los siete inputs del estudio de factibilidad</span></button>
+      <button class="tile" data-go="s14"><span class="n num">14</span><span class="t">Método y fuentes</span><span class="d">Qué verificamos, qué no, y de dónde salió cada dato</span></button>
+      <button class="tile cta" data-go="cta"><span class="n num">→</span><span class="t">Contrastar la hipótesis</span><span class="d">45 minutos. Si está mal planteada, esa respuesta también nos sirve.</span></button>
+    </div>
+
+    <p class="hub-foot">
+      Preparado por London Consulting Group México con información pública al 13 de octubre de 2026. PiSA es una
+      empresa privada y no publica estados financieros: no hay ingresos, márgenes, utilización de capacidad ni
+      nivel de servicio verificables, y no los estimamos. Todo lo que aquí aparece como hecho tiene fuente y fecha;
+      todo lo que es interpretación está marcado como tal. La sección 14 declara las limitaciones completas.
+    </p>
+  </div>
+</section>
+
+<!-- ============================= 01 LA TESIS ============================= -->
+<section id="s1" class="view" aria-label="Sección 1">
+  <div class="bar"><div class="bar-in">
+    <button class="bar-btn" data-go="hub">&#8592; Índice</button>
+    <div class="bar-title"></div>
+    <div class="bar-nav">
+      <button class="bar-btn nav-prev" aria-label="Sección anterior">&#8592;</button>
+      <button class="bar-btn nav-next" aria-label="Sección siguiente">&#8594;</button>
+    </div>
+  </div></div>
+  <main>
+    <h1 class="sr">La tesis</h1>
+    <p class="eyebrow"><span class="num">01</span> La tesis</p>
+    <h2 class="sec">La restricción se movió de fabricar a comprometer</h2>
+    <p class="lede">
+      PiSA resolvió hace décadas el problema industrial. Lo que ninguna fuente pública permite verificar es con
+      qué criterio once negocios distintos se reparten la misma hora de línea, el mismo andén y el mismo camión
+      cuando la piden al mismo tiempo. Esa es la conversación que proponemos.
+    </p>
+
+    <div class="body">
+      <div class="panel dark">
+        <p style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:800;color:var(--lime)">Core Business Hypothesis</p>
+        <p style="margin-top:14px;font-size:clamp(18px,2.6vw,24px);line-height:1.42;color:#fff;font-weight:500;max-width:56ch">
+          El cuello de botella de PiSA ya no está en producir, sino en <b>decidir qué producir primero</b>.
+          Once economías de negocio con ciclos de cobro, clientes y métricas incompatibles compiten por una misma
+          base industrial, una misma red logística y un mismo ERP. El 1 de enero de 2027 ese arbitraje deja de ser
+          un asunto interno: la jornada legal baja a 46 horas sobre una operación continua y, treinta días
+          después, vence la primera ventana de entrega del nuevo régimen Birmex.
+        </p>
+        <p style="margin-top:18px;font-size:14.5px;color:var(--green-200);max-width:70ch">
+          Es refutable. Si ya existe un proceso formal de planeación integrada con reglas económicas explícitas de
+          arbitraje entre unidades, y un plan de capacidad construido sobre 46 horas, la tesis cae y lo decimos.
+        </p>
+      </div>
+
+      <div class="rest">
+        <div class="col l">
+          <span class="k">Lo que ya está resuelto</span>
+          <h4>La capacidad industrial</h4>
+          <ul>
+            <li>Envase primario propio: soplado-llenado-sellado en línea, sin envase comprado</li>
+            <li>Shingo Silver Medallion en PyMPSA, 2014</li>
+            <li>Lean adoptado desde 2008 según la cronología oficial</li>
+            <li>Centro de Distribución Nacional automatizado y flota propia</li>
+            <li>SAP transversal, con TI dedicada a continuidad operativa 24/7</li>
+            <li>Más de 1,500 marcas y 17 líneas de especialidad</li>
+          </ul>
+        </div>
+        <div class="arrow" aria-hidden="true">&#8594;</div>
+        <div class="col r">
+          <span class="k">Dónde se mueve la restricción</span>
+          <h4>El arbitraje entre negocios</h4>
+          <ul>
+            <li>Cuatro lógicas de demanda incompatibles sobre la misma infraestructura</li>
+            <li>Una línea puede ir a clave de licitación o a producto de marca: ¿con qué criterio?</li>
+            <li>El compromiso de volumen se firma antes de conocer la capacidad disponible a 46 horas</li>
+            <li>El incumplimiento pasó de penalización a criterio de elegibilidad futura</li>
+            <li>La caja compite entre cartera institucional e inversión internacional</li>
+          </ul>
+        </div>
+      </div>
+      <p class="cap">
+        Esquema cualitativo derivado del análisis de fuentes públicas. No es un scoring numérico ni un diagnóstico
+        de la operación: es la formulación de la pregunta que proponemos contrastar.
+      </p>
+
+      <div class="callout">
+        <h4>Por qué esta tesis y no la obvia</h4>
+        <p>
+          La lectura fácil sería decir que PiSA tiene un problema de excelencia operativa. No lo sostenemos: una
+          empresa con medalla Shingo, envase propio y un CEDIS automatizado no necesita que le expliquen qué es
+          Lean. <b>Lo que cambia en 2027 no es la planta: es el calendario al que la planta tiene que responder.</b>
+        </p>
+      </div>
+    </div>
+
+    <div class="foot">
+      <button class="bar-btn" data-go="hub">&#8592; Volver al índice</button>
+      <button class="bar-btn nav-next foot-next"><span class="nx"></span> &#8594;</button>
+    </div>
+  </main>
+</section>
+
+<!-- ============================= 02 HALLAZGOS ============================= -->
+<section id="s2" class="view" aria-label="Sección 2">
+  <div class="bar"><div class="bar-in">
+    <button class="bar-btn" data-go="hub">&#8592; Índice</button>
+    <div class="bar-title"></div>
+    <div class="bar-nav">
+      <button class="bar-btn nav-prev" aria-label="Sección anterior">&#8592;</button>
+      <button class="bar-btn nav-next" aria-label="Sección siguiente">&#8594;</button>
+    </div>
+  </div></div>
+  <main>
+    <h1 class="sr">Hallazgos</h1>
+    <p class="eyebrow"><span class="num">02</span> Hallazgos</p>
+    <h2 class="sec">Seis cosas que encontramos, con fuente y fecha</h2>
+    <p class="lede">
+      Separamos lo que está documentado de lo que es interpretación nuestra. Un hecho tiene fuente identificable y
+      fechada. Una señal es un indicio que por sí solo no demuestra nada. Nada de lo que sigue es una estimación.
+    </p>
+
+    <div class="body">
+      <div class="legend">
+        <span class="chip hecho">Hecho</span>
+        <span class="chip senal">Señal</span>
+        <span class="chip hip">Hipótesis</span>
+        <span class="chip imp">Implicación</span>
+      </div>
+
+      <div class="g2">
+        <div class="tab hecho">
+          <span class="lab">Hecho 01</span>
+          <h4>El régimen de entrega cambió de volumen anual a ventana acotada</h4>
+          <p>
+            Birmex adjudicó 626 de 766 claves para 2027-2028 por hasta 84,353 millones de pesos sin IVA, en 956
+            asignaciones a 102 empresas. Las adjudicadas reciben un primer pedido de hasta 5% de las piezas
+            asignadas, con entrega a más tardar el 31 de enero de 2027 y de 2028, y en ningún caso pueden surtir
+            más de 25% de lo contratado en esa primera entrega.
+          </p>
+          <p class="src">Fallo Birmex, 25 de septiembre de 2026. SuMédico, 26 de septiembre de 2026; Agencia Reforma vía Tierra Fuerte, 29 de septiembre de 2026.</p>
+        </div>
+
+        <div class="tab hecho">
+          <span class="lab">Hecho 02</span>
+          <h4>Incumplir dejó de ser solo una penalización y pasó a ser un criterio de elegibilidad</h4>
+          <p>
+            La convocatoria 2027-2028 incorporó reglas explícitas para limitar la participación de proveedores que
+            hubieran incumplido entregas en contrataciones anteriores. En paralelo, 375 de las 626 claves quedaron
+            con un solo proveedor y la autoridad anunció vigilancia especial sobre ellas desde el primer trimestre
+            de 2027.
+          </p>
+          <p class="src">MVS Noticias, 21 de julio de 2026; SuMédico, 26 y 27 de septiembre de 2026.</p>
+        </div>
+
+        <div class="tab hecho">
+          <span class="lab">Hecho 03</span>
+          <h4>La jornada legal baja a 46 horas el 1 de enero de 2027, y el registro se vuelve exigible</h4>
+          <p>
+            La reforma a la Ley Federal del Trabajo publicada en el DOF el 1 de mayo de 2026 escalona la jornada
+            máxima: 46 horas en 2027, 44 en 2028, 42 en 2029 y 40 en 2030, sin reducción de sueldos ni
+            prestaciones. La misma reforma obliga al registro electrónico de inicio y fin de jornada por persona,
+            exigible desde el 1 de enero de 2027, con multas por trabajador.
+          </p>
+          <p class="src">DOF, 1 de mayo de 2026 (artículos 59, 61 y 132 fracción XXXIV de la LFT); reforma constitucional al artículo 123, DOF 3 de marzo de 2026.</p>
+        </div>
+
+        <div class="tab hecho">
+          <span class="lab">Hecho 04</span>
+          <h4>El gobierno reconoció 110.8 mil millones de pesos pendientes con la industria</h4>
+          <p>
+            El Segundo Informe de Gobierno reportó esa cifra de pagos conciliados al 30 de junio de 2026, con foco
+            en IMSS-Bienestar y adeudos que arrastran desde licitaciones de 2023. CANIFARMA estimó entre 12 y 13
+            mil millones pendientes solo de las compras 2025-2026.
+          </p>
+          <p class="src">El Universal y Proyecto Puente, 22 de septiembre de 2026; La Jornada, 13 de septiembre de 2026.</p>
+        </div>
+
+        <div class="tab senal">
+          <span class="lab">Señal 05</span>
+          <h4>La compañía está contratando la función que resolvería el problema</h4>
+          <p>
+            Durante 2026 aparecieron publicadas vacantes de Director de Abastecimientos, Gerente de Planeación
+            Nacional —descrita como balancear demanda contra capacidad operativa— y Gerente de Planeación de la
+            Producción, con mandato de plan maestro alineado a demanda y capacidad instalada. No pudimos verificar
+            si fueron cubiertas ni por quién.
+          </p>
+          <p class="src">Vacantes publicadas en LinkedIn, Glassdoor e Indeed México durante 2026. Estado de cobertura: no verificable públicamente.</p>
+        </div>
+
+        <div class="tab senal">
+          <span class="lab">Señal 06</span>
+          <h4>Hay una comunidad interna de cadena de suministro ya movilizada</h4>
+          <p>
+            La actividad pública del director general describe una cumbre interna con cerca de cien líderes de
+            cadena de suministro discutiendo agilidad, capacidad de respuesta, analítica de datos y modelado
+            predictivo. No pudimos determinar la fecha exacta de esa publicación, así que la tratamos como señal y
+            no como hecho.
+          </p>
+          <p class="src">Perfil público de Heriberto Castañeda en LinkedIn. Fecha no determinable al cierre de esta investigación.</p>
+        </div>
+      </div>
+
+      <div class="note cool">
+        <b>Una precisión que importa.</b> El 12 de octubre de 2026 el director general del IMSS mencionó
+        públicamente problemas con claves de PiSA dentro de un anuncio de procesos de rescisión a proveedores
+        incumplidos. Publimetro aclaró ese mismo día que la autoridad <b>no precisó</b> si PiSA se encuentra entre
+        las empresas con contratos en proceso de cancelación, ni cuántos contratos ni qué montos. No lo afirmamos,
+        porque no está afirmado.
+      </div>
+    </div>
+
+    <div class="foot">
+      <button class="bar-btn" data-go="hub">&#8592; Volver al índice</button>
+      <button class="bar-btn nav-next foot-next"><span class="nx"></span> &#8594;</button>
+    </div>
+  </main>
+</section>
+
+<!-- ============================= 03 EL MERCADO CAMBIÓ ============================= -->
+<section id="s3" class="view" aria-label="Sección 3">
+  <div class="bar"><div class="bar-in">
+    <button class="bar-btn" data-go="hub">&#8592; Índice</button>
+    <div class="bar-title"></div>
+    <div class="bar-nav">
+      <button class="bar-btn nav-prev" aria-label="Sección anterior">&#8592;</button>
+      <button class="bar-btn nav-next" aria-label="Sección siguiente">&#8594;</button>
+    </div>
+  </div></div>
+  <main>
+    <h1 class="sr">El mercado cambió</h1>
+    <p class="eyebrow"><span class="num">03</span> El mercado cambió</p>
+    <h2 class="sec">El comprador público reescribió el contrato, no solo el precio</h2>
+    <p class="lede">
+      Entre 2023 y 2026 el abasto público mexicano pasó por cuatro operadores, una licitación cancelada y un
+      rediseño completo de las reglas de entrega. Lo relevante para un fabricante no es cuánto se compró: es que
+      cambió qué significa cumplir.
+    </p>
+
+    <div class="body">
+      <div class="g4">
+        <div class="stat dark">
+          <div class="v num">766</div>
+          <div class="l">Claves convocadas para 2027-2028</div>
+          <div class="s">Birmex · fallo 25 sep 2026</div>
+        </div>
+        <div class="stat mint">
+          <div class="v num">626</div>
+          <div class="l">Claves adjudicadas, con 139 desiertas y una cancelada</div>
+          <div class="s">SuMédico · 26 sep 2026</div>
+        </div>
+        <div class="stat lime">
+          <div class="v num">375</div>
+          <div class="l">Adjudicadas a proveedor único, con vigilancia especial desde el 1T 2027</div>
+          <div class="s">SuMédico · 27 sep 2026</div>
+        </div>
+        <div class="stat cream">
+          <div class="v num">102</div>
+          <div class="l">Empresas con asignación, en 956 contratos</div>
+          <div class="s">Birmex · 25 sep 2026</div>
+        </div>
+      </div>
+
+      <div class="g2">
+        <div class="panel">
+          <h3 class="sub">Lo que la autoridad apretó en esta vuelta</h3>
+          <div class="pills" role="img" aria-label="Topes de la primera entrega bajo el régimen Birmex 2027-2028">
+            <div class="pillwrap"><div class="pill hi" style="height:21%"><span>5%</span></div><div class="pilllab">Pedido mínimo garantizado de primera entrega</div></div>
+            <div class="pillwrap"><div class="pill" style="height:100%"><span>25%</span></div><div class="pilllab">Tope máximo a surtir en esa primera entrega</div></div>
+            <div class="pillwrap"><div class="pill neg" style="height:60%"><span>60%</span></div><div class="pilllab">Claves monofuente del total adjudicado</div></div>
+          </div>
+          <p class="cap">
+            Las dos primeras barras son topes contractuales publicados; la tercera es el cociente de 375 sobre 626.
+            No es una serie temporal ni comparable entre sí: son tres magnitudes distintas del mismo régimen,
+            puestas juntas para mostrar su efecto conjunto.
+          </p>
+        </div>
+
+        <div class="panel sunken">
+          <h3 class="sub">Lo que significa operativamente</h3>
+          <p class="tx" style="margin-top:12px;font-size:15px">
+            Antes se planeaba contra una cifra anual. Ahora se planea contra un rango, con el cliente liberando
+            demanda por pedido y con fechas fijas. Producir de más inmoviliza caja que ya está comprometida en
+            cartera; producir de menos en una clave monofuente deja al sistema de salud sin alternativa, y hoy eso
+            se mide, se penaliza y se recuerda en la siguiente licitación.
+          </p>
+          <p class="tx" style="margin-top:14px;font-size:15px">
+            La asimetría es nueva: el castigo por quedarse corto ya no es simétrico al costo de quedarse largo.
+          </p>
+        </div>
+      </div>
+
+      <div class="g3">
+        <div class="tab imp" style="margin-top:28px">
+          <span class="lab">Implicación</span>
+          <h4>La ventaja deja de ser estructural</h4>
+          <p>
+            La licitación LA-12-NEF-012NEF001-I-285-2026 se abrió a proveedores de India y China, y la industria
+            nacional pidió públicamente condiciones parejas. Donde entra competencia de costo, la posición se
+            defiende con costo unitario y confiabilidad de entrega, no con presencia histórica.
+          </p>
+          <p class="src">El Universal y El Imparcial, septiembre de 2026.</p>
+        </div>
+        <div class="tab imp" style="margin-top:28px">
+          <span class="lab">Implicación</span>
+          <h4>La producción nacional viene contrayéndose</h4>
+          <p>
+            INEGI reportó en julio de 2026 una fabricación de productos farmacéuticos de 15,637 millones de pesos,
+            1.7% menos interanual, con caídas de 24.2% en analgésicos y 48.6% en materias primas para la industria.
+            El dato de materias primas sugiere presión aguas arriba, no solo de demanda.
+          </p>
+          <p class="src">EMIM/INEGI vía El Universal, septiembre de 2026.</p>
+        </div>
+        <div class="tab imp" style="margin-top:28px">
+          <span class="lab">Implicación</span>
+          <h4>El cobro se volvió parte del diseño operativo</h4>
+          <p>
+            El IMSS explicó que solo paga contra entrega en almacén, que no ha pagado a quien incumplió y que
+            aplica un plazo de nueve días tras emitir una orden de reposición antes de multar e iniciar
+            cancelación. La planeación de entregas y la planeación de caja dejaron de ser dos conversaciones.
+          </p>
+          <p class="src">Declaraciones del director general del IMSS, 12 de octubre de 2026, vía Quadratín y Vanguardia.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <button class="bar-btn" data-go="hub">&#8592; Volver al índice</button>
+      <button class="bar-btn nav-next foot-next"><span class="nx"></span> &#8594;</button>
+    </div>
+  </main>
+</section>
+
+<!-- ============================= 04 PISA CAMBIÓ ============================= -->
+<section id="s4" class="view" aria-label="Sección 4">
+  <div class="bar"><div class="bar-in">
+    <button class="bar-btn" data-go="hub">&#8592; Índice</button>
+    <div class="bar-title"></div>
+    <div class="bar-nav">
+      <button class="bar-btn nav-prev" aria-label="Sección anterior">&#8592;</button>
+      <button class="bar-btn nav-next" aria-label="Sección siguiente">&#8594;</button>
+    </div>
+  </div></div>
+  <main>
+    <h1 class="sr">PiSA cambió</h1>
+    <p class="eyebrow"><span class="num">04</span> PiSA cambió</p>
+    <h2 class="sec">Tres años en los que la compañía creció y se profesionalizó a la vez</h2>
+    <p class="lede">
+      La lectura externa de PiSA suele quedarse en el canal gobierno. Lo que muestran las fuentes públicas de
+      2023 a 2026 es otra cosa: una compañía que al mismo tiempo abrió un frente internacional de consumo, renovó
+      su dirección con ejecutivos de carrera y empezó a construir funciones corporativas que antes no tenían
+      nombre propio.
+    </p>
+
+    <div class="body">
+      <div class="g2">
+        <div class="panel">
+          <div class="tl">
+            <div class="ev">
+              <div class="d">Octubre de 2023</div>
+              <div class="t">Acuerdo de largo plazo con Keurig Dr Pepper para Electrolit en EE. UU.</div>
+              <div class="x">Acuerdo de venta y distribución, no de capital. KDP estimó hasta 57 millones de dólares para la transición de derechos.</div>
+              <div class="s">10-Q de KDP ante la SEC, 3T 2023; comunicado conjunto del 26 de octubre de 2023.</div>
+            </div>
+            <div class="ev key">
+              <div class="d">Noviembre de 2024</div>
+              <div class="t">Anuncio de la planta de Waco, Texas</div>
+              <div class="x">400 millones de dólares, 600 mil pies cuadrados, más de 200 empleos, operación continua, arranque objetivo a principios de 2026. Primer activo productivo propio fuera de México.</div>
+              <div class="s">Greater Waco Chamber y Area Development, noviembre de 2024.</div>
+            </div>
+            <div class="ev">
+              <div class="d">2025</div>
+              <div class="t">80 aniversario y más de diez moléculas nuevas incorporadas</div>
+              <div class="x">Innovación de portafolio acelerada sobre una base de más de 1,500 marcas registradas y 17 líneas de especialidad.</div>
+              <div class="s">Excélsior, contenido institucional, 2026; sitio oficial.</div>
+            </div>
+            <div class="ev key">
+              <div class="d">1 de enero de 2026</div>
+              <div class="t">Electrolit entra al IEPS tras años de exención</div>
+              <div class="x">3.0818 pesos por litro para sueros y bebidas con electrolitos con azúcares añadidos. La exención se conserva solo para fórmula tipo OMS.</div>
+              <div class="s">Paquete Económico 2026; Expansión, 25 de noviembre de 2025.</div>
+            </div>
+            <div class="ev">
+              <div class="d">Marzo de 2026</div>
+              <div class="t">Interlocución regulatoria al más alto nivel</div>
+              <div class="x">Santiago Álvarez Vega, vicepresidente ejecutivo, se reunió con el titular de Cofepris. En la nota, PiSA se describe como productora de genéricos y biosimilares y manifiesta disposición a sumarse a la estrategia de inversión del Plan México.</div>
+              <div class="s">Milenio y Excélsior, 26 de marzo de 2026.</div>
+            </div>
+            <div class="ev">
+              <div class="d">Junio de 2026</div>
+              <div class="t">Heriberto Castañeda confirmado como director general</div>
+              <div class="x">Ejecutivo con origen en operaciones y cadena de suministro. En el mismo periodo, convenio de investigación con el INSP y alianza de formación técnica con el IDEFT.</div>
+              <div class="s">Expansión (contenido patrocinado), 22 de junio de 2026; SuMédico, 11 de junio de 2026; Excélsior, 28 de julio de 2026.</div>
+            </div>
+            <div class="ev key">
+              <div class="d">Junio de 2026</div>
+              <div class="t">El socio distribuidor de Electrolit anuncia que se parte en dos</div>
+              <div class="x">Keurig Dr Pepper informó su separación en Beverage Co. y Global Coffee Co., prevista para principios de 2027. Electrolit quedará alojado en una compañía nueva.</div>
+              <div class="s">Formato 8-K de KDP ante la SEC, 23 de junio de 2026.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:grid;gap:14px;align-content:start">
+          <div class="stat cream">
+            <div class="v num">81</div>
+            <div class="l">Años de trayectoria al momento de la entrevista con el director general</div>
+            <div class="s">Expansión · 22 de junio de 2026</div>
+          </div>
+          <div class="panel sunken">
+            <h3 class="sub">Una cifra que no es una serie</h3>
+            <p class="tx" style="margin-top:12px;font-size:14.6px">
+              El número de plantas y de colaboradores que PiSA reporta varía mucho según la fuente y el año. En
+              2018, en un registro directo de nuestro propio archivo, la empresa declaraba cuatro compañías de
+              producción y 18,000 empleados. El sitio oficial habla de 16 plantas en 2020. Un caso técnico de HPE
+              menciona 14 plantas. Expansión reportó en 2026 más de 30,000 colaboradores, mientras LinkedIn
+              mantiene más de 20,000.
+            </p>
+            <p class="tx" style="margin-top:12px;font-size:14.6px">
+              <b>No construimos una línea de tendencia con esto.</b> Cada cifra viene de un contexto y una
+              definición de perímetro distintos, y unirlas produciría una gráfica que la evidencia no sostiene.
+              Lo señalamos porque la diferencia entre 14 y 17 plantas, o entre 20 y 30 mil personas, cambia por
+              completo el cálculo de lo que significa pasar de 48 a 46 horas semanales.
+            </p>
+          </div>
+          <div class="note">
+            <b>Un dato que no pudimos cerrar.</b> No encontramos confirmación pública de que la planta de Waco
+            haya arrancado producción. La última referencia útil es una vacante de la propia entidad operadora,
+            publicada en abril de 2026, que aún describía la planta como en construcción con fecha objetivo de
+            enero de 2026. No concluimos nada de eso: lo declaramos como pregunta abierta.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <button class="bar-btn" data-go="hub">&#8592; Volver al índice</button>
+      <button class="bar-btn nav-next foot-next"><span class="nx"></span> &#8594;</button>
+    </div>
+  </main>
+</section>
+
+<!-- ============================= 05 ONCE ECONOMÍAS ============================= -->
+<section id="s5" class="view" aria-label="Sección 5">
+  <div class="bar"><div class="bar-in">
+    <button class="bar-btn" data-go="hub">&#8592; Índice</button>
+    <div class="bar-title"></div>
+    <div class="bar-nav">
+      <button class="bar-btn nav-prev" aria-label="Sección anterior">&#8592;</button>
+      <button class="bar-btn nav-next" aria-label="Sección siguiente">&#8594;</button>
+    </div>
+  </div></div>
+  <main>
+    <h1 class="sr">Once economías</h1>
+    <p class="eyebrow"><span class="num">05</span> Once economías, una base industrial</p>
+    <h2 class="sec">No es una farmacéutica: son once negocios compartiendo infraestructura</h2>
+    <p class="lede">
+      Reconstruimos el portafolio a partir del sitio oficial, el listado público de ubicaciones y prensa de
+      negocios. Lo que aparece no es una empresa con divisiones: son once modelos económicos con clientes,
+      reguladores, ciclos de cobro y definiciones de falla distintas, operando sobre los mismos activos.
+    </p>
+
+    <div class="body">
+      <div class="plot" role="img" aria-label="Ubicación cualitativa de las unidades de negocio de PiSA según dependencia del canal público y velocidad de respuesta exigida">
+        <div class="axY"><span>Respuesta rápida</span><span>Horizonte largo</span></div>
+        <div class="axX"><span>Canal comercial</span><span>Canal público</span></div>
+        <div class="field">
+          <div class="bub me" style="width:106px;height:106px;left:76%;bottom:28%">Parenterales<br>gran volumen</div>
+          <div class="bub a" style="width:88px;height:88px;left:82%;bottom:58%">Rx y<br>genéricos</div>
+          <div class="bub c" style="width:76px;height:76px;left:62%;bottom:16%">Terapia<br>renal</div>
+          <div class="bub a" style="width:68px;height:68px;left:88%;bottom:82%">Servicios<br>clínicos</div>
+          <div class="bub b" style="width:92px;height:92px;left:16%;bottom:76%">Electrolit<br>México</div>
+          <div class="bub b" style="width:80px;height:80px;left:12%;bottom:40%">Electrolit<br>EE. UU.</div>
+          <div class="bub c" style="width:66px;height:66px;left:30%;bottom:22%">Salud<br>Animal</div>
+          <div class="bub d" style="width:54px;height:54px;left:34%;bottom:60%">Body<br>logic</div>
+          <div class="bub d" style="width:58px;height:58px;left:54%;bottom:78%">Biotec</div>
+        </div>
+      </div>
+      <p class="cap">
+        <b>Ubicación cualitativa derivada de las variables del análisis, no un scoring numérico.</b> El eje
+        horizontal refleja dependencia declarada del canal público; el vertical, la velocidad de respuesta que
+        exige su cliente. El tamaño de cada burbuja indica relevancia estimada dentro del grupo y es una
+        inferencia nuestra, no una cifra publicada. Dispositivos, maquila y distribución a terceros no se grafican
+        porque son capacidades transversales, no unidades con demanda propia.
+      </p>
+
+      <div class="tw">
+        <table>
+          <caption class="sr">Lógicas de demanda por tipo de negocio</caption>
+          <thead>
+            <tr>
+              <th>Dimensión</th>
+              <th>Parenterales y Rx al sector público</th>
+              <th>Servicios clínicos y mezclas</th>
+              <th>Salud Animal</th>
+              <th>Electrolit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><b>Unidad de planeación</b></td><td>Clave o partida contractual</td><td>Prescripción por paciente</td><td>SKU por distribuidor</td><td>SKU por sabor y canal</td></tr>
+            <tr><td><b>Horizonte de demanda</b></td><td>Bianual y contractual</td><td>Diario, no pronosticable</td><td>Mensual, estacional</td><td>Semanal, con promoción</td></tr>
+            <tr><td><b>Qué cuenta como falla</b></td><td>No entregar en la ventana</td><td>Desviación de calidad</td><td>Desabasto en el distribuidor</td><td>Anaquel vacío</td></tr>
+            <tr><td><b>Regulador</b></td><td>Cofepris</td><td>Cofepris</td><td>SENASICA</td><td>Cofepris, SAT y FDA</td></tr>
+            <tr><td><b>Ciclo de cobro</b></td><td>Presupuestal, largo</td><td>Presupuestal</td><td>Comercial</td><td>Comercial y retail</td></tr>
+            <tr><td><b>Sensible a 46 horas</b></td><td>Alta: manufactura continua</td><td>Alta: turnos clínicos</td><td>Media</td><td>Alta: operación continua</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="scrollhint">Desliza la tabla horizontalmente para ver todas las columnas. Construida con información pública; las celdas son categorías, no mediciones.</p>
+
+      <div class="g2">
+        <div class="tab hip">
+          <span class="lab">Hipótesis</span>
+          <h4>La integración vertical es la fortaleza y también la raíz de la complejidad</h4>
+          <p>
+            PiSA fabrica su envase primario, acondiciona su empaque, almacena en centro de distribución propio,
+            transporta con flota propia y, en nefrología y mezclas, administra el punto de consumo. Eso significa
+            que ningún problema de nivel de servicio puede atribuirse a un tercero. También significa que las
+            interdependencias son densas: la planta de diálisis alimenta a las clínicas, los parenterales alimentan
+            a las centrales de mezcla, y un mismo centro de distribución alimenta a todos.
+          </p>
+          <p class="src">Interpretación de LCG a partir del sitio oficial de ubicaciones y de la cronología corporativa publicada.</p>
+        </div>
+        <div class="tab imp">
+          <span class="lab">Implicación</span>
+          <h4>Concentración geográfica como punto único de falla</h4>
+          <p>
+            Entre la Zona Industrial de Guadalajara y el Complejo de Tlajomulco se concentra la mayoría de la
+            capacidad declarada y el único centro de distribución automatizado del grupo. Fuera de Jalisco, el
+            listado oficial solo confirma una planta farmacéutica en operación, en Coyoacán. Un evento regulatorio,
+            laboral o hídrico en Tlajomulco tocaría simultáneamente a seis de las once economías.
+          </p>
+          <p class="src">Listado oficial de ubicaciones de PiSA, consultado en octubre de 2026.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <button class="bar-btn" data-go="hub">&#8592; Volver al índice</button>
+      <button class="bar-btn nav-next foot-next"><span class="nx"></span> &#8594;</button>
+    </div>
+  </main>
+</section>
+
+<!-- ============================= 06 BENCHMARK ============================= -->
+<section id="s6" class="view" aria-label="Sección 6">
+  <div class="bar"><div class="bar-in">
+    <button class="bar-btn" data-go="hub">&#8592; Índice</button>
+    <div class="bar-title"></div>
+    <div class="bar-nav">
+      <button class="bar-btn nav-prev" aria-label="Sección anterior">&#8592;</button>
+      <button class="bar-btn nav-next" aria-label="Sección siguiente">&#8594;</button>
+    </div>
+  </div></div>
+  <main>
+    <h1 class="sr">Benchmark competitivo</h1>
+    <p class="eyebrow"><span class="num">06</span> Benchmark competitivo</p>
+    <h2 class="sec">Cinco variables definidas antes de elegir a las empresas</h2>
+    <p class="lede">
+      No comparamos por lo que es fácil de encontrar. Las variables salen del reto identificado: quién depende del
+      mismo comprador, quién tiene la misma densidad de integración, y quién publica métrica de ejecución en lugar
+      de métrica de capacidad.
+    </p>
+
+    <div class="body">
+      <div class="g3">
+        <div class="panel sunken"><span class="chip imp">Variable 01</span><h3 class="sub" style="margin-top:10px;font-size:16px">Exposición al comprador público consolidado</h3><p class="small" style="margin-top:8px">Qué proporción del negocio depende de un solo mecanismo de compra con calendario y penalizaciones comunes.</p></div>
+        <div class="panel sunken"><span class="chip imp">Variable 02</span><h3 class="sub" style="margin-top:10px;font-size:16px">Profundidad de integración vertical</h3><p class="small" style="margin-top:8px">Desde dónde hasta dónde es responsabilidad propia la cadena: envase, manufactura, distribución, punto de consumo.</p></div>
+        <div class="panel sunken"><span class="chip imp">Variable 03</span><h3 class="sub" style="margin-top:10px;font-size:16px">Dispersión de la huella productiva</h3><p class="small" style="margin-top:8px">Cuántos sitios pueden fabricar lo mismo. Define si existe plan B ante un evento local.</p></div>
+        <div class="panel sunken"><span class="chip imp">Variable 04</span><h3 class="sub" style="margin-top:10px;font-size:16px">Economías de negocio sobre la misma base</h3><p class="small" style="margin-top:8px">Cuántas lógicas de demanda incompatibles compiten por la misma capacidad instalada.</p></div>
+        <div class="panel sunken"><span class="chip imp">Variable 05</span><h3 class="sub" style="margin-top:10px;font-size:16px">Métrica que la empresa publica</h3><p class="small" style="margin-top:8px">Si comunica capacidad y cobertura, o si comunica desempeño de entrega. Es la variable que más mueve el argumento frente a un comprador institucional.</p></div>
+      </div>
+
+      <div class="tw">
+        <table>
+          <caption class="sr">Comparación por variable</caption>
+          <thead>
+            <tr>
+              <th>Variable</th>
+              <th>PiSA</th>
+              <th>Baxter México</th>
+              <th>Vantive (ex Baxter Kidney Care)</th>
+              <th>Fresenius Kabi</th>
+              <th>B. Braun</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="me">
+              <td>Exposición al comprador público</td>
+              <td>Alta y declarada: la dirección describe presencia en sector público y privado como fortaleza</td>
+              <td>Reportado: cerca de 70% del negocio en México es gobierno</td>
+              <td class="nd">Información pública no identificada</td>
+              <td class="nd">Información pública no identificada</td>
+              <td class="nd">Información pública no identificada</td>
+            </tr>
+            <tr class="me">
+              <td>Integración vertical</td>
+              <td>Envase primario propio, manufactura, CEDIS propio, flota propia y operación del punto de consumo en nefrología y mezclas</td>
+              <td>Manufactura local confirmada en Jiutepec, Morelos</td>
+              <td class="nd">Información pública no identificada</td>
+              <td class="nd">Información pública no identificada</td>
+              <td class="nd">Información pública no identificada</td>
+            </tr>
+            <tr class="me">
+              <td>Dispersión productiva en México</td>
+              <td>Concentrada: Zona Industrial de Guadalajara y Tlajomulco, más una planta en Coyoacán</td>
+              <td>Jiutepec, Morelos</td>
+              <td class="nd">Información pública no identificada</td>
+              <td class="nd">Información pública no identificada</td>
+              <td class="nd">Información pública no identificada</td>
+            </tr>
+            <tr class="me">
+              <td>Economías de negocio sobre la misma base</td>
+              <td>Once identificadas, de licitación pública a bebida de consumo y salud animal</td>
+              <td>Portafolio hospitalario, acotado tras la escisión renal</td>
+              <td>Negocio renal puro desde la venta a Carlyle, cerrada el 31 de enero de 2025 por 3,800 millones de dólares</td>
+              <td class="nd">Información pública no identificada</td>
+              <td class="nd">Información pública no identificada</td>
+            </tr>
+            <tr class="me">
+              <td>Métrica que publica</td>
+              <td>Capacidad industrial, marcas, líneas de especialidad y alcance de mercado</td>
+              <td>Capacidad de producción anual en litros equivalentes</td>
+              <td class="nd">Información pública no identificada</td>
+              <td class="nd">Información pública no identificada</td>
+              <td class="nd">Información pública no identificada</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="scrollhint">
+        Desliza horizontalmente. Las celdas vacías están vacías a propósito: no encontramos información pública
+        verificable y preferimos declararlo antes que estimarlo. Fuentes en la sección 14.
+      </p>
+
+      <div class="callout">
+        <h4>La lectura</h4>
+        <p>
+          La tabla tiene muchos huecos, y ese es el hallazgo. <b>En este sector nadie publica métrica de
+          ejecución.</b> Todos publican capacidad: litros, plantas, marcas, líneas. Pero el comprador que acaba de
+          rediseñar el contrato no está comprando capacidad, está comprando cumplimiento en una ventana con
+          vigilancia especial. El primer proveedor que pueda sentarse frente a Birmex con una serie auditable de
+          desempeño de entrega por clave y por institución va a estar hablando un idioma que nadie más está
+          hablando todavía.
+        </p>
+      </div>
+
+      <div class="note">
+        <b>Nota de exclusión.</b> Pharmatycsa, cliente de LCG citado en la sección 13, es un distribuidor
+        farmacéutico al sector público con centrales de mezcla y por tanto compite en frentes donde PiSA también
+        opera. Por esa razón se excluye deliberadamente de este benchmark: no aparece en dos papeles dentro del
+        mismo documento.
+      </div>
+    </div>
+
+    <div class="foot">
+      <button class="bar-btn" data-go="hub">&#8592; Volver al índice</button>
+      <button class="bar-btn nav-next foot-next"><span class="nx"></span> &#8594;</button>
+    </div>
+  </main>
+</section>
+
+<!-- ============================= 07 SEÑALES DE LIDERAZGO ============================= -->
+<section id="s7" class="view" aria-label="Sección 7">
+  <div class="bar"><div class="bar-in">
+    <button class="bar-btn" data-go="hub">&#8592; Índice</button>
+    <div class="bar-title"></div>
+    <div class="bar-nav">
+      <button class="bar-btn nav-prev" aria-label="Sección anterior">&#8592;</button>
+      <button class="bar-btn nav-next" aria-label="Sección siguiente">&#8594;</button>
+    </div>
+  </div></div>
+  <main>
+    <h1 class="sr">Señales de liderazgo</h1>
+    <p class="eyebrow"><span class="num">07</span> Señales de liderazgo</p>
+    <h2 class="sec">Lo que la dirección ya dijo en público, y lo que se deduce de ahí</h2>
+    <p class="lede">
+      No hace falta suponer prioridades cuando están publicadas. Estas tres citas, todas verificables y fechadas,
+      describen la posición de la compañía mejor que cualquier diagnóstico externo.
+    </p>
+
+    <div class="body">
+      <div class="qt">
+        <p>&#8220;La fortaleza de PiSA Farmacéutica radica en su capacidad industrial y en su alcance en el mercado, con presencia tanto en el sector público como en el privado.&#8221;</p>
+        <div class="who"><b>Heriberto Castañeda</b>, Director General · Expansión, 22 de junio de 2026 <span style="color:var(--n400)">(contenido patrocinado por PiSA: válido para confirmar dichos, no como evaluación independiente)</span></div>
+      </div>
+
+      <div class="qt">
+        <p>&#8220;La inteligencia artificial ya está presente en nuestros procesos, en nuestras plantas, cadenas de distribución y de suministro. Su implementación nos ha permitido reducir tareas repetitivas y enfocar mejor las capacidades de nuestro equipo en procesos especializados y de mayor valor dentro de la manufactura de medicamentos.&#8221;</p>
+        <div class="who"><b>Heriberto Castañeda</b>, Director General · Expansión, 22 de junio de 2026</div>
+      </div>
+
+      <div class="qt">
+        <p>&#8220;Cualquier tiempo de inactividad es una pesadilla que provoca retrasos en los envíos y un aumento en los costos.&#8221;</p>
+        <div class="who"><b>Heriberto Olmedo Vera</b>, Director de TI · Continuidad Operativa · Caso técnico publicado por HPE. En el mismo material, PiSA describe una manufactura que funciona de forma continua, cargas de trabajo SAP y aplicaciones de misión crítica.</div>
+      </div>
+
+      <div class="g2">
+        <div class="tab imp">
+          <span class="lab">Implicación</span>
+          <h4>La conversación de IA no empieza en cero, y eso cambia el punto de partida</h4>
+          <p>
+            Proponer inteligencia artificial a una empresa que ya la declara desplegada sería desconocer su
+            situación. La pregunta útil es distinta y mucho más incómoda: de los casos ya en operación, cuáles
+            cambiaron una decisión medible y cuáles siguen reduciendo tareas sin cambiar una decisión. Esa
+            distinción es donde está el valor, y solo se responde desde dentro.
+          </p>
+        </div>
+        <div class="tab imp">
+          <span class="lab">Implicación</span>
+          <h4>El perfil del director general coincide con el reto del calendario</h4>
+          <p>
+            Castañeda llegó a la dirección general desde operaciones y cadena de suministro. Es el perfil que
+            entiende sin traducción qué significa restar dos horas semanales a una operación continua treinta días
+            antes de una ventana de entrega contractual. No hay que construir el interés: hay que traer la
+            evidencia.
+          </p>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>Lo que no citamos.</b> Encontramos actividad pública del director general donde describe que el reto
+        central es que cada unidad de negocio defina su propia estrategia. El contenido es claro y coincide con
+        nuestra tesis, pero no pudimos determinar su fecha de publicación con certeza, y una cita sin fecha no es
+        una cita. La dejamos fuera y construimos la tesis con material fechado. Si resulta correcta, la
+        conversación empieza todavía más cerca de donde la planteamos.
+      </div>
+    </div>
+
+    <div class="foot">
+      <button class="bar-btn" data-go="hub">&#8592; Volver al índice</button>
+      <button class="bar-btn nav-next foot-next"><span class="nx"></span> &#8594;</button>
+    </div>
+  </main>
+</section>
+
+<!-- ============================= 08 EL 1 DE ENERO ============================= -->
+<section id="s8" class="view" aria-label="Sección 8">
+  <div class="bar"><div class="bar-in">
+    <button class="bar-btn" data-go="hub">&#8592; Índice</button>
+    <div class="bar-title"></div>
+    <div class="bar-nav">
+      <button class="bar-btn nav-prev" aria-label="Sección anterior">&#8592;</button>
+      <button class="bar-btn nav-next" aria-label="Sección siguiente">&#8594;</button>
+    </div>
+  </div></div>
+  <main>
+    <h1 class="sr">El 1 de enero</h1>
+    <p class="eyebrow"><span class="num">08</span> Implicaciones de ejecución</p>
+    <h2 class="sec">Tres relojes que vencen en la misma semana</h2>
+    <p class="lede">
+      Ninguno de los tres es opinión. Los tres están publicados, con fecha, y los tres aterrizan sobre la misma
+      capacidad instalada. Es la convergencia, no cada uno por separado, lo que vuelve a este trimestre distinto
+      de cualquier otro de los últimos tres años.
+    </p>
+
+    <div class="body">
+      <div class="chain">
+        <div><div class="h">Reloj 01</div><div class="b"><b>1 de enero de 2027.</b> Jornada ordinaria máxima de 46 horas, sin reducción de sueldos ni prestaciones.</div></div>
+        <div><div class="h">Reloj 02</div><div class="b"><b>1 de enero de 2027.</b> Registro electrónico de jornada exigible por persona, con multa por trabajador.</div></div>
+        <div><div class="h">Reloj 03</div><div class="b"><b>31 de enero de 2027.</b> Primera entrega del régimen Birmex, topada al 5% de las piezas asignadas.</div></div>
+        <div><div class="h">Sobre esto</div><div class="b">Manufactura continua, 375 claves monofuente en el sistema bajo vigilancia y cartera institucional conciliada pendiente.</div></div>
+        <div><div class="h">Resultado</div><div class="b">Menos horas disponibles, más exigencia de puntualidad y menos margen para corregir sobre la marcha.</div></div>
+      </div>
+
+      <div class="g2">
+        <div class="tab hip">
+          <span class="lab">Hipótesis</span>
+          <h4>La reducción de jornada es un problema de capacidad antes que de nómina</h4>
+          <p>
+            En una operación que no se detiene, bajar de 48 a 46 horas semanales sin reducir sueldos tiene dos
+            salidas: rediseñar turnos para cubrir las mismas horas-máquina con una rotación distinta, o aceptar
+            menos horas-máquina. La primera exige planeación, la segunda cuesta capacidad. Y la decisión hay que
+            tomarla antes de saber cuánto volumen hay que entregar el 31 de enero.
+          </p>
+          <p class="src">Interpretación de LCG sobre la reforma publicada en el DOF el 1 de mayo de 2026.</p>
+        </div>
+        <div class="tab hip">
+          <span class="lab">Hipótesis</span>
+          <h4>El registro electrónico cambia de lado la carga de la prueba</h4>
+          <p>
+            Más allá de la obligación, el registro convierte la jornada real en un dato auditable por la autoridad
+            y por cualquier contraparte en un conflicto. Para una organización con decenas de miles de personas y
+            turnos continuos en múltiples sitios, eso es un proyecto de sistemas y de disciplina operativa, no una
+            compra de reloj checador.
+          </p>
+          <p class="src">Artículo 132 fracción XXXIV de la LFT, reforma del 1 de mayo de 2026; exigibilidad diferida al 1 de enero de 2027.</p>
+        </div>
+        <div class="tab imp">
+          <span class="lab">Implicación</span>
+          <h4>La ventana de preparación se cierra, no se mueve</h4>
+          <p>
+            Entre hoy y enero el tema vivo de una dirección de operaciones es cómo llegar. Después de enero, la
+            conversación ya es sobre consecuencias. Es la diferencia entre diseñar el plan de arranque y explicar
+            un incumplimiento.
+          </p>
+        </div>
+        <div class="tab imp">
+          <span class="lab">Implicación</span>
+          <h4>Las claves monofuente concentran todo el riesgo asimétrico</h4>
+          <p>
+            Donde hay un solo proveedor no existe tolerancia a la falla: no hay segunda fuente que absorba. Saber
+            cuántas de las claves ganadas caen en ese grupo, y planearlas aparte del resto, es probablemente la
+            decisión de planeación con mayor consecuencia del próximo trimestre.
+          </p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <h4>Lo que esto no es</h4>
+        <p>
+          No estamos diciendo que PiSA no vaya a poder. Una compañía que lleva ocho décadas abasteciendo al
+          sistema de salud mexicano ha pasado por calendarios más duros que este. <b>Lo que decimos es que estos
+          tres relojes se cruzan por primera vez, que las decisiones que los resuelven son de planeación integrada
+          y no de planta, y que la ventana para tomarlas se mide en semanas.</b>
+        </p>
+      </div>
+    </div>
+
+    <div class="foot">
+      <button class="bar-btn" data-go="hub">&#8592; Volver al índice</button>
+      <button class="bar-btn nav-next foot-next"><span class="nx"></span> &#8594;</button>
+    </div>
+  </main>
+</section>
+
+<!-- ============================= 09 IA Y AGENTES ============================= -->
+<section id="s9" class="view" aria-label="Sección 9">
+  <div class="bar"><div class="bar-in">
+    <button class="bar-btn" data-go="hub">&#8592; Índice</button>
+    <div class="bar-title"></div>
+    <div class="bar-nav">
+      <button class="bar-btn nav-prev" aria-label="Sección anterior">&#8592;</button>
+      <button class="bar-btn nav-next" aria-label="Sección siguiente">&#8594;</button>
+    </div>
+  </div></div>
+  <main>
+    <h1 class="sr">IA y agentes</h1>
+    <p class="eyebrow"><span class="num">09</span> IA y agentes</p>
+    <h2 class="sec">Siete decisiones repetitivas que hoy se toman con información repartida</h2>
+    <p class="lede">
+      La fórmula no se toca. El expediente de registro, la validación de proceso y la liberación de lote tampoco:
+      son responsabilidad sanitaria y ahí ningún modelo sustituye a una firma. Lo que sí se puede asistir es la
+      decisión de qué producir, en qué orden y para quién, que hoy se arma juntando SAP, hojas de cálculo y correos.
+      PiSA ya declara IA desplegada en procesos, plantas y cadena de suministro; lo que proponemos no es
+      introducirla, sino conectarla a decisiones que cambien de resultado.
+    </p>
+
+    <div class="body">
+      <div class="console">
+        <div class="console-top">
+          <span class="tag">Sistema agéntico · propuesta para PiSA</span>
+          <span class="live"><i></i>07 agentes documentados</span>
+        </div>
+        <div class="console-body">
+          <div class="agent-list" role="tablist" aria-label="Agentes propuestos" id="agentList"></div>
+          <div class="agent-detail" id="agentDetail" role="tabpanel" tabindex="0"></div>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>Ninguno de estos casos promete un retorno.</b> Cada uno declara la condición previa de datos que tendría
+        que cumplirse para funcionar. Normalmente es ahí donde se rompe, y decirlo por adelantado vale más que
+        prometer un número.
+      </div>
+
+      <div class="g2">
+        <div class="panel dark">
+          <h3 class="sub" style="color:#fff">El primer agente es el que sostiene a los otros seis</h3>
+          <p style="margin-top:12px;font-size:15.5px;line-height:1.6">
+            Mientras no exista un criterio económico explícito para repartir una hora de línea compartida entre
+            once negocios, los demás agentes optimizan piezas de un sistema cuyo objetivo nadie escribió. Por eso
+            el agente de atribución de rentabilidad y costo de servir no es uno más de la lista: es el que
+            convierte a los otros en algo útil.
+          </p>
+        </div>
+        <div class="panel sunken">
+          <h3 class="sub">Empezar por medir, no por la tecnología</h3>
+          <p class="tx" style="margin-top:12px;font-size:15px">
+            Los siete comparten una misma condición: necesitan que el dato de capacidad, de compromiso contractual
+            y de entrega viva en un solo lugar y signifique lo mismo para todas las unidades. Con SAP transversal
+            ya instalado, esa es una conversación de gobierno del dato y de rutinas de decisión, no de comprar
+            plataforma. La recomendación es levantar primero la línea base: qué se mide hoy, dónde vive cada dato y
+            qué tan confiable es.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <button class="bar-btn" data-go="hub">&#8592; Volver al índice</button>
+      <button class="bar-btn nav-next foot-next"><span class="nx"></span> &#8594;</button>
+    </div>
+  </main>
+</section>
+
+<!-- ============================= 10 DATOS Y GOBERNANZA ============================= -->
+<section id="s10" class="view" aria-label="Sección 10">
+  <div class="bar"><div class="bar-in">
+    <button class="bar-btn" data-go="hub">&#8592; Índice</button>
+    <div class="bar-title"></div>
+    <div class="bar-nav">
+      <button class="bar-btn nav-prev" aria-label="Sección anterior">&#8592;</button>
+      <button class="bar-btn nav-next" aria-label="Sección siguiente">&#8594;</button>
+    </div>
+  </div></div>
+  <main>
+    <h1 class="sr">Datos y gobernanza</h1>
+    <p class="eyebrow"><span class="num">10</span> Datos, gobernanza y ecosistema digital</p>
+    <h2 class="sec">Tres preguntas que no se responden desde fuera y que cambian el alcance</h2>
+    <p class="lede">
+      Hay datos que ninguna fuente pública contiene y que sin embargo determinan cuánto trabajo hay que hacer. No
+      los adivinamos: los planteamos como bifurcación, con el trabajo que corresponde a cada escenario. Resolver
+      las tres toma una sesión con el equipo de sistemas y planeación.
+    </p>
+
+    <div class="body">
+      <div class="g3">
+        <div class="bif">
+          <h4>Bifurcación A · Dónde vive la planeación</h4>
+          <p class="q">¿El plan maestro de producción se construye dentro de SAP o se arma fuera y se captura después?</p>
+          <div class="opts">
+            <div class="opt a"><b>Escenario A · Dentro del sistema</b>El trabajo empieza en el gobierno del proceso: reglas de prioridad, ciclo de junta, responsables y métricas. La materia prima ya existe y el tiempo se va en acordar criterios, no en construir infraestructura.</div>
+            <div class="opt b"><b>Escenario B · Fuera y luego capturado</b>El trabajo empieza por cerrar la brecha entre el plan real y el plan registrado. Es más largo, pero tiene un beneficio inmediato: desaparece el trabajo de reconciliación que hoy consume al equipo cada cierre, y el plan deja de envejecer entre que se decide y se ejecuta.</div>
+          </div>
+        </div>
+
+        <div class="bif">
+          <h4>Bifurcación B · Cómo se calcula la capacidad comprometible</h4>
+          <p class="q">Cuando se decide qué volumen ofertar por clave, ¿contra qué modelo de capacidad se compara: nominal, histórica o disponible real por familia?</p>
+          <div class="opts">
+            <div class="opt a"><b>Escenario A · Hay modelo de capacidad por familia</b>El trabajo es de afinación: incorporar el efecto de 46 horas, los cambios de formato y la segregación obligatoria de betalactámicos y hormonales, y convertirlo en una regla de oferta.</div>
+            <div class="opt b"><b>Escenario B · Se usa referencia histórica</b>El trabajo empieza por construir el modelo. Es el entregable con mayor consecuencia directa, porque es el que determina si lo que se firma en licitación cabe en lo que la planta puede hacer.</div>
+          </div>
+        </div>
+
+        <div class="bif">
+          <h4>Bifurcación C · Cómo se mide el cumplimiento hoy</h4>
+          <p class="q">¿Existe una medición propia de entrega a tiempo y completa por clave, institución y punto de entrega, o la referencia es la que reporta el cliente?</p>
+          <div class="opts">
+            <div class="opt a"><b>Escenario A · Medición propia</b>El trabajo es de explotación y de rutina: convertir la medición en un tablero de operación semanal y en el argumento que se lleva a la mesa con la autoridad.</div>
+            <div class="opt b"><b>Escenario B · Se usa la del cliente</b>La prioridad es construir la medición propia. Sin ella, cada conversación sobre incumplimiento se da sobre la versión de la contraparte, y la empresa llega sin evidencia a discutir penalizaciones y elegibilidad futura.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <h4>Por qué lo planteamos así</h4>
+        <p>
+          Determinar en cuál escenario está la operación <b>toma una sesión de dos horas con el equipo de sistemas
+          y planeación</b>. Es la primera parada del estudio de factibilidad, y es la que define si el proyecto es
+          de gobierno del proceso o de construcción de modelo. Preferimos decir que ya vimos venir la pregunta y
+          que hay un plan para cada respuesta, en vez de entregar un documento con un hueco.
+        </p>
+      </div>
+
+      <div class="g2">
+        <div class="tab senal">
+          <span class="lab">Señal</span>
+          <h4>Lo que sí se observa desde fuera</h4>
+          <p>
+            SAP aparece de forma dominante y transversal en las descripciones de puesto publicadas del grupo:
+            almacén, calidad, cuentas por cobrar, mantenimiento, compras y laboratorio. Un caso técnico publicado
+            por HPE describe cargas de trabajo SAP mayoritariamente virtualizadas y aplicaciones de misión crítica
+            en infraestructura dedicada, con una dirección de TI enfocada en continuidad operativa.
+          </p>
+          <p class="src">Vacantes publicadas de Grupo PiSA; caso técnico de HPE Community. La plataforma está; su uso en planeación no es verificable desde fuera.</p>
+        </div>
+        <div class="tab imp">
+          <span class="lab">Implicación</span>
+          <h4>Tener la plataforma y tener el proceso son cosas distintas</h4>
+          <p>
+            Un ERP transversal resuelve el registro, no el criterio. La pregunta que decide el alcance de cualquier
+            proyecto no es si PiSA tiene SAP —lo tiene— sino si la decisión de qué se produce primero se toma
+            dentro de ese sistema, con reglas escritas, o se toma en una junta y se registra después. Las dos son
+            respuestas legítimas; llevan a dos proyectos muy distintos.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <button class="bar-btn" data-go="hub">&#8592; Volver al índice</button>
+      <button class="bar-btn nav-next foot-next"><span class="nx"></span> &#8594;</button>
+    </div>
+  </main>
+</section>
+
+<!-- ============================= 11 OUTLOOK ============================= -->
+<section id="s11" class="view" aria-label="Sección 11">
+  <div class="bar"><div class="bar-in">
+    <button class="bar-btn" data-go="hub">&#8592; Índice</button>
+    <div class="bar-title"></div>
+    <div class="bar-nav">
+      <button class="bar-btn nav-prev" aria-label="Sección anterior">&#8592;</button>
+      <button class="bar-btn nav-next" aria-label="Sección siguiente">&#8594;</button>
+    </div>
+  </div></div>
+  <main>
+    <h1 class="sr">Outlook 2026-2029</h1>
+    <p class="eyebrow"><span class="num">11</span> Outlook 2026-2029</p>
+    <h2 class="sec">Tres escenarios, sin pronósticos numéricos</h2>
+    <p class="lede">
+      No hay base pública para proyectar cifras del abasto farmacéutico mexicano a tres años, así que no las
+      inventamos. Lo que sí se puede hacer es describir tres trayectorias plausibles y lo que cada una
+      significaría en términos operativos concretos.
+    </p>
+
+    <div class="body">
+      <div class="g3">
+        <div class="scen base">
+          <span class="k">Escenario base</span>
+          <h4>El nuevo régimen se sostiene</h4>
+          <p>
+            Birmex consolida su mandato, las ventanas de entrega se cumplen razonablemente y el gobierno avanza en
+            regularizar los pagos conciliados. La jornada sigue el calendario publicado: 44 horas en 2028 y 42 en
+            2029. La competencia de importación crece despacio.
+          </p>
+          <div class="imp">
+            <b>Qué podría significar para PiSA:</b> la ventaja se reconstruye cada bienio en la mesa de
+            licitación, y el argumento que gana es la confiabilidad demostrable. Quien llegue con evidencia propia
+            de desempeño de entrega negocia; quien llegue con capacidad instalada, compite por precio.
+          </div>
+        </div>
+
+        <div class="scen acc">
+          <span class="k">Escenario de aceleración</span>
+          <h4>El frente internacional despega</h4>
+          <p>
+            Waco entra en régimen, la escisión de Keurig Dr Pepper prevista para principios de 2027 ordena a
+            Electrolit dentro de una compañía de bebidas enfocada, y el negocio de consumo en dólares crece más
+            rápido que el canal público mexicano.
+          </p>
+          <div class="imp">
+            <b>Qué podría significar para PiSA:</b> el cuello de botella se mueve a gobierno corporativo. Dos
+            negocios con ciclos, monedas y métricas distintas requieren decisiones de asignación de capital y de
+            talento que hoy se resuelven por cercanía a la dirección. Toda relación con un socio distribuidor se
+            renegocia de facto en una escisión, y eso coincide con el cambio del punto de origen del producto.
+          </div>
+        </div>
+
+        <div class="scen pre">
+          <span class="k">Escenario de presión</span>
+          <h4>Costo laboral, costo fiscal y competencia importada a la vez</h4>
+          <p>
+            La jornada baja según calendario sobre una operación continua, el IEPS a bebidas con electrolitos se
+            mantiene o se endurece, la apertura a proveedores asiáticos se amplía y la cartera institucional tarda
+            más en regularizarse de lo previsto.
+          </p>
+          <div class="imp">
+            <b>Qué podría significar para PiSA:</b> el margen se comprime por los dos extremos a la vez —costo de
+            conversión y precio de licitación— mientras la caja sigue atrapada. En ese escenario la palanca más
+            rápida no es vender más: es liberar caja de cartera y de inventario, y defender costo unitario con
+            productividad medida por línea.
+          </div>
+        </div>
+      </div>
+
+      <div class="note cool">
+        Los tres escenarios comparten la misma consecuencia práctica: en todos, la ventaja está en la calidad del
+        dato de capacidad real y de desempeño de entrega. Ese es el argumento para empezar a construirlo ahora y
+        no cuando el escenario se defina solo.
+      </div>
+    </div>
+
+    <div class="foot">
+      <button class="bar-btn" data-go="hub">&#8592; Volver al índice</button>
+      <button class="bar-btn nav-next foot-next"><span class="nx"></span> &#8594;</button>
+    </div>
+  </main>
+</section>
+
+<!-- ============================= 12 HIPÓTESIS ============================= -->
+<section id="s12" class="view" aria-label="Sección 12">
+  <div class="bar"><div class="bar-in">
+    <button class="bar-btn" data-go="hub">&#8592; Índice</button>
+    <div class="bar-title"></div>
+    <div class="bar-nav">
+      <button class="bar-btn nav-prev" aria-label="Sección anterior">&#8592;</button>
+      <button class="bar-btn nav-next" aria-label="Sección siguiente">&#8594;</button>
+    </div>
+  </div></div>
+  <main>
+    <h1 class="sr">Hipótesis</h1>
+    <p class="eyebrow"><span class="num">12</span> Hipótesis</p>
+    <h2 class="sec">Seis hipótesis formuladas para poder ser refutadas</h2>
+    <p class="lede">
+      Están redactadas de manera que un dato interno pueda tumbarlas. No cuantificamos impacto porque no tenemos
+      evidencia suficiente para hacerlo con honestidad, y una cifra inventada sería peor que ninguna.
+    </p>
+
+    <div class="body">
+      <div class="g2">
+        <article class="hyp">
+          <div class="hd"><span class="id num">H1</span><h4>No existe una regla económica explícita para arbitrar capacidad compartida entre unidades</h4></div>
+          <dl>
+            <dt>Indicador a revisar</dt><dd>Margen de contribución por unidad de negocio con costos compartidos asignados; criterio documentado de prioridad cuando dos unidades piden la misma línea.</dd>
+            <dt>Información necesaria</dt><dd>Estado de resultados por unidad; reglas de asignación de costo de planta, almacén y flota; actas de la junta donde se resuelven conflictos de capacidad.</dd>
+            <dt>Posible impacto</dt><dd>Decidir mezcla y asignación con criterio económico explícito en lugar de por jerarquía o urgencia.</dd>
+            <dt>Área involucrada</dt><dd>Dirección General, Finanzas y Operaciones</dd>
+          </dl>
+        </article>
+
+        <article class="hyp">
+          <div class="hd"><span class="id num">H2</span><h4>El volumen que se compromete en licitación no se contrasta contra capacidad disponible real por familia</h4></div>
+          <dl>
+            <dt>Indicador a revisar</dt><dd>Utilización por línea crítica contra volumen comprometido; horas-máquina disponibles a 46 horas por familia de producto; claves donde el compromiso excede la corrida histórica máxima.</dd>
+            <dt>Información necesaria</dt><dd>Modelo de capacidad por familia; corridas históricas; tiempos de cambio de formato; restricciones de segregación regulatoria.</dd>
+            <dt>Posible impacto</dt><dd>Ofertar por clave sabiendo qué cabe, y reservar deliberadamente el margen de las claves monofuente.</dd>
+            <dt>Área involucrada</dt><dd>Planeación, Manufactura y Ventas Gobierno</dd>
+          </dl>
+        </article>
+
+        <article class="hyp">
+          <div class="hd"><span class="id num">H3</span><h4>La reducción a 46 horas aún no está traducida a un plan de turnos por sitio</h4></div>
+          <dl>
+            <dt>Indicador a revisar</dt><dd>Horas-máquina disponibles antes y después del cambio por planta; esquema de turnos vigente; horas extra como porcentaje de la jornada ordinaria.</dd>
+            <dt>Información necesaria</dt><dd>Plantilla y rol de turnos por sitio; contratos colectivos aplicables; capacidad del registro actual de jornada para cumplir el requisito electrónico.</dd>
+            <dt>Posible impacto</dt><dd>Sostener horas-máquina con rediseño de rotación en lugar de absorber la pérdida de capacidad o pagar tiempo extraordinario.</dd>
+            <dt>Área involucrada</dt><dd>Recursos Humanos, Manufactura y Jurídico</dd>
+          </dl>
+        </article>
+
+        <article class="hyp">
+          <div class="hd"><span class="id num">H4</span><h4>Hay caja recuperable en el ciclo de facturación y conciliación institucional</h4></div>
+          <dl>
+            <dt>Indicador a revisar</dt><dd>Días de cartera y antigüedad de saldos por institución; porcentaje de facturas rechazadas por documentación; días entre entrega, factura conciliada y cobro.</dd>
+            <dt>Información necesaria</dt><dd>Cartera por institución y antigüedad; causales de rechazo documental; evidencia de entrega en almacén por pedido.</dd>
+            <dt>Posible impacto</dt><dd>Reducir el tiempo entre entregar y cobrar sin depender de que el cliente cambie, liberando caja que hoy compite con el capex comprometido.</dd>
+            <dt>Área involucrada</dt><dd>Finanzas, Ventas Gobierno y Logística</dd>
+          </dl>
+        </article>
+
+        <article class="hyp">
+          <div class="hd"><span class="id num">H5</span><h4>La expansión de portafolio está consumiendo capacidad que no se está midiendo</h4></div>
+          <dl>
+            <dt>Indicador a revisar</dt><dd>Contribución por SKU y cola de baja rotación; proporción de SKU activos que genera el 80% del margen; número de cambios de formato por línea y por mes.</dd>
+            <dt>Información necesaria</dt><dd>Catálogo activo con venta y margen; pipeline de registro y lanzamiento; costo y tiempo de cambio de formato; existencia de un proceso formal de descontinuación.</dd>
+            <dt>Posible impacto</dt><dd>Liberar horas de línea hoy consumidas por complejidad de catálogo y redirigirlas a las claves con compromiso contractual.</dd>
+            <dt>Área involucrada</dt><dd>Comercial, Innovación y Planeación</dd>
+          </dl>
+        </article>
+
+        <article class="hyp">
+          <div class="hd"><span class="id num">H6</span><h4>La función de planeación integrada se está creando sin un método que la sostenga</h4></div>
+          <dl>
+            <dt>Indicador a revisar</dt><dd>Existencia, frecuencia y asistencia del ciclo de planeación de ventas y operaciones; error de pronóstico; adherencia al plan maestro; tiempo de ciclo de decisión ante una desviación de surtido.</dd>
+            <dt>Información necesaria</dt><dd>Calendario y minutas del ciclo vigente; definición de responsabilidades de las nuevas posiciones de abastecimiento y planeación; indicadores con los que se evalúan.</dd>
+            <dt>Posible impacto</dt><dd>Que el nuevo liderazgo llegue a una función con estructura, rutinas e indicadores ya definidos en lugar de construirlos mientras opera.</dd>
+            <dt>Área involucrada</dt><dd>Operaciones, Abastecimiento y Recursos Humanos</dd>
+          </dl>
+        </article>
+      </div>
+
+      <div class="note cool">
+        <b>Cómo se refutan.</b> Ninguna de las seis se responde con un sí o un no. Se responden mostrando cómo se
+        toma hoy esa decisión y con qué información. Si en esa conversación resulta que el método ya existe y
+        funciona, la hipótesis cae y lo decimos en la misma sesión. Esa también es información útil para las dos
+        partes.
+      </div>
+    </div>
+
+    <div class="foot">
+      <button class="bar-btn" data-go="hub">&#8592; Volver al índice</button>
+      <button class="bar-btn nav-next foot-next"><span class="nx"></span> &#8594;</button>
+    </div>
+  </main>
+</section>
+
+<!-- ============================= 13 PREDIAGNÓSTICO ============================= -->
+<section id="s13" class="view" aria-label="Sección 13">
+  <div class="bar"><div class="bar-in">
+    <button class="bar-btn" data-go="hub">&#8592; Índice</button>
+    <div class="bar-title"></div>
+    <div class="bar-nav">
+      <button class="bar-btn nav-prev" aria-label="Sección anterior">&#8592;</button>
+      <button class="bar-btn nav-next" aria-label="Sección siguiente">&#8594;</button>
+    </div>
+  </div></div>
+  <main>
+    <h1 class="sr">Prediagnóstico</h1>
+    <p class="eyebrow"><span class="num">13</span> Prediagnóstico · Estudio de factibilidad</p>
+    <h2 class="sec">Siete inputs, dos a tres semanas, y un entregable que puede decir que no</h2>
+    <p class="lede">
+      Es el marco metodológico fijo de London. Lo único que cambia de cuenta a cuenta es el alcance y el acceso
+      dentro de los primeros dos inputs. Para PiSA proponemos acotarlo a planeación y abastecimiento, logística y
+      distribución, ventas gobierno, y finanzas en la dimensión de cartera institucional.
+    </p>
+
+    <div class="body">
+      <div class="g2">
+        <div class="inp"><div class="no num">01</div><div><h4>Alcance y estrategia del estudio</h4><p>Entendimiento de los retos estratégicos, definición de alcance por áreas, responsables y ubicación geográfica, designación del sponsor, y entendimiento del modelo de gobierno: consejo, socios y tomadores de decisión.</p></div></div>
+        <div class="inp"><div class="no num">02</div><div><h4>Recolección de información básica</h4><p>Firma de NDA, inducción general, organigramas, estados financieros, indicadores de juntas directivas y operativas, manuales de proceso o sistemas de calidad, y reunión de perfilamiento. Aquí se necesita acceso a las bases de datos; sin eso el ejercicio se queda en observación y pierde la mitad de su valor.</p></div></div>
+        <div class="inp"><div class="no num">03</div><div><h4>Comunicación y entrevistas</h4><p>Diseño y acuerdo del plan de entrevistas con apoyo del sponsor, kick off oficial con objetivos y factores clave de éxito, ejecución de entrevistas y reuniones de validación de oportunidades. Mandos medios y personal de piso saben dónde está el problema mucho antes que cualquier reporte.</p></div></div>
+        <div class="inp"><div class="no num">04</div><div><h4>Gemba Walk</h4><p>Gemba significa «el lugar real»: donde el trabajo ocurre y donde se genera el valor. Recorrido estructurado por planta y centros de distribución para observar flujos de producto y de personas, tiempos de ciclo, puntos de espera y cambios de formato, preguntando a quien ejecuta la tarea y no a quien la supervisa. La distancia entre el proceso documentado y el real es casi siempre donde está el dinero.</p></div></div>
+        <div class="inp"><div class="no num">05</div><div><h4>Estadística agéntica</h4><p>Con las bases que comparte el cliente se ejecutan estudios estadísticos apoyados en inteligencia artificial agéntica. Los agentes cruzan venta, producción, inventario y nómina buscando patrones que no se ven revisando cada base por separado: dispersión de productividad entre sitios, correlaciones entre familia de producto y rentabilidad, comportamientos atípicos por región o por institución.</p></div></div>
+        <div class="inp"><div class="no num">06</div><div><h4>Nivel de Madurez Organizacional</h4><p>Mide la capacidad de la empresa para la mejora continua en tres dimensiones: personas y cultura, procesos y estructuras, y tecnología, con benchmarks operativos y financieros de empresas similares. La escala va de Inicial a Optimizado. El resultado no es una calificación: es el punto de partida contra el que se mide el avance.</p></div></div>
+        <div class="inp"><div class="no num">07</div><div><h4>Growth Management</h4><p>Encuesta que mide la mentalidad de los líderes y los aspectos organizacionales clave para el éxito. Evalúa 11 elementos en cuatro bloques con 68 reactivos: estrategia y objetivos, liderazgo y cultura, adaptabilidad y cambio, y digitalización y eficiencia operativa.</p></div></div>
+        <div class="inp" style="background:var(--green-100);border-color:var(--green-300)"><div class="no num" style="color:var(--green-700)">→</div><div><h4>El entregable: propuesta de proyecto</h4><p>No es un input: es lo que se construye sobre los siete anteriores. Contiene oportunidades cuantificadas en pesos, beneficios esperados, metodología de implementación, cronograma, inversión y ROI. <b>Si las oportunidades no justifican el proyecto, se dice. Ese también es un resultado válido del estudio.</b></p></div></div>
+      </div>
+
+      <h3 class="sub" style="margin-top:14px">Dónde hemos hecho esto antes</h3>
+      <p class="tx">
+        Tres casos publicados con carta de recomendación firmada por el cliente. Los elegimos por adyacencia de
+        problema, no de sector: canal institucional, manufactura con planeación de demanda, y distribución de
+        bebidas con operación continua.
+      </p>
+
+      <div class="g3">
+        <div class="case">
+          <div class="top">
+            <div class="nm">Pharmatycsa<small>Farmacéutico y productos médicos</small></div>
+            <div class="roi nd"><div class="v">Caso publicado sin cifra de ROI</div></div>
+          </div>
+          <div class="bd">
+            <p>
+              Distribución, comercialización y representación de medicamentos y desarrollo de proyectos de
+              soluciones integrales para la salud, con el canal público como centro de gravedad. Es el caso del
+              banco de London más cercano a la economía de licitación, entrega institucional y ciclo de cobro
+              presupuestal.
+            </p>
+            <div class="acts">
+              <a class="btn p" href="https://londoncg.mx/hubfs/Growth%20Series%20LP/clientes/casos_de_exito/CASO_DE_EXITO-PHARMATYCSA.pdf?hsLang=es-mx" target="_blank" rel="noopener">Caso de éxito</a>
+              <a class="btn" href="https://londoncg.mx/hubfs/Growth%20Series%20LP/clientes/cartas_de_recomendacion/Pharmatycsa.pdf?hsLang=es-mx" target="_blank" rel="noopener">Carta de recomendación</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="case">
+          <div class="top">
+            <div class="nm">Panovo<small>Alimentos · Grupo PROAN</small></div>
+            <div class="roi"><div class="v num">3.8<sup>:1</sup></div><div class="l">ROI publicado</div></div>
+          </div>
+          <div class="bd">
+            <p>
+              Manufactura con planeación de demanda, operaciones de planta, calidad, mantenimiento, cadena de
+              suministro y manejo del cambio. El episodio de Growth Stories lo narra el propio director general.
+            </p>
+            <div class="acts">
+              <a class="btn p" href="https://www.youtube.com/watch?v=_Ax-Ur_u0Rs" target="_blank" rel="noopener">Ver episodio</a>
+              <a class="btn" href="https://londoncg.mx/hubfs/Growth%20Series%20LP/clientes/cartas_de_recomendacion/Panovo.pdf?hsLang=es-mx" target="_blank" rel="noopener">Carta de recomendación</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="case">
+          <div class="top">
+            <div class="nm">Bepensa<small>Bienes de consumo</small></div>
+            <div class="roi"><div class="v num">3.9<sup>:1</sup></div><div class="l">ROI publicado</div></div>
+          </div>
+          <div class="bd">
+            <p>
+              Grupo multinacional con cinco unidades de negocio y más de cuarenta empresas bajo una misma
+              estructura. El testimonio publicado es del director de Planeación, que es exactamente la función de
+              la que trata esta pieza.
+            </p>
+            <div class="acts">
+              <a class="btn p" href="https://londoncg.mx/hubfs/Growth%20Series%20LP/clientes/casos_de_exito/CASO_DE_EXITO-BEPENSA.pdf?hsLang=es-mx" target="_blank" rel="noopener">Caso de éxito</a>
+              <a class="btn" href="https://londoncg.mx/hubfs/Growth%20Series%20LP/clientes/cartas_de_recomendacion/Bepensa.pdf?hsLang=es-mx" target="_blank" rel="noopener">Carta de recomendación</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        La ficha de Pharmatycsa publicada en Growth Stories no incluye cifra de ROI. No le ponemos una: citamos el
+        caso tal como está publicado y enlazamos el documento original. El resto del banco de casos está en
+        <a href="https://londoncg.mx/growth-stories" target="_blank" rel="noopener">londoncg.mx/growth-stories</a>.
+      </div>
+    </div>
+
+    <div class="foot">
+      <button class="bar-btn" data-go="hub">&#8592; Volver al índice</button>
+      <button class="bar-btn nav-next foot-next"><span class="nx"></span> &#8594;</button>
+    </div>
+  </main>
+</section>
+
+<!-- ============================= 14 MÉTODO Y FUENTES ============================= -->
+<section id="s14" class="view" aria-label="Sección 14">
+  <div class="bar"><div class="bar-in">
+    <button class="bar-btn" data-go="hub">&#8592; Índice</button>
+    <div class="bar-title"></div>
+    <div class="bar-nav">
+      <button class="bar-btn nav-prev" aria-label="Sección anterior">&#8592;</button>
+      <button class="bar-btn nav-next" aria-label="Sección siguiente">&#8594;</button>
+    </div>
+  </div></div>
+  <main>
+    <h1 class="sr">Método, fuentes y limitaciones</h1>
+    <p class="eyebrow"><span class="num">14</span> Método, fuentes y limitaciones</p>
+    <h2 class="sec">Qué verificamos, qué no pudimos, y de dónde salió cada dato</h2>
+    <p class="lede">
+      Esta sección no es un anexo. Es parte del producto: un documento sobre una empresa privada que no declara
+      sus límites no merece confianza, por bien escrito que esté.
+    </p>
+
+    <div class="body">
+      <div class="legend">
+        <span class="chip hecho">Hecho · fuente identificable y fechada</span>
+        <span class="chip senal">Señal · indicio que por sí solo no demuestra</span>
+        <span class="chip hip">Hipótesis · interpretación refutable</span>
+        <span class="chip imp">Implicación · qué podría significar</span>
+      </div>
+
+      <div class="g2">
+        <div class="panel sunken">
+          <h3 class="sub">Lo que no existe públicamente y no estimamos</h3>
+          <p class="tx" style="margin-top:12px;font-size:14.8px">
+            PiSA es una empresa privada sin obligación de reporte. No hay ingresos consolidados, márgenes, mezcla
+            entre canal público y privado, utilización de capacidad por planta, nivel de servicio, días de cartera,
+            ni costo por sesión clínica. Tampoco encontramos la participación específica de PiSA en el fallo de la
+            compra consolidada 2027-2028: las fuentes solo publican cifras agregadas, así que no afirmamos nada
+            sobre su posición en ese proceso.
+          </p>
+          <p class="tx" style="margin-top:12px;font-size:14.8px">
+            Las cifras públicas de tamaño son inconsistentes entre sí. Lo decimos en la sección 4 y no construimos
+            ninguna serie con ellas.
+          </p>
+        </div>
+        <div class="panel sunken">
+          <h3 class="sub">Preguntas abiertas que declaramos como tales</h3>
+          <p class="tx" style="margin-top:12px;font-size:14.8px">
+            Si arrancó la planta de Waco y en qué punto de su curva está. Si se cubrieron las vacantes de
+            abastecimiento y planeación, y con qué mandato. Si PiSA quedó entre las empresas del paquete de
+            inversión del Plan México. Qué proporción del adeudo sectorial conciliado le corresponde. Ninguna de
+            estas se resuelve desde fuera, y ninguna la respondimos con una suposición.
+          </p>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>Sobre las fuentes institucionales.</b> Varias notas sobre PiSA en medios de negocios de 2026 son
+        contenido patrocinado o institucional. Las usamos para confirmar cargos y declaraciones, que es para lo
+        que sirven, y nunca como evaluación independiente. Lo señalamos cada vez que ocurre.
+      </div>
+
+      <h3 class="sub" style="margin-top:12px">Fuentes</h3>
+      <div class="srcs">
+        <div><span class="id num">01</span><span>Fallo de la compra consolidada de medicamentos 2027-2028, Birmex, 25 de septiembre de 2026 — cobertura de SuMédico (26 y 27 de septiembre), Excélsior (29 de septiembre) y Agencia Reforma vía Tierra Fuerte.<span class="m">626 de 766 claves adjudicadas, 84,353 mdp sin IVA, 956 asignaciones a 102 empresas, 375 claves monofuente, 139 desiertas.</span></span></div>
+        <div><span class="id num">02</span><span>Convocatoria Birmex 2027-2028 y nuevas reglas de entrega — MVS Noticias, 21 de julio de 2026.<span class="m">Primera entrega topada al 5% con máximo de 25%; límites a proveedores con incumplimientos previos; hasta cuatro proveedores por clave.</span></span></div>
+        <div><span class="id num">03</span><span>Reforma de jornada laboral — Diario Oficial de la Federación, 1 de mayo de 2026 (artículos 59, 61 y 132 fracción XXXIV de la LFT) y reforma constitucional al artículo 123, DOF 3 de marzo de 2026.<span class="m">46 horas desde el 1 de enero de 2027; registro electrónico de jornada exigible en la misma fecha.</span></span></div>
+        <div><span class="id num">04</span><span>Segundo Informe de Gobierno sobre pagos conciliados con la industria farmacéutica — El Universal y Proyecto Puente, 22 de septiembre de 2026; CANIFARMA vía La Jornada, 13 de septiembre de 2026.</span></div>
+        <div><span class="id num">05</span><span>Declaraciones del director general del IMSS sobre incumplimientos y rescisiones — Quadratín, Vanguardia y Publimetro, 12 de octubre de 2026.<span class="m">Publimetro precisa que no se detalló si PiSA está entre las empresas con contratos en proceso de cancelación.</span></span></div>
+        <div><span class="id num">06</span><span>Entrevista con el director general de PiSA Farmacéutica — Expansión, 22 de junio de 2026 (contenido patrocinado por PiSA).</span></div>
+        <div><span class="id num">07</span><span>Caso técnico de infraestructura de TI de PiSA Farmacéutica — HPE Community.<span class="m">SAP transversal, manufactura continua, 1,500 marcas y 17 líneas de especialidad; 14 plantas según ese material.</span></span></div>
+        <div><span class="id num">08</span><span>Sitio oficial de PiSA: historia, empresas del grupo y listado público de ubicaciones — pisa.com.mx, consultado en octubre de 2026.</span></div>
+        <div><span class="id num">09</span><span>Reunión de la vicepresidencia ejecutiva con Cofepris — Milenio y Excélsior, 26 de marzo de 2026.</span></div>
+        <div><span class="id num">10</span><span>Acuerdo Keurig Dr Pepper–Grupo PiSA y separación corporativa de KDP — formularios 10-Q (3T 2023) y 8-K (23 de junio de 2026) ante la SEC; comunicado conjunto del 26 de octubre de 2023.</span></div>
+        <div><span class="id num">11</span><span>Planta de Waco, Texas — Greater Waco Chamber y Area Development, noviembre de 2024; vacantes publicadas por la entidad operadora, abril de 2026.</span></div>
+        <div><span class="id num">12</span><span>IEPS a sueros y bebidas con electrolitos, Paquete Económico 2026 — Expansión, 25 de noviembre de 2025.</span></div>
+        <div><span class="id num">13</span><span>Producción farmacéutica nacional — EMIM/INEGI vía El Universal, septiembre de 2026. Apertura de licitación a proveedores de India y China — El Universal y El Imparcial, septiembre de 2026.</span></div>
+        <div><span class="id num">14</span><span>Venta del negocio renal de Baxter a Carlyle, cerrada el 31 de enero de 2025 — reporte anual 10-K de Baxter ante la SEC. Capacidad de Baxter en Jiutepec — The Logistics World.</span></div>
+        <div><span class="id num">15</span><span>Casos de éxito y cartas de recomendación de London Consulting Group — londoncg.mx/growth-stories, consultado el 13 de octubre de 2026.</span></div>
+      </div>
+
+      <div class="panel dark">
+        <h3 class="sub" style="color:#fff">Credenciales de London Consulting Group</h3>
+        <div class="g3" style="margin-top:16px">
+          <div class="stat mint"><div class="v num">1<sup>:1</sup></div><div class="l">ROI garantizado por contrato sobre la inversión del cliente</div></div>
+          <div class="stat lime"><div class="v num">5<sup>:1</sup></div><div class="l">Promedio histórico de retorno</div></div>
+          <div class="stat cream"><div class="v num">1991</div><div class="l">Año de fundación. Metodología London aplicada en estrategia, ejecución e implementación</div></div>
+        </div>
+        <p style="margin-top:16px;font-size:15px;color:var(--green-100);max-width:72ch">
+          No solamente identificamos qué debería cambiar: ayudamos a implementar los cambios y a que las cosas
+          sucedan. Casos y cartas de recomendación publicados en
+          <a href="https://londoncg.mx/growth-stories" target="_blank" rel="noopener" style="color:var(--lime)">londoncg.mx/growth-stories</a>.
+        </p>
+      </div>
+    </div>
+
+    <div class="foot">
+      <button class="bar-btn" data-go="hub">&#8592; Volver al índice</button>
+      <button class="bar-btn nav-next foot-next"><span class="nx"></span> &#8594;</button>
+    </div>
+  </main>
+</section>
+
+<!-- ============================= CTA ============================= -->
+<section id="cta" class="view" aria-label="Siguiente paso">
+  <div class="bar"><div class="bar-in">
+    <button class="bar-btn" data-go="hub">&#8592; Índice</button>
+    <div class="bar-title"></div>
+    <div class="bar-nav">
+      <button class="bar-btn nav-prev" aria-label="Sección anterior">&#8592;</button>
+      <button class="bar-btn nav-next" aria-label="Sección siguiente" disabled>&#8594;</button>
+    </div>
+  </div></div>
+  <main>
+    <h1 class="sr">Siguiente paso</h1>
+    <p class="eyebrow"><span class="num">→</span> Siguiente paso</p>
+    <h2 class="sec">45 minutos para contrastar una hipótesis</h2>
+    <p class="lede">
+      No una presentación de servicios. Una sesión de trabajo con una sola pregunta sobre la mesa.
+    </p>
+
+    <div class="body">
+      <div class="cta-wrap">
+        <h3>¿Con qué criterio se decide hoy <b>qué se produce primero</b> cuando once negocios piden la misma línea?</h3>
+        <p>
+          Eso es lo que queremos contrastar contigo y con Heriberto. Traemos las seis hipótesis de la sección 12 y
+          las tres bifurcaciones de la sección 10, y las ponemos a prueba contra lo que ustedes saben. Si están mal
+          planteadas, esa respuesta también nos sirve y te ahorramos la siguiente conversación. Si alguna da en el
+          blanco, el paso natural es un estudio de factibilidad de dos a tres semanas.
+        </p>
+        <div class="cta-acts">
+          <a class="btn" href="https://wa.me/523318628273?text=Hola%20Leonardo%2C%20vi%20el%20an%C3%A1lisis%20que%20prepararon%20para%20PiSA.%20Agendemos%20los%2045%20minutos." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+          <a class="btn s" href="mailto:leonardo.pimentel@londoncg.mx?subject=PiSA%20%C2%B7%20Contraste%20de%20hip%C3%B3tesis%20%2845%20min%29&body=Hola%20Leonardo%2C%20vi%20el%20an%C3%A1lisis.%20Propongo%20estas%20fechas%3A%20">Responder por correo</a>
+        </div>
+        <div class="sig">
+          <b>Leonardo Pimentel</b><br>
+          <span class="r">Director de Operaciones · London Consulting Group México</span><br>
+          <a href="tel:+523318628273">33 1862 8273</a> · <a href="mailto:leonardo.pimentel@londoncg.mx">leonardo.pimentel@londoncg.mx</a>
+        </div>
+      </div>
+
+      <div class="g3">
+        <div class="panel"><h3 class="sub" style="font-size:16px">1 · La conversación</h3><p class="small" style="margin-top:9px">45 minutos con la dirección corporativa y la dirección general. Contrastamos hipótesis contra lo que ustedes ven desde dentro.</p></div>
+        <div class="panel"><h3 class="sub" style="font-size:16px">2 · El estudio de factibilidad</h3><p class="small" style="margin-top:9px">Dos a tres semanas, siete inputs, alcance acotado a planeación, abastecimiento, logística, ventas gobierno y cartera institucional.</p></div>
+        <div class="panel"><h3 class="sub" style="font-size:16px">3 · La propuesta, o el no</h3><p class="small" style="margin-top:9px">Oportunidades cuantificadas, metodología, cronograma, inversión y ROI. Si no justifican el proyecto, lo decimos.</p></div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <button class="bar-btn" data-go="hub">&#8592; Volver al índice</button>
+      <span class="small">Documento privado preparado por London Consulting Group México · 13 de octubre de 2026</span>
+    </div>
+  </main>
+</section>
+
+<script>
+(function(){
+  "use strict";
+  var ORDER=["s1","s2","s3","s4","s5","s6","s7","s8","s9","s10","s11","s12","s13","s14","cta"];
+  var NAMES={
+    s1:["01","La tesis"], s2:["02","Hallazgos"], s3:["03","El mercado cambió"],
+    s4:["04","PiSA cambió"], s5:["05","Once economías"], s6:["06","Benchmark competitivo"],
+    s7:["07","Señales de liderazgo"], s8:["08","Implicaciones de ejecución"], s9:["09","IA y agentes"],
+    s10:["10","Datos y gobernanza"], s11:["11","Outlook 2026-2029"], s12:["12","Hipótesis"],
+    s13:["13","Prediagnóstico"], s14:["14","Método y fuentes"], cta:["→","Siguiente paso"]
+  };
+
+  function fill(){
+    ORDER.forEach(function(id,i){
+      var sec=document.getElementById(id); if(!sec) return;
+      var t=sec.querySelector(".bar-title");
+      if(t){ t.innerHTML='<span class="num">'+NAMES[id][0]+'</span><b>'+NAMES[id][1]+'</b>'; }
+      var nxId=ORDER[i+1];
+      sec.querySelectorAll(".nav-next").forEach(function(b){
+        if(!nxId){ b.setAttribute("disabled","disabled"); return; }
+        b.removeAttribute("disabled");
+        b.dataset.go=nxId;
+        var lbl=b.querySelector(".nx");
+        if(lbl) lbl.textContent=NAMES[nxId][1];
+      });
+      sec.querySelectorAll(".nav-prev").forEach(function(b){
+        b.dataset.go = i===0 ? "hub" : ORDER[i-1];
+      });
+    });
+  }
+
+  function show(id,push){
+    var target=document.getElementById(id)?id:"hub";
+    document.querySelectorAll(".view").forEach(function(v){ v.classList.remove("on"); });
+    var el=document.getElementById(target);
+    el.classList.add("on");
+    if(push!==false){
+      try{ history.pushState({v:target},"", target==="hub" ? "#" : "#"+target); }catch(e){}
+    }
+    window.scrollTo(0,0);
+    var h=el.querySelector(".eyebrow")||el;
+    h.setAttribute("tabindex","-1");
+    try{ h.focus({preventScroll:true}); }catch(e){ h.focus(); }
+  }
+
+  document.addEventListener("click",function(e){
+    var b=e.target.closest("[data-go]");
+    if(!b) return;
+    e.preventDefault();
+    show(b.dataset.go,true);
+  });
+
+  document.addEventListener("keydown",function(e){
+    if(e.key==="Escape"){
+      var cur=document.querySelector(".view.on");
+      if(cur && cur.id!=="hub") show("hub",true);
+    }
+  });
+
+  window.addEventListener("popstate",function(){
+    show((location.hash||"#").replace("#","")||"hub",false);
+  });
+
+  fill();
+  show((location.hash||"#").replace("#","")||"hub",false);
+})();
+</script>
+
+<script>
+(function(){
+  "use strict";
+  var AGENTS=[
+    {n:"01",t:"Rentabilidad y costo de servir por unidad",c:"Transversal · agente ancla",
+     sum:"Pone un número al reparto de una base industrial compartida entre once negocios, que es la condición para que cualquiera de los otros seis agentes sepa qué está optimizando.",
+     s:["Asignación de capacidad de planta, almacén y flota entre unidades con clientes y ciclos de cobro distintos.",
+        "El costo de planta, CEDIS y transporte se reparte con reglas heredadas. Nadie puede decir con precisión qué aporta una hora de línea destinada a una clave de licitación frente a la misma hora destinada a producto de marca.",
+        "Asigna costo real de conversión, almacenamiento y distribución a cada unidad, clave y canal, y calcula contribución después de costo de servir.",
+        "Entrega la contribución por unidad y por clave con los costos compartidos ya asignados, y marca dónde la asignación actual distorsiona la decisión.",
+        "La discusión de prioridad deja de resolverse por jerarquía y pasa a resolverse con un criterio que todos pueden ver."],
+     pre:"Catálogo de costos de planta, almacén y transporte con criterio de asignación acordado, y venta por clave, unidad y canal de al menos doce meses. Es el dato que más suele vivir repartido entre contabilidad y operación."},
+
+    {n:"02",t:"Compromiso de capacidad en licitación",c:"Planeación · ventas gobierno",
+     sum:"Contesta, antes de firmar, si el volumen que se va a ofertar por clave cabe en las horas que la planta va a tener disponibles bajo la jornada de 46 horas.",
+     s:["Definición del volumen a ofertar por clave en una compra consolidada bianual.",
+        "El compromiso se decide con referencia histórica y criterio comercial. La capacidad real disponible depende de familia, cambios de formato, segregación regulatoria y, desde 2027, de dos horas semanales menos.",
+        "Simula el plan de producción implícito en una oferta contra la capacidad disponible por familia y por sitio, incluyendo tiempos de cambio y restricciones de segregación.",
+        "Devuelve un semáforo por clave: cabe, cabe con riesgo, o no cabe sin desplazar otra cosa, y dice qué desplaza.",
+        "Se ofertan volúmenes que la planta puede sostener, y el riesgo que se asume queda documentado en lugar de descubrirse en enero."],
+     pre:"Modelo de capacidad por familia de producto con tiempos de cambio de formato y rendimiento real por línea. Sin ese modelo el agente no existe: es el primer entregable, no un insumo que se dé por hecho."},
+
+    {n:"03",t:"Torre de control de surtido",c:"Operaciones · logística",
+     sum:"Convierte el estado de entrega por clave, institución y punto de entrega en una vista única y diaria, en lugar de un reporte que se arma cuando alguien lo pide.",
+     s:["Surtido de pedidos a IMSS, IMSS-Bienestar, ISSSTE y Pemex desde el centro de distribución nacional y los centros regionales.",
+        "La información de pedido, inventario, producción y entrega vive en lugares distintos. Para cuando se consolida, la desviación ya ocurrió y la ventana de corrección se cerró.",
+        "Cruza pedido comprometido, inventario disponible, plan de producción y evidencia de entrega, y proyecta el cumplimiento de cada ventana contractual.",
+        "Alerta priorizada por criticidad contractual, con los días que restan y las acciones posibles para cada clave en riesgo.",
+        "La desviación se detecta mientras todavía se puede producir o reasignar, no cuando ya hay una orden de reposición corriendo."],
+     pre:"Un identificador común de clave, pedido, lote y punto de entrega entre el sistema de ventas, el de producción y el de logística. Si ese identificador no es el mismo en los tres, la torre reporta números que no cuadran."},
+
+    {n:"04",t:"Vigilancia de claves monofuente",c:"Planeación · riesgo",
+     sum:"Separa las claves donde no existe segunda fuente y las trata con una política distinta al resto del portafolio, porque su tolerancia a la falla es cero.",
+     s:["Abastecimiento de las claves donde la empresa quedó como proveedor único dentro del régimen 2027-2028.",
+        "Todas las claves se planean con el mismo criterio de inventario y prioridad, aunque el costo de fallar sea radicalmente distinto entre una con tres proveedores y una sin alternativa.",
+        "Clasifica el portafolio contratado por número de fuentes y por criticidad clínica, y calcula la cobertura de inventario y el margen de producción que cada grupo requiere.",
+        "Política diferenciada de inventario de seguridad y de prioridad de programa para el grupo monofuente, revisada semanalmente.",
+        "El margen de protección se concentra donde fallar no tiene remedio, en lugar de repartirse parejo entre todo el catálogo."],
+     pre:"El desglose de claves ganadas con su número de fuentes adjudicadas, que sale del acta de fallo, y el consumo histórico por institución. Es información obtenible; hoy simplemente no está consolidada en un solo lugar."},
+
+    {n:"05",t:"Secuenciación y cambio de formato",c:"Manufactura · programación",
+     sum:"Ordena la cola de producción considerando el costo real de cada cambio de formato, que es donde se pierden horas que nadie contabiliza como pérdida.",
+     s:["Programación de líneas que fabrican múltiples presentaciones, con segregación obligatoria entre familias.",
+        "La secuencia se arma por urgencia del pedido. Cada reordenamiento de emergencia agrega cambios de formato y limpiezas que consumen capacidad real sin aparecer en ningún indicador.",
+        "Propone secuencia considerando compromiso contractual, costo y tiempo de cada transición, y restricciones de validación y limpieza entre familias.",
+        "Programa semanal con el costo en horas de cada cambio explícito, y el costo de alterarlo cuando entra una urgencia.",
+        "Se recuperan horas de línea que hoy se pierden en transiciones, y el costo de decir que sí a una urgencia se vuelve visible antes de decirlo."],
+     pre:"Matriz de tiempos de cambio entre presentaciones por línea y reglas documentadas de limpieza y validación. Suele existir en la cabeza del programador y no en el sistema."},
+
+    {n:"06",t:"Conciliación y cobranza institucional",c:"Finanzas · ventas gobierno",
+     sum:"Persigue el dinero ya ganado que está detenido por diferencias documentales entre lo entregado, lo facturado y lo reconocido por cada institución.",
+     s:["Facturación y cobro de entregas al sector público, donde el pago ocurre contra recepción en almacén.",
+        "Una factura rechazada por documentación no avisa: simplemente no se paga. El hallazgo llega semanas después, cuando el saldo envejece y la conversación ya es de antigüedad y no de corrección.",
+        "Concilia evidencia de entrega, factura emitida y reconocimiento de la institución, y detecta la discrepancia el día que aparece.",
+        "Lista diaria de facturas en riesgo con la causa probable del rechazo y el documento faltante.",
+        "Se acorta el tiempo entre entregar y cobrar sin depender de que el cliente cambie su proceso."],
+     pre:"Trazabilidad entre pedido, remisión firmada, factura y pago por institución. Donde la evidencia de entrega vive en papel o en correo, el agente no puede cerrar el círculo y el primer trabajo es digitalizarla."},
+
+    {n:"07",t:"Lectura de condiciones contractuales",c:"Ventas gobierno · jurídico",
+     sum:"Convierte cientos de páginas de contratos y anexos en un calendario operable de ventanas, topes, mínimos, máximos y penalizaciones por clave.",
+     s:["Administración de contratos abiertos con mínimos y máximos, ventanas de entrega y reglas de penalización distintas por proceso.",
+        "Las condiciones viven en documentos legales que el equipo de operación no lee. La planta se entera de una ventana cuando alguien la traduce a una orden, y a veces esa traducción llega tarde.",
+        "Extrae de cada contrato las fechas, topes, mínimos, máximos y causales de penalización, y los publica como calendario operativo por clave e institución.",
+        "Un calendario único con la fecha comprometida de cada clave, el rango de volumen permitido y la consecuencia de cada incumplimiento.",
+        "La operación planea contra las condiciones reales del contrato, no contra una interpretación que se fue perdiendo en el camino."],
+     pre:"Los contratos y anexos en formato digital legible, y un criterio único de identificación de clave entre el documento legal y el sistema operativo. Es el agente más fácil de arrancar y el que más rápido devuelve orden."}
+  ];
+
+  var list=document.getElementById("agentList");
+  var detail=document.getElementById("agentDetail");
+  if(!list||!detail) return;
+  var LABELS=["Proceso","Fricción","Agente","Acción","Resultado"];
+
+  function render(i){
+    var a=AGENTS[i];
+    var h='<h3>'+a.t+'</h3><p class="sum">'+a.sum+'</p><div class="flow anim">';
+    for(var k=0;k<5;k++){
+      var cls="step"+(k===2?" is-agent":"")+(k===4?" is-result":"");
+      h+='<div class="'+cls+'"><div class="k"><i>'+("0"+(k+1))+'</i><span>'+LABELS[k]+'</span></div><div class="v">'+a.s[k]+'</div></div>';
+    }
+    h+='</div><div class="pre"><div class="lb">Condición previa de datos</div><p>'+a.pre+'</p></div>';
+    detail.innerHTML=h;
+    Array.prototype.forEach.call(list.children,function(b,j){
+      b.setAttribute("aria-selected", j===i ? "true" : "false");
+    });
+  }
+
+  AGENTS.forEach(function(a,i){
+    var b=document.createElement("button");
+    b.className="agent-btn";
+    b.setAttribute("role","tab");
+    b.setAttribute("aria-selected", i===0 ? "true":"false");
+    b.innerHTML='<span class="n num">'+a.n+'</span><span><span class="t">'+a.t+'</span><span class="c">'+a.c+'</span></span>';
+    b.addEventListener("click",function(){ render(i); });
+    list.appendChild(b);
+  });
+  render(0);
+})();
+</script>
+
+</body>
+</html>
