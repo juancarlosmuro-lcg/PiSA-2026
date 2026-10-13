@@ -506,45 +506,59 @@ td.nd{color:var(--n400);font-style:italic}
 }
 
 /* ---------- organigrama ---------- */
-.otree-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--neutral-0);
-  border:1px solid var(--n200);border-radius:14px;padding:22px 18px 26px}
-.otree{min-width:880px;display:flex;flex-direction:column;align-items:center}
-.oband{width:100%;max-width:820px}
-.oband-lb{font-size:9.6px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--n400);
+.oc{background:var(--neutral-0);border:1px solid var(--n200);border-radius:14px;padding:22px 18px 24px;
+  display:flex;flex-direction:column;align-items:center}
+.oc-band{width:100%;max-width:880px}
+.oc-bandlb{font-size:9.6px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--n400);
   text-align:center;margin-bottom:10px}
-.oband-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.odrop{width:2px;height:26px;background:var(--n200)}
-.otree ul{position:relative;padding:26px 0 0;display:flex;justify-content:center;list-style:none;margin:0}
-.otree li{position:relative;padding:26px 7px 0;display:flex;flex-direction:column;align-items:center}
-.otree li::before,.otree li::after{content:"";position:absolute;top:0;right:50%;
-  border-top:2px solid var(--n200);width:50%;height:26px}
-.otree li::after{right:auto;left:50%;border-left:2px solid var(--n200)}
-.otree li:only-child{padding-top:0}
-.otree li:only-child::before,.otree li:only-child::after{display:none}
-.otree li:first-child::before,.otree li:last-child::after{border:0 none}
-.otree li:last-child::before{border-right:2px solid var(--n200);border-radius:0 7px 0 0}
-.otree li:first-child::after{border-radius:7px 0 0 0}
-.otree ul ul::before{content:"";position:absolute;top:0;left:50%;border-left:2px solid var(--n200);width:0;height:26px}
-.otree > ul{padding-top:0}
-.otree > ul > li{padding-top:0}
-.onode{border-radius:11px;padding:12px 13px;border:1px solid var(--n200);background:var(--neutral-0);
-  width:206px;white-space:normal;text-align:left}
+.oc-bandrow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.oc-stem{width:2px;height:24px;background:var(--n200)}
+.oc-dgrow{width:100%;max-width:470px}
+.oc-branches{width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;position:relative;padding-top:26px}
+.oc-branches::before{content:"";position:absolute;top:0;left:12.5%;right:12.5%;height:2px;background:var(--n200)}
+.oc-col{position:relative;display:flex;flex-direction:column;gap:9px}
+.oc-col::before{content:"";position:absolute;top:-26px;left:50%;width:2px;height:26px;background:var(--n200)}
+.onode{border-radius:11px;padding:12px 13px;border:1px solid var(--n200);background:var(--neutral-0)}
 .onode .rolo{font-size:9.2px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--green-600);line-height:1.3}
 .onode .nm{font-size:14.6px;font-weight:700;margin-top:5px;line-height:1.24;color:var(--n800)}
-.onode .mt{font-size:11.4px;color:var(--n500);margin-top:6px;line-height:1.4}
-.onode.owner{background:var(--green-900);border-color:transparent;width:auto}
+.onode .mt{font-size:11.6px;color:var(--n500);margin-top:6px;line-height:1.42}
+.onode.owner{background:var(--green-900);border-color:transparent}
 .onode.owner .rolo{color:var(--lime)}
 .onode.owner .nm{color:#fff}
 .onode.owner .mt{color:var(--green-200)}
-.onode.dg{background:var(--green-700);border-color:transparent;width:280px}
+.onode.dg{background:var(--green-700);border-color:transparent;text-align:center}
 .onode.dg .rolo{color:var(--green-200)}
-.onode.dg .nm{color:#fff;font-size:16px}
-.onode.dg .mt{color:var(--green-100)}
+.onode.dg .nm{color:#fff;font-size:19px;margin-top:6px}
+.onode.dg .mt{color:var(--green-100);font-size:12.4px;max-width:52ch;margin-left:auto;margin-right:auto}
 .onode.open{background:var(--n100);border-style:dashed;border-color:var(--n300)}
 .onode.open .nm{color:var(--n600);font-style:italic}
 .onode.soft{background:var(--green-100);border-color:var(--green-300)}
 .onode.hot{box-shadow:0 0 0 2px var(--lime)}
-
+.oc-subs{display:grid;gap:8px;padding-left:16px;position:relative}
+.oc-subs::before{content:"";position:absolute;left:5px;top:-9px;bottom:14px;width:2px;background:var(--n200)}
+.osub{position:relative;background:var(--cream);border:1px solid var(--n200);border-radius:9px;padding:10px 11px}
+.osub::before{content:"";position:absolute;left:-11px;top:17px;width:11px;height:2px;background:var(--n200)}
+.osub .r{display:block;font-size:8.8px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--green-600);line-height:1.3}
+.osub .n{display:block;font-size:13.2px;font-weight:700;color:var(--n800);margin-top:4px;line-height:1.25}
+.osub .m{display:block;font-size:11.2px;color:var(--n500);margin-top:5px;line-height:1.4}
+.osub.vac{border-style:dashed;box-shadow:0 0 0 2px var(--lime)}
+.osub.vac .n{font-style:italic;color:var(--n600)}
+.osub.pend{border-style:dashed}
+.osub.pend .n{font-style:italic;color:var(--n600)}
+@media(max-width:900px){
+  .oc-branches{grid-template-columns:repeat(2,1fr);row-gap:22px}
+  .oc-branches::before{left:25%;right:25%}
+  .oc-col:nth-child(n+3)::before{display:none}
+}
+@media(max-width:620px){
+  .oc{padding:18px 14px 20px}
+  .oc-bandrow{grid-template-columns:1fr}
+  .oc-branches{grid-template-columns:1fr;row-gap:18px;padding-top:20px}
+  .oc-branches::before{display:none}
+  .oc-col::before{display:none}
+  .oc-col{border-left:2px solid var(--n200);padding-left:12px}
+  .onode .mt,.osub .m{font-size:11.8px}
+}
 /* ---------- casos de éxito homologados ---------- */
 .case{background:var(--neutral-0);border:1px solid var(--n200);border-radius:16px;overflow:hidden;
   display:flex;flex-direction:column}
@@ -1505,52 +1519,59 @@ td.nd{color:var(--n400);font-style:italic}
     </p>
 
     <div class="body">
-      <div class="otree-wrap">
-        <div class="otree">
-          <div class="oband">
-            <div class="oband-lb">Capa de propiedad · familia Álvarez</div>
-            <div class="oband-row">
-              <div class="onode owner"><div class="rolo">Presidente · confirmado</div><div class="nm">Carlos Álvarez Bermejillo</div><div class="mt">Hijo del fundador. Más de cinco décadas en la empresa. Veto y aprobación final; no es punto de entrada.</div></div>
-              <div class="onode owner"><div class="rolo">Vicepresidente Ejecutivo · confirmado marzo 2026</div><div class="nm">Santiago Álvarez Vega</div><div class="mt">Interlocutor del grupo ante Cofepris y miembro del Consejo Mexicano de Negocios. Patrocinador final de cualquier inversión de escala.</div></div>
-              <div class="onode owner"><div class="rolo">Vicepresidente · confirmado</div><div class="nm">Esteban Álvarez Vega</div><div class="mt">Sin mandato funcional visible en fuentes públicas.</div></div>
+      <div class="oc">
+        <div class="oc-band">
+          <div class="oc-bandlb">Capa de propiedad · familia Álvarez</div>
+          <div class="oc-bandrow">
+            <div class="onode owner"><div class="rolo">Presidente · confirmado</div><div class="nm">Carlos Álvarez Bermejillo</div><div class="mt">Hijo del fundador. Más de cinco décadas en la empresa. Veto y aprobación final; no es punto de entrada.</div></div>
+            <div class="onode owner"><div class="rolo">Vicepresidente Ejecutivo · confirmado marzo 2026</div><div class="nm">Santiago Álvarez Vega</div><div class="mt">Interlocutor ante Cofepris y miembro del Consejo Mexicano de Negocios. Patrocinador final de cualquier inversión de escala.</div></div>
+            <div class="onode owner"><div class="rolo">Vicepresidente · confirmado</div><div class="nm">Esteban Álvarez Vega</div><div class="mt">Sin mandato funcional visible en fuentes públicas.</div></div>
+          </div>
+        </div>
+
+        <div class="oc-stem"></div>
+
+        <div class="oc-dgrow">
+          <div class="onode dg"><div class="rolo">Director General · confirmado por cuatro fuentes de 2026</div><div class="nm">Heriberto Castañeda</div><div class="mt">Ejecutivo profesional con origen en Operaciones y Cadena de Suministro. Antes Director Ejecutivo de Operaciones. Es el dueño del resultado afectado por el calendario de 2027.</div></div>
+        </div>
+
+        <div class="oc-stem"></div>
+
+        <div class="oc-branches">
+          <div class="oc-col">
+            <div class="onode hot"><div class="rolo">Chief Corporate Officer · confirmado</div><div class="nm">Alejandro Troya</div><div class="mt">CFO de 2014 a 2022, Deputy CEO y CHRO en 2022, Chief Talent, Transformation &amp; Technology Officer hasta 2024. Mandato explícito de transformación.</div></div>
+            <div class="oc-subs">
+              <div class="osub"><span class="r">CIO · confirmado</span><span class="n">Luis Dávalos</span><span class="m">Más de 18 años en la función. Arquitectura empresarial de cadena de suministro y manufactura. Guardián técnico de todo lo que toque SAP.</span></div>
+              <div class="osub"><span class="r">Recursos Humanos · confirmado julio 2026</span><span class="n">Alexis Valencia</span><span class="m">En marzo de 2026 el área ejecutó un cascadeo formal de objetivos corporativos.</span></div>
             </div>
           </div>
-          <div class="odrop"></div>
-          <ul class="olevel">
-            <li>
-              <div class="onode dg"><div class="rolo">Director General · confirmado por cuatro fuentes de 2026</div><div class="nm">Heriberto Castañeda</div><div class="mt">Ejecutivo profesional con origen en Operaciones y Cadena de Suministro. Antes Director Ejecutivo de Operaciones. Es el dueño del resultado afectado por el calendario de 2027.</div></div>
-              <ul>
-                <li>
-                  <div class="onode hot"><div class="rolo">Chief Corporate Officer · confirmado</div><div class="nm">Alejandro Troya</div><div class="mt">CFO de 2014 a 2022, Deputy CEO y CHRO en 2022, Chief Talent, Transformation &amp; Technology Officer hasta 2024. Mandato explícito de transformación.</div></div>
-                  <ul>
-                    <li><div class="onode "><div class="rolo">CIO · confirmado</div><div class="nm">Luis Dávalos</div><div class="mt">Más de 18 años en la función. Arquitectura empresarial de cadena de suministro y manufactura. Guardián técnico de todo lo que toque SAP.</div></div></li>
-                    <li><div class="onode "><div class="rolo">Recursos Humanos · confirmado julio 2026</div><div class="nm">Alexis Valencia</div><div class="mt">En marzo de 2026 el área ejecutó un cascadeo formal de objetivos corporativos.</div></div></li>
-                  </ul>
-                </li>
-                <li>
-                  <div class="onode "><div class="rolo">Dirección Comercial · confirmado junio 2026</div><div class="nm">Felipe Ríos</div><div class="mt">Director Comercial de PiSA Farmacéutica.</div></div>
-                </li>
-                <li>
-                  <div class="onode open"><div class="rolo">Operaciones y Cadena de Suministro · pendiente</div><div class="nm">Titular no identificado</div><div class="mt">No encontramos al titular tras el ascenso de Castañeda a la dirección general.</div></div>
-                  <ul>
-                    <li><div class="onode "><div class="rolo">Logística Pharma · confirmado julio 2026</div><div class="nm">Sigmund González Contreras</div><div class="mt">CAB Logistics. Responsable del centro de distribución que surte al sector público.</div></div></li>
-                    <li><div class="onode open hot"><div class="rolo">Abastecimientos · vacante publicada 2026</div><div class="nm">Dirección de Abastecimientos</div><div class="mt">Posición de dirección publicada hacia mayo de 2026. No pudimos verificar si fue cubierta.</div></div></li>
-                    <li><div class="onode open hot"><div class="rolo">Planeación · vacantes publicadas 2026</div><div class="nm">Planeación Nacional y Plan Maestro</div><div class="mt">Gerencias descritas como balancear demanda contra capacidad operativa y desarrollar el plan maestro alineado a demanda y capacidad instalada.</div></div></li>
-                  </ul>
-                </li>
-                <li>
-                  <div class="onode soft"><div class="rolo">Unidades con dirección propia</div><div class="nm">Fuera de la línea de PiSA Farmacéutica</div><div class="mt">Negocios que reportan por separado, con mandato, moneda y ciclo distintos.</div></div>
-                  <ul>
-                    <li><div class="onode "><div class="rolo">Electrolit USA · confirmado</div><div class="nm">Caridad Ochoa</div><div class="mt">President &amp; CEO desde octubre de 2020. Sede reportada en Houston.</div></div></li>
-                    <li><div class="onode "><div class="rolo">Biotecnología e Innovación · confirmado</div><div class="nm">William Rodríguez-Limas</div><div class="mt">Dirección de Biotecnología e Innovación.</div></div></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
+
+          <div class="oc-col">
+            <div class="onode"><div class="rolo">Dirección Comercial · confirmado junio 2026</div><div class="nm">Felipe Ríos</div><div class="mt">Director Comercial de PiSA Farmacéutica. Dueño de la relación con el canal privado y de la cifra de venta.</div></div>
+            <div class="oc-subs">
+              <div class="osub pend"><span class="r">Ventas Gobierno · pendiente</span><span class="n">Titular no identificado</span><span class="m">El corporativo de Paseo de la Reforma 180 está dedicado a este canal, pero no encontramos a su responsable en fuentes públicas.</span></div>
+            </div>
+          </div>
+
+          <div class="oc-col">
+            <div class="onode open"><div class="rolo">Operaciones y Cadena de Suministro · pendiente</div><div class="nm">Titular no identificado</div><div class="mt">No encontramos al titular tras el ascenso de Castañeda a la dirección general.</div></div>
+            <div class="oc-subs">
+              <div class="osub"><span class="r">Logística Pharma · confirmado julio 2026</span><span class="n">Sigmund González Contreras</span><span class="m">CAB Logistics. Responsable del centro de distribución que surte al sector público.</span></div>
+              <div class="osub vac"><span class="r">Abastecimientos · vacante publicada 2026</span><span class="n">Dirección de Abastecimientos</span><span class="m">Posición de dirección publicada hacia mayo de 2026. No pudimos verificar si fue cubierta.</span></div>
+              <div class="osub vac"><span class="r">Planeación · vacantes publicadas 2026</span><span class="n">Planeación Nacional y Plan Maestro</span><span class="m">Gerencias descritas como balancear demanda contra capacidad operativa y desarrollar el plan maestro alineado a demanda y capacidad instalada.</span></div>
+            </div>
+          </div>
+
+          <div class="oc-col">
+            <div class="onode soft"><div class="rolo">Unidades con dirección propia</div><div class="nm">Fuera de la línea de PiSA Farmacéutica</div><div class="mt">Negocios que reportan por separado, con mandato, moneda y ciclo distintos.</div></div>
+            <div class="oc-subs">
+              <div class="osub"><span class="r">Electrolit USA · confirmado</span><span class="n">Caridad Ochoa</span><span class="m">President &amp; CEO desde octubre de 2020. Sede reportada en Houston.</span></div>
+              <div class="osub"><span class="r">Biotecnología e Innovación · confirmado</span><span class="n">William Rodríguez-Limas</span><span class="m">Dirección de Biotecnología e Innovación.</span></div>
+            </div>
+          </div>
         </div>
       </div>
-      <p class="scrollhint">Desliza el organigrama horizontalmente si no cabe en tu pantalla. Los recuadros con borde lima concentran la agenda de este análisis; los de borde punteado son posiciones pendientes o vacantes.</p>
+      <p class="scrollhint">Los recuadros con borde lima concentran la agenda de este análisis. Los de borde punteado son posiciones pendientes de identificar o vacantes publicadas durante 2026.</p>
 
       <h3 class="sub">Lo que la dirección ya dijo en público</h3>
 
@@ -2666,7 +2687,7 @@ td.nd{color:var(--n400);font-style:italic}
   var panel=document.getElementById("gmPanel"), tip=document.getElementById("gmTip");
   var stage=document.getElementById("gmStage");
   var VW=MD.W, VH=MD.H, TH=30, MINS=1, MAXS=48, FITMAX=12, SPR=54;
-  var view={s:1,tx:0,ty:0}, sel=null, spider=null;
+  var view={s:1,tx:0,ty:0}, sel=null, spider=null, hits=[];
   var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var KIND={plant:"Manufactura",cedis:"Centro de distribución",corp:"Corporativo",office:"Oficina comercial"};
   var BASIS={colonia:"Centroide de la colonia o parque industrial publicado en el listado oficial.",
@@ -2704,14 +2725,19 @@ td.nd{color:var(--n400);font-style:italic}
       if(k<1) requestAnimationFrame(step);
     })(t0);
   }
-  function fit(nodes,pad){
-    pad=pad||90;
+  function bbox(nodes){
     var x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;
     nodes.forEach(function(n){x0=Math.min(x0,n.x);y0=Math.min(y0,n.y);x1=Math.max(x1,n.x);y1=Math.max(y1,n.y);});
-    var w=Math.max(x1-x0,0.6), h=Math.max(y1-y0,0.6);
-    var s=Math.max(MINS,Math.min(FITMAX,Math.min((VW-pad*2)/w,(VH-pad*2)/h)));
-    var cx=(x0+x1)/2, cy=(y0+y1)/2;
-    animTo({s:s,tx:VW/2-s*cx,ty:VH/2-s*cy});
+    return {x0:x0,y0:y0,x1:x1,y1:y1,w:Math.max(x1-x0,0.6),h:Math.max(y1-y0,0.6),cx:(x0+x1)/2,cy:(y0+y1)/2};
+  }
+  function fitScale(nodes,pad){
+    var b=bbox(nodes);
+    return Math.max(MINS,Math.min(FITMAX,Math.min((VW-pad*2)/b.w,(VH-pad*2)/b.h)));
+  }
+  function fit(nodes,pad){
+    pad=pad||90;
+    var b=bbox(nodes), s=fitScale(nodes,pad);
+    animTo({s:s,tx:VW/2-s*b.cx,ty:VH/2-s*b.cy});
   }
 
   // ---------- agrupación dinámica ----------
@@ -2738,6 +2764,7 @@ td.nd{color:var(--n400);font-style:italic}
 
   function draw(){
     while(gNodes.firstChild) gNodes.removeChild(gNodes.firstChild);
+    hits=[];
     var cs=cluster(), showLabel=view.s>=3.2;
     cs.forEach(function(c){
       if(c.X<-40||c.X>VW+40||c.Y<-40||c.Y>VH+40) return;
@@ -2747,14 +2774,13 @@ td.nd{color:var(--n400);font-style:italic}
         var hp=kinds.indexOf("plant")>=0;
         g.appendChild(el("circle",{cx:c.X,cy:c.Y,r:14,"class":"gm-cl"+(hp?" hasplant":"")}));
         var tx=el("text",{x:c.X,y:c.Y,"class":"gm-cn"}); tx.textContent=c.items.length; g.appendChild(tx);
-        g.setAttribute("aria-label",c.items.length+" instalaciones agrupadas. Acercar para separarlas.");
-        g.addEventListener("click",function(ev){ ev.stopPropagation(); openCluster(c.items); });
+        g.setAttribute("aria-label",c.items.length+" instalaciones agrupadas. Activar para separarlas.");
         g.addEventListener("keydown",function(e){ if(e.key==="Enter"||e.key===" "){e.preventDefault();openCluster(c.items);} });
-        g.addEventListener("mousemove",function(e){ showTip(e,"<b>"+c.items.length+" instalaciones</b><span>Clic para separarlas</span>"); });
+        hits.push({X:c.X,Y:c.Y,r:16,cl:c.items,
+          tip:"<b>"+c.items.length+" instalaciones</b><span>Clic para separarlas</span>"});
       }else{
         nodeMark(g,c.items[0],c.X,c.Y,showLabel);
       }
-      g.addEventListener("mouseleave",hideTip);
       g.addEventListener("blur",hideTip);
       gNodes.appendChild(g);
     });
@@ -2768,9 +2794,9 @@ td.nd{color:var(--n400);font-style:italic}
     if(showLabel&&n.k!=="office"){
       var lb=el("text",{x:X,y:Y-R[n.k]-7,"class":"gm-lb"}); lb.textContent=n.nm; g.appendChild(lb);
     }
-    g.addEventListener("click",function(ev){ ev.stopPropagation(); select(n.id); });
     g.addEventListener("keydown",function(e){ if(e.key==="Enter"||e.key===" "){e.preventDefault();select(n.id);} });
-    g.addEventListener("mousemove",function(e){ showTip(e,"<b>"+n.nm+"</b><span>"+KIND[n.k]+" · "+n.city+"</span>"); });
+    hits.push({X:X,Y:Y,r:Math.max(R[n.k],11),id:n.id,
+      tip:"<b>"+n.nm+"</b><span>"+KIND[n.k]+" · "+n.city+"</span>"});
   }
 
   // separación radial para puntos que quedan a menos de un kilómetro entre sí
@@ -2782,8 +2808,9 @@ td.nd{color:var(--n400);font-style:italic}
   }
   function openCluster(items){
     var need=(TH*1.35)/Math.max(minPair(items),1e-6);
-    if(need>FITMAX){ spider={seed:items}; fit(items,260); }
-    else { spider=null; fit(items,160); }
+    // si el encuadre que realmente vamos a aplicar no alcanza para separarlos, se abren en abanico
+    if(fitScale(items,170)>=need){ spider=null; fit(items,170); }
+    else { spider={seed:items}; fit(items,260); }
   }
   function spiderSet(){
     var seed=spider.seed, cx=0, cy=0;
@@ -2805,7 +2832,6 @@ td.nd{color:var(--n400);font-style:italic}
       var g=el("g",{"class":"gm-hit",tabindex:"0",role:"button"});
       nodeMark(g,p,X,Y,false);
       radialLabel(g,p,X,Y,Math.cos(a),Math.sin(a));
-      g.addEventListener("mouseleave",hideTip);
       gNodes.appendChild(g);
     });
   }
@@ -2817,10 +2843,19 @@ td.nd{color:var(--n400);font-style:italic}
     var t=el("text",a); t.textContent=n.nm; g.appendChild(t);
   }
 
-  function showTip(e,html){
-    var r=stage.getBoundingClientRect();
-    tip.innerHTML=html; tip.classList.add("on");
-    tip.style.left=(e.clientX-r.left)+"px"; tip.style.top=(e.clientY-r.top-6)+"px";
+  function hitAt(p){
+    var best=null,bd=1e9;
+    for(var i=0;i<hits.length;i++){
+      var h=hits[i], d=Math.hypot(p.x-h.X,p.y-h.Y);
+      if(d<=h.r+7&&d<bd){ bd=d; best=h; }
+    }
+    return best;
+  }
+  function showTip(h){
+    var r=svg.getBoundingClientRect();
+    tip.innerHTML=h.tip; tip.classList.add("on");
+    tip.style.left=(h.X/VW*r.width)+"px";
+    tip.style.top=(h.Y/VH*r.height-6)+"px";
   }
   function hideTip(){ tip.classList.remove("on"); }
 
@@ -2908,12 +2943,13 @@ td.nd{color:var(--n400);font-style:italic}
     var r=svg.getBoundingClientRect();
     return {x:(e.clientX-r.left)/r.width*VW, y:(e.clientY-r.top)/r.height*VH};
   }
-  var ptrs={}, last=null, pinch0=null;
+  var ptrs={}, last=null, pinch0=null, down=null, moved=false;
   svg.addEventListener("pointerdown",function(e){
-    ptrs[e.pointerId]=e; svg.setPointerCapture(e.pointerId);
+    ptrs[e.pointerId]=e;
     var k=Object.keys(ptrs);
-    if(k.length===1){ last=toVB(e); svg.classList.add("drag"); }
+    if(k.length===1){ last=toVB(e); down={x:e.clientX,y:e.clientY,id:e.pointerId}; moved=false; }
     else if(k.length===2){
+      moved=true;
       var a=ptrs[k[0]],b=ptrs[k[1]];
       pinch0={d:Math.hypot(a.clientX-b.clientX,a.clientY-b.clientY),s:view.s};
     }
@@ -2933,13 +2969,32 @@ td.nd{color:var(--n400);font-style:italic}
       clampView(); apply(); return;
     }
     if(k.length===1&&last){
+      if(!moved&&down&&Math.hypot(e.clientX-down.x,e.clientY-down.y)<5) return;
+      if(!moved){ moved=true; svg.classList.add("drag");
+        try{ svg.setPointerCapture(down.id); }catch(err){} }
       var p=toVB(e);
       view.tx+=p.x-last.x; view.ty+=p.y-last.y; last=p;
       if(spider) spider=null;
       clampView(); apply(); hideTip();
     }
   });
-  function up(e){ delete ptrs[e.pointerId]; if(!Object.keys(ptrs).length){last=null;pinch0=null;svg.classList.remove("drag");} }
+
+  // el toque se resuelve contra el registro de impactos, no contra el objetivo del DOM:
+  // durante un arrastre el marcador se vuelve a dibujar y el click del navegador se pierde
+  svg.addEventListener("pointerup",function(e){
+    if(moved||!down) return;
+    var h=hitAt(toVB(e));
+    if(!h) return;
+    if(h.cl) openCluster(h.cl); else select(h.id);
+  });
+  svg.addEventListener("pointermove",function(e){
+    if(moved||Object.keys(ptrs).length) return;
+    var h=hitAt(toVB(e));
+    if(h) showTip(h); else hideTip();
+  });
+  svg.addEventListener("pointerleave",hideTip);
+  function up(e){ delete ptrs[e.pointerId];
+    if(!Object.keys(ptrs).length){last=null;pinch0=null;down=null;moved=false;svg.classList.remove("drag");} }
   svg.addEventListener("pointerup",up); svg.addEventListener("pointercancel",up);
   svg.addEventListener("wheel",function(e){
     e.preventDefault();
