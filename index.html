@@ -460,81 +460,200 @@ td.nd{color:var(--n400);font-style:italic}
 }
 
 /* ---------- marca del prospecto en portada ---------- */
-.pisa-mark{background:var(--neutral-0);border-radius:12px;padding:14px 18px;display:inline-block}
-.pisa-mark img{width:168px;max-width:40vw;height:auto}
+.pisa-mark{background:var(--neutral-0);border-radius:10px;padding:10px 13px;display:inline-block}
+.pisa-mark img{width:104px;max-width:30vw;height:auto}
 .mark-wrap{text-align:right}
 .mark-wrap .addressee{margin-top:14px}
 
 /* ---------- líneas de negocio ---------- */
-.lob{background:var(--neutral-0);border:1px solid var(--n200);border-radius:13px;padding:0;overflow:hidden;
-  display:flex;flex-direction:column}
-.lob .hd{padding:14px 16px 12px;border-bottom:1px solid var(--n100);display:flex;gap:11px;align-items:flex-start}
-.lob .hd .n{font-family:var(--font-numeric);font-size:12px;font-weight:800;color:var(--green-600);padding-top:3px;flex:0 0 auto}
-.lob .hd h4{font-size:16px;font-weight:700;line-height:1.22}
-.lob .hd .sub{display:block;font-size:11.5px;color:var(--n500);font-weight:600;margin-top:4px;letter-spacing:.02em}
-.lob .bd{padding:13px 16px 0;display:grid;gap:9px;flex:1}
-.lob .row{display:grid;grid-template-columns:86px 1fr;gap:10px;align-items:start}
-.lob .row dt{font-size:9.6px;letter-spacing:.11em;text-transform:uppercase;color:var(--green-600);font-weight:800;padding-top:2px}
-.lob .row dd{margin:0;font-size:13.3px;color:var(--n700);line-height:1.45}
-.lob .nd{padding:11px 16px 14px;margin-top:11px;background:var(--n100);font-size:12.2px;color:var(--n500);line-height:1.45}
-.lob .nd b{color:var(--n700);display:block;font-size:9.6px;letter-spacing:.11em;text-transform:uppercase;margin-bottom:4px}
-.flag{display:inline-flex;align-items:center;border-radius:999px;padding:3px 9px;font-size:9.6px;
-  letter-spacing:.1em;text-transform:uppercase;font-weight:800;margin-left:auto;flex:0 0 auto;white-space:nowrap}
-.flag.pub{background:var(--green-800);color:var(--green-200)}
-.flag.com{background:var(--lime);color:#31400F}
-.flag.mix{background:var(--green-200);color:var(--green-800)}
-.g2b{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:14px}
-
-/* ---------- mapa ---------- */
-.mapbox{background:var(--neutral-0);border:1px solid var(--n200);border-radius:14px;padding:16px}
-.mapbox svg{width:100%;height:auto;display:block;overflow:visible}
-.land{fill:var(--n100);stroke:var(--n300);stroke-width:1.6;stroke-linejoin:round}
-.mk{stroke:var(--neutral-0);stroke-width:2;cursor:default;transition:transform .14s var(--ease)}
-.mk:hover{stroke-width:3}
-.mk.plant{fill:var(--lime);stroke:var(--green-800);stroke-width:2.5}
-.mk.cedis{fill:var(--green-500)}
-.mk.corp{fill:var(--green-900);stroke:var(--lime);stroke-width:2.5}
-.mk.office{fill:var(--n400)}
-.lead{fill:none;stroke:var(--n300);stroke-width:1.5}
-.mlab{fill:var(--n700);font-family:var(--font-sans);font-size:17px;font-weight:700}
-.msub{fill:var(--n500);font-family:var(--font-sans);font-size:12px}
-.maplegend{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;padding-top:12px;border-top:1px solid var(--n100)}
-.maplegend span{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--n600);font-weight:600}
-.maplegend i{width:12px;height:12px;border-radius:50%;display:block}
-.maplegend i.plant{background:var(--lime);box-shadow:0 0 0 2px var(--green-800) inset}
-.maplegend i.cedis{background:var(--green-500)}
-.maplegend i.corp{background:var(--green-900);box-shadow:0 0 0 2px var(--lime) inset}
-.maplegend i.office{background:var(--n400)}
+.lob-key{display:flex;flex-wrap:wrap;gap:16px}
+.lk{display:inline-flex;align-items:center;gap:8px;font-size:12.4px;font-weight:700;color:var(--n600)}
+.lk i{width:14px;height:14px;border-radius:4px;display:block}
+.lk.pub i{background:var(--green-800)}
+.lk.mix i{background:var(--green-300)}
+.lk.com i{background:var(--lime)}
+.lob-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(324px,1fr));gap:14px}
+.lob{position:relative;background:var(--neutral-0);border:1px solid var(--n200);border-radius:14px;
+  padding:0 0 4px;overflow:hidden;display:flex;flex-direction:column}
+.lob::before{content:"";position:absolute;top:0;left:0;right:0;height:4px}
+.lob.pub::before{background:var(--green-800)}
+.lob.mix::before{background:linear-gradient(90deg,var(--green-500),var(--green-300))}
+.lob.com::before{background:linear-gradient(90deg,var(--lime),var(--green-400))}
+.lob .hd{padding:18px 16px 12px;display:flex;gap:13px;align-items:flex-start}
+.lob .ico{width:42px;height:42px;border-radius:11px;flex:0 0 auto;display:flex;align-items:center;justify-content:center}
+.lob .ico svg{width:23px;height:23px}
+.lob.pub .ico{background:var(--green-800);color:var(--green-200)}
+.lob.mix .ico{background:var(--green-200);color:var(--green-800)}
+.lob.com .ico{background:var(--lime);color:#31400F}
+.lob .ti{min-width:0}
+.lob .ti .n{font-family:var(--font-numeric);font-size:10.5px;font-weight:800;color:var(--n400);letter-spacing:.1em;display:block}
+.lob .ti h4{font-size:16.5px;font-weight:700;line-height:1.2;margin-top:4px}
+.lob .ti .sub{display:block;font-size:12.2px;color:var(--n500);font-weight:600;margin-top:5px;line-height:1.35}
+.lob .flag{position:absolute;top:14px;right:14px;display:inline-flex;align-items:center;border-radius:999px;
+  padding:3px 9px;font-size:9.2px;letter-spacing:.1em;text-transform:uppercase;font-weight:800}
+.lob .flag.pub{background:var(--green-100);color:var(--green-800)}
+.lob .flag.mix{background:var(--n100);color:var(--n600)}
+.lob .flag.com{background:#F4F7E2;color:#4A5A17}
+.lob .bd{padding:4px 16px 14px;display:grid;gap:9px;flex:1;border-top:1px solid var(--n100);margin-top:6px;padding-top:13px}
+.lob .row{display:grid;grid-template-columns:88px 1fr;gap:10px;align-items:start}
+.lob .row dt{font-size:9.4px;letter-spacing:.11em;text-transform:uppercase;color:var(--green-600);font-weight:800;padding-top:2px}
+.lob .row dd{margin:0;font-size:13.2px;color:var(--n700);line-height:1.45}
+@media(max-width:520px){
+  .lob .hd{padding-right:14px}
+  .lob .flag{position:static;margin:0 16px 10px;align-self:flex-start}
+  .lob .row{grid-template-columns:1fr;gap:2px}
+  .lob-grid{grid-template-columns:1fr}
+}
 
 /* ---------- organigrama ---------- */
-.org{display:grid;gap:10px}
-.orow{display:grid;gap:10px}
-.orow.r2{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
-.orow.r3{grid-template-columns:repeat(auto-fit,minmax(176px,1fr))}
-.onode{border-radius:11px;padding:13px 14px;border:1px solid var(--n200);background:var(--neutral-0)}
-.onode .rolo{font-size:9.6px;letter-spacing:.11em;text-transform:uppercase;font-weight:800;color:var(--green-600)}
-.onode .nm{font-size:15px;font-weight:700;margin-top:5px;line-height:1.25;color:var(--n800)}
-.onode .mt{font-size:11.8px;color:var(--n500);margin-top:5px;line-height:1.4}
-.onode.owner{background:var(--green-900);border-color:transparent}
+.otree-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--neutral-0);
+  border:1px solid var(--n200);border-radius:14px;padding:22px 18px 26px}
+.otree{min-width:880px;display:flex;flex-direction:column;align-items:center}
+.oband{width:100%;max-width:820px}
+.oband-lb{font-size:9.6px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--n400);
+  text-align:center;margin-bottom:10px}
+.oband-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.odrop{width:2px;height:26px;background:var(--n200)}
+.otree ul{position:relative;padding:26px 0 0;display:flex;justify-content:center;list-style:none;margin:0}
+.otree li{position:relative;padding:26px 7px 0;display:flex;flex-direction:column;align-items:center}
+.otree li::before,.otree li::after{content:"";position:absolute;top:0;right:50%;
+  border-top:2px solid var(--n200);width:50%;height:26px}
+.otree li::after{right:auto;left:50%;border-left:2px solid var(--n200)}
+.otree li:only-child{padding-top:0}
+.otree li:only-child::before,.otree li:only-child::after{display:none}
+.otree li:first-child::before,.otree li:last-child::after{border:0 none}
+.otree li:last-child::before{border-right:2px solid var(--n200);border-radius:0 7px 0 0}
+.otree li:first-child::after{border-radius:7px 0 0 0}
+.otree ul ul::before{content:"";position:absolute;top:0;left:50%;border-left:2px solid var(--n200);width:0;height:26px}
+.otree > ul{padding-top:0}
+.otree > ul > li{padding-top:0}
+.onode{border-radius:11px;padding:12px 13px;border:1px solid var(--n200);background:var(--neutral-0);
+  width:206px;white-space:normal;text-align:left}
+.onode .rolo{font-size:9.2px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--green-600);line-height:1.3}
+.onode .nm{font-size:14.6px;font-weight:700;margin-top:5px;line-height:1.24;color:var(--n800)}
+.onode .mt{font-size:11.4px;color:var(--n500);margin-top:6px;line-height:1.4}
+.onode.owner{background:var(--green-900);border-color:transparent;width:auto}
 .onode.owner .rolo{color:var(--lime)}
 .onode.owner .nm{color:#fff}
 .onode.owner .mt{color:var(--green-200)}
-.onode.dg{background:var(--green-700);border-color:transparent}
+.onode.dg{background:var(--green-700);border-color:transparent;width:280px}
 .onode.dg .rolo{color:var(--green-200)}
-.onode.dg .nm{color:#fff}
+.onode.dg .nm{color:#fff;font-size:16px}
 .onode.dg .mt{color:var(--green-100)}
 .onode.open{background:var(--n100);border-style:dashed;border-color:var(--n300)}
-.onode.open .nm{color:var(--n500);font-style:italic}
+.onode.open .nm{color:var(--n600);font-style:italic}
+.onode.soft{background:var(--green-100);border-color:var(--green-300)}
 .onode.hot{box-shadow:0 0 0 2px var(--lime)}
-.conn{height:16px;position:relative}
-.conn::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--n200)}
-.orlbl{font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:var(--n400);margin-top:6px}
 
-/* ---------- logos de caso ---------- */
-.case .top img{height:46px;width:auto;max-width:200px;object-fit:contain}
+/* ---------- casos de éxito homologados ---------- */
+.case{background:var(--neutral-0);border:1px solid var(--n200);border-radius:16px;overflow:hidden;
+  display:flex;flex-direction:column}
+.case .top{padding:18px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  border-bottom:1px solid var(--n100);background:var(--cream);min-height:98px}
+.case .top img{height:42px;width:auto;max-width:190px;object-fit:contain}
+.case .roi{margin-left:auto;text-align:right}
+.case .roi .v{font-family:var(--font-numeric);font-size:42px;font-weight:300;line-height:1;color:var(--green-700);letter-spacing:-0.04em}
+.case .roi .v sup{font-size:.40em;font-weight:700;vertical-align:super;margin-left:2px}
+.case .roi .l{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--n500);font-weight:700;margin-top:4px}
+.case .bd{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.case .bd > p{font-size:14.2px;color:var(--n700);line-height:1.5}
 .case .bd ul{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:8px}
-.case .bd li{font-size:14px;color:var(--n700);line-height:1.45;padding-left:20px;position:relative}
-.case .bd li::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:2px;background:var(--green-400)}
+.case .bd li{font-size:13.8px;color:var(--n700);line-height:1.45;padding-left:20px;position:relative}
+.case .bd li::before{content:"";position:absolute;left:0;top:7px;width:8px;height:8px;border-radius:2px;background:var(--green-400)}
+.case .acts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:auto;padding-top:18px}
+.case .acts .btn{justify-content:center;text-align:center;padding:10px 8px}
+@media(max-width:620px){.case .top{min-height:0}}
+
+/* ---------- mapa interactivo ---------- */
+.gmap{background:var(--neutral-0);border:1px solid var(--n200);border-radius:16px;overflow:hidden;
+  display:grid;grid-template-columns:1fr 330px;position:relative}
+.gmap-stage{position:relative;background:var(--cream);min-width:0}
+.gmap-stage svg{display:block;width:100%;height:auto;touch-action:none;cursor:grab}
+.gmap-stage svg.drag{cursor:grabbing}
+.gm-st{fill:var(--n100);stroke:var(--n300);stroke-width:.9;vector-effect:non-scaling-stroke}
+.gm-st.hl{fill:var(--green-100);stroke:var(--green-400)}
+.gm-hit{cursor:pointer}
+.gm-dot{stroke:var(--neutral-0);stroke-width:2;transition:r .12s var(--ease)}
+.gm-dot.plant{fill:var(--lime);stroke:var(--green-800);stroke-width:2.4}
+.gm-dot.cedis{fill:var(--green-500)}
+.gm-dot.corp{fill:var(--green-900);stroke:var(--lime);stroke-width:2.4}
+.gm-dot.office{fill:var(--n400);stroke-width:1.6}
+.gm-g .gm-hit:hover .gm-dot,.gm-g .gm-hit:focus-visible .gm-dot{r:13}
+.gm-hit.on .gm-dot{stroke:var(--green-700);stroke-width:3.4}
+.gm-halo{fill:rgba(3,181,133,.10);stroke:var(--green-400);stroke-width:1.4;stroke-dasharray:4 4;pointer-events:none}
+.gm-pin{fill:var(--green-600);pointer-events:none}
+.gm-spoke{stroke:var(--green-400);stroke-width:1.6;pointer-events:none}
+.gm-cl{fill:var(--green-700);stroke:var(--neutral-0);stroke-width:2.4}
+.gm-cl.hasplant{fill:var(--green-800);stroke:var(--lime)}
+.gm-cn{fill:#fff;font-family:var(--font-sans);font-size:12px;font-weight:800;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.gm-lb{fill:var(--n700);font-family:var(--font-sans);font-size:11.5px;font-weight:700;text-anchor:middle;pointer-events:none;
+  paint-order:stroke;stroke:var(--cream);stroke-width:3.5px;stroke-linejoin:round}
+
+.gm-quick{position:absolute;top:12px;left:12px;right:12px;display:flex;gap:6px;flex-wrap:wrap;z-index:3}
+.gm-chip{background:rgba(255,254,252,.93);backdrop-filter:blur(6px);border:1px solid var(--n200);border-radius:999px;
+  padding:6px 13px;font-size:12px;font-weight:700;color:var(--n600);white-space:nowrap}
+.gm-chip:hover{border-color:var(--green-500);color:var(--green-700)}
+.gm-chip[aria-pressed="true"]{background:var(--green-700);border-color:transparent;color:#fff}
+.gm-zoom{position:absolute;right:12px;bottom:12px;display:flex;flex-direction:column;gap:5px;z-index:3}
+.gm-zoom button{width:34px;height:34px;border-radius:9px;border:1px solid var(--n200);background:rgba(255,254,252,.95);
+  font-size:16px;font-weight:700;color:var(--n600);display:flex;align-items:center;justify-content:center;line-height:1}
+.gm-zoom button:hover{border-color:var(--green-500);color:var(--green-700)}
+.gm-zoom button.rs{font-size:10.5px;letter-spacing:.04em;height:auto;padding:7px 0;font-weight:800}
+.gm-tip{position:absolute;pointer-events:none;z-index:5;background:var(--green-900);color:var(--cream);
+  border-radius:9px;padding:7px 11px;font-size:12.4px;font-weight:600;line-height:1.35;max-width:230px;
+  opacity:0;transform:translate(-50%,-140%);transition:opacity .12s}
+.gm-tip.on{opacity:1}
+.gm-tip b{color:#fff;display:block;font-size:13px}
+.gm-tip span{color:var(--green-300);font-size:11px}
+
+.gm-panel{border-left:1px solid var(--n200);background:var(--neutral-0);display:flex;flex-direction:column;min-height:460px}
+.gm-ph{padding:16px 18px 13px;border-bottom:1px solid var(--n100)}
+.gm-ph .kind{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 10px;font-size:9.6px;
+  letter-spacing:.1em;text-transform:uppercase;font-weight:800}
+.gm-ph .kind.plant{background:var(--lime);color:#31400F}
+.gm-ph .kind.cedis{background:var(--green-200);color:var(--green-800)}
+.gm-ph .kind.corp{background:var(--green-800);color:var(--green-200)}
+.gm-ph .kind.office{background:var(--n200);color:var(--n700)}
+.gm-ph h4{font-size:17.5px;font-weight:700;margin-top:10px;line-height:1.22}
+.gm-ph .loc{font-size:12.6px;color:var(--n500);margin-top:6px;line-height:1.4}
+.gm-pb{padding:14px 18px;display:grid;gap:12px;overflow-y:auto;flex:1}
+.gm-f dt{font-size:9.4px;letter-spacing:.11em;text-transform:uppercase;color:var(--green-600);font-weight:800}
+.gm-f dd{margin:4px 0 0;font-size:13.4px;color:var(--n700);line-height:1.5}
+.gm-f dd.mono{font-family:var(--font-numeric);font-size:12.4px;color:var(--n500)}
+.gm-tags{display:flex;flex-wrap:wrap;gap:5px}
+.gm-tags span{background:var(--green-100);color:var(--green-800);border-radius:6px;padding:3px 8px;font-size:11.4px;font-weight:600}
+.gm-val{border-radius:9px;padding:10px 12px;font-size:12.4px;line-height:1.45}
+.gm-val.ok{background:var(--green-100);color:var(--green-900)}
+.gm-val.pd{background:var(--warn-bg);color:var(--n700)}
+.gm-val b{display:block;font-size:9.4px;letter-spacing:.11em;text-transform:uppercase;margin-bottom:4px;opacity:.8}
+.gm-src{font-size:11.4px;color:var(--n400);line-height:1.45;border-top:1px solid var(--n100);padding-top:11px}
+.gm-empty{padding:22px 18px;display:grid;gap:14px;align-content:start}
+.gm-empty p{font-size:13.6px;color:var(--n600);line-height:1.5}
+.gm-tally{display:grid;gap:7px}
+.gm-tally button{display:flex;align-items:center;gap:10px;background:var(--cream);border:1px solid var(--n200);
+  border-radius:9px;padding:9px 12px;width:100%;text-align:left}
+.gm-tally button:hover{border-color:var(--green-500)}
+.gm-tally i{width:12px;height:12px;border-radius:50%;flex:0 0 auto}
+.gm-tally i.plant{background:var(--lime);box-shadow:inset 0 0 0 2px var(--green-800)}
+.gm-tally i.cedis{background:var(--green-500)}
+.gm-tally i.corp{background:var(--green-900);box-shadow:inset 0 0 0 2px var(--lime)}
+.gm-tally i.office{background:var(--n400)}
+.gm-tally .tl{font-size:13px;font-weight:700;color:var(--n700);flex:1}
+.gm-tally .tn{font-family:var(--font-numeric);font-size:15px;font-weight:300;color:var(--green-700)}
+.gm-close{display:none}
+@media(max-width:820px){
+  .gmap{grid-template-columns:1fr}
+  .gm-panel{position:absolute;left:0;right:0;bottom:0;z-index:8;border-left:0;border-top:1px solid var(--n200);
+    border-radius:16px 16px 0 0;max-height:68%;min-height:0;transform:translateY(100%);transition:transform .22s var(--ease);
+    box-shadow:0 -10px 30px rgba(7,62,56,.16)}
+  .gm-panel.open{transform:none}
+  .gm-close{display:block;position:absolute;top:10px;right:12px;background:var(--n100);border:0;border-radius:8px;
+    padding:5px 11px;font-size:12px;font-weight:700;color:var(--n600);z-index:2}
+  .gm-quick{top:10px;left:10px;right:10px}
+  .gm-chip{padding:5px 10px;font-size:11.4px}
+  .gm-lb{display:none}
+}
+@media (prefers-reduced-motion:reduce){.gm-panel{transition:none}}
 
 </style>
 </head>
@@ -1065,12 +1184,17 @@ td.nd{color:var(--n400);font-style:italic}
     <h2 class="sec">No es una farmacéutica: son doce negocios sobre una misma base industrial</h2>
     <p class="lede">
       Reconstruimos el portafolio línea por línea a partir del sitio oficial, el listado público de ubicaciones,
-      comunicados de la propia empresa y prensa de negocios. Cada ficha dice qué sí pudimos verificar y qué no.
-      La columna de lo no verificable es tan informativa como la otra: marca exactamente dónde empezaría un
-      estudio de factibilidad.
+      comunicados de la propia empresa y prensa de negocios. El color de cada ficha indica a qué economía
+      pertenece: canal público, canal comercial, mixta o transversal.
     </p>
 
     <div class="body">
+      <div class="lob-key">
+        <span class="lk pub"><i></i>Canal público · licitación y contrato</span>
+        <span class="lk mix"><i></i>Público y privado</span>
+        <span class="lk com"><i></i>Canal comercial · venta y anaquel</span>
+      </div>
+
       <div class="g4">
         <div class="stat dark"><div class="v num">12</div><div class="l">Líneas de negocio identificadas, con clientes y reguladores distintos</div><div class="s">Reconstrucción LCG · fuentes públicas</div></div>
         <div class="stat mint"><div class="v num">4</div><div class="l">Lógicas de demanda incompatibles sobre la misma infraestructura</div><div class="s">Ver tabla al final de esta sección</div></div>
@@ -1078,56 +1202,103 @@ td.nd{color:var(--n400);font-style:italic}
         <div class="stat cream"><div class="v num">2</div><div class="l">Reguladores sectoriales distintos: Cofepris y SENASICA, más FDA en el frente de consumo</div><div class="s">Sitios oficiales de las unidades</div></div>
       </div>
 
-      <div class="g2b">
-        <div class="lob">
-          <div class="hd"><span class="n num">L1</span><div><h4>Soluciones parenterales de gran y pequeño volumen</h4><span class="sub">El negocio fundacional y el más pesado de mover</span></div><span class="flag pub">Canal público</span></div>
+      <div class="lob-grid">
+        <article class="lob pub">
+          <div class="hd">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v3a3 3 0 0 1-1 2v8a3 3 0 0 1-3 3h0a3 3 0 0 1-3-3V8a3 3 0 0 1-1-2V3z"/><path d="M12 19v2"/><path d="M8.5 11h7"/></svg></span>
+            <div class="ti"><span class="n num">L1</span><h4>Soluciones parenterales de gran y pequeño volumen</h4><span class="sub">El negocio fundacional y el más pesado de mover</span></div>
+          </div>
+          <span class="flag pub">Canal público</span>
           <div class="bd"><div class="row"><dt>Entidad</dt><dd>Laboratorios PiSA, S.A. de C.V.</dd></div><div class="row"><dt>Productos</dt><dd>Soluciones inyectables de gran volumen, envase FLEXOVAL® de polietileno desde 1993, ampolletas de polipropileno y de vidrio, diluyentes</dd></div><div class="row"><dt>Dónde</dt><dd>Calle 7 #1308, Zona Industrial, Guadalajara · Complejo Tlajomulco</dd></div><div class="row"><dt>Cliente</dt><dd>IMSS, IMSS-Bienestar, ISSSTE, Secretaría de Salud y Pemex vía Birmex; hospitales privados y distribuidores</dd></div><div class="row"><dt>Escala</dt><dd>Se autodeclara el mayor fabricante en México de soluciones en polietileno y de ampolletas plásticas</dd></div></div>
-          <div class="nd"><b>No verificable desde fuera</b>Volumen producido, utilización de línea y margen. Es la línea que mejor explica por qué el grupo necesita red logística propia: un suero de un litro es caro de mover y barato de vender.</div>
-        </div><div class="lob">
-          <div class="hd"><span class="n num">L2</span><div><h4>Terapia renal · producto</h4><span class="sub">Insumos de diálisis fabricados en casa</span></div><span class="flag pub">Canal público</span></div>
+        </article>
+        <article class="lob pub">
+          <div class="hd">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="4"/><circle cx="16" cy="16" r="4"/><path d="M11.2 10.8 12.8 13.2"/><path d="M4 18h3v-3"/><path d="M20 6h-3v3"/></svg></span>
+            <div class="ti"><span class="n num">L2</span><h4>Terapia renal · producto</h4><span class="sub">Insumos de diálisis fabricados en casa</span></div>
+          </div>
+          <span class="flag pub">Canal público</span>
           <div class="bd"><div class="row"><dt>Entidad</dt><dd>Laboratorios PiSA</dd></div><div class="row"><dt>Productos</dt><dd>Bolsas de diálisis peritoneal, equipo de diálisis peritoneal automatizada PD PACIFICA® desde 2008, consumibles</dd></div><div class="row"><dt>Dónde</dt><dd>Planta de Soluciones para Diálisis y Soluciones Inyectables, Complejo Tlajomulco</dd></div><div class="row"><dt>Cliente</dt><dd>IMSS e ISSSTE. PiSA cita que el IMSS atiende cerca del 70% de los pacientes renales del país y que 58.3% recibe diálisis peritoneal</dd></div><div class="row"><dt>Hito</dt><dd>Primer fabricante mexicano de insumos para diálisis peritoneal ambulatoria, 1994</dd></div></div>
-          <div class="nd"><b>No verificable desde fuera</b>Participación de mercado actual y efecto del reacomodo global: el negocio renal de Baxter se vendió a Carlyle el 31 de enero de 2025 por 3,800 millones de dólares y opera como Vantive.</div>
-        </div><div class="lob">
-          <div class="hd"><span class="n num">L3</span><div><h4>Servicios de nefrología</h4><span class="sub">No solo vende el insumo: opera el punto de consumo</span></div><span class="flag pub">Canal público</span></div>
+        </article>
+        <article class="lob pub">
+          <div class="hd">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V9l8-5 8 5v11"/><path d="M4 20h16"/><path d="M12 9v5"/><path d="M9.5 11.5h5"/><path d="M10 20v-4h4v4"/></svg></span>
+            <div class="ti"><span class="n num">L3</span><h4>Servicios de nefrología</h4><span class="sub">No solo vende el insumo: opera el punto de consumo</span></div>
+          </div>
+          <span class="flag pub">Canal público</span>
           <div class="bd"><div class="row"><dt>Entidad</dt><dd>Productos Hospitalarios, S.A. de C.V.</dd></div><div class="row"><dt>Servicio</dt><dd>Hemodiálisis subrogada y servicios integrales de nefrología</dd></div><div class="row"><dt>Escala</dt><dd>14 clínicas en la República, 11 certificadas por el Consejo de Salubridad General; 42 médicos generales, 31 nefrólogos y 335 profesionales de enfermería según comunicado oficial de marzo de 2021</dd></div><div class="row"><dt>Insignia</dt><dd>Guadalajara: 126 cabinas, tres tandas diarias, más de 300 pacientes por día, la mayor del occidente de México</dd></div><div class="row"><dt>Modelo</dt><dd>Pago por sesión bajo contrato de subrogación. Cerca del 90% de los pacientes de la clínica insignia son subrogados por IMSS e ISSSTE</dd></div></div>
-          <div class="nd"><b>No verificable desde fuera</b>Escala vigente a 2026 y utilización por clínica. Señal estructural documentada: el IMSS puso en marcha su propia unidad de hemodiálisis en Aguascalientes el 1 de diciembre de 2025, retirando pacientes del esquema subrogado.</div>
-        </div><div class="lob">
-          <div class="hd"><span class="n num">L4</span><div><h4>Preparación de mezclas y nutrición parenteral</h4><span class="sub">Servicio de altísima intensidad regulatoria</span></div><span class="flag pub">Canal público</span></div>
-          <div class="bd"><div class="row"><dt>Entidad</dt><dd>Productos Hospitalarios, S.A. de C.V.</dd></div><div class="row"><dt>Servicio</dt><dd>Nutrición parenteral total, mezclas farmacéuticas y oncológicas por subrogación a hospitales</dd></div><div class="row"><dt>Dónde</dt><dd>Centro de preparación en parque industrial de Toluca, Estado de México</dd></div><div class="row"><dt>Unidad de planeación</dt><dd>Prescripción por paciente. Es la única línea del grupo cuya demanda es diaria y no pronosticable</dd></div><div class="row"><dt>Regulador</dt><dd>Cofepris, con el nivel de exigencia más alto de todo el portafolio</dd></div></div>
-          <div class="nd"><b>No verificable desde fuera</b>Estado operativo y jurídico actual de la unidad. Comparte razón social con los servicios de nefrología, lo que sugiere que comparte también sistema de gestión de calidad y estructura directiva.</div>
-        </div><div class="lob">
-          <div class="hd"><span class="n num">L5</span><div><h4>Medicamentos Rx: genéricos, antibióticos, oncológicos y hormonales</h4><span class="sub">El portafolio más amplio y el más fragmentado en plantas</span></div><span class="flag mix">Público y privado</span></div>
+        </article>
+        <article class="lob pub">
+          <div class="hd">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v6l-4.6 8a2 2 0 0 0 1.7 3h11.8a2 2 0 0 0 1.7-3L15 9V3"/><path d="M8 3h8"/><path d="M7.2 15h9.6"/></svg></span>
+            <div class="ti"><span class="n num">L4</span><h4>Preparación de mezclas y nutrición parenteral</h4><span class="sub">Servicio de altísima intensidad regulatoria</span></div>
+          </div>
+          <span class="flag pub">Canal público</span>
+          <div class="bd"><div class="row"><dt>Entidad</dt><dd>Productos Hospitalarios, S.A. de C.V.</dd></div><div class="row"><dt>Servicio</dt><dd>Nutrición parenteral total, mezclas farmacéuticas y oncológicas por subrogación a hospitales</dd></div><div class="row"><dt>Dónde</dt><dd>Centro de preparación en parque industrial de Toluca, Estado de México</dd></div><div class="row"><dt>Planeación</dt><dd>Prescripción por paciente. Es la única línea del grupo cuya demanda es diaria y no pronosticable</dd></div><div class="row"><dt>Regulador</dt><dd>Cofepris, con el nivel de exigencia más alto de todo el portafolio</dd></div></div>
+        </article>
+        <article class="lob mix">
+          <div class="hd">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="8.5" width="19" height="7" rx="3.5" transform="rotate(-38 12 12)"/><path d="M9.2 7.4 14.8 16.6"/></svg></span>
+            <div class="ti"><span class="n num">L5</span><h4>Medicamentos Rx: genéricos, antibióticos, oncológicos y hormonales</h4><span class="sub">El portafolio más amplio y el más fragmentado en plantas</span></div>
+          </div>
+          <span class="flag mix">Público y privado</span>
           <div class="bd"><div class="row"><dt>Entidad</dt><dd>Laboratorios PiSA</dd></div><div class="row"><dt>Dónde</dt><dd>Cuatro plantas segregadas por obligación regulatoria: cefalosporínicos en Calle 6 #2676, penicilínicos en Calle 6 #2924 y hormonales en Calle 6 #2819, todas en la Zona Industrial de Guadalajara; oncológicos y polvos inyectables en Av. Miguel Ángel de Quevedo #555, Coyoacán, CDMX</dd></div><div class="row"><dt>También</dt><dd>Cuatro líneas de sólidos orales y tres liofilizadores en el Complejo Tlajomulco</dd></div><div class="row"><dt>Escala</dt><dd>Más de 1,500 marcas registradas y 17 líneas de especialidad. En 2016 la empresa reportó producir más de mil millones de unidades de formas sólidas al año</dd></div><div class="row"><dt>Crecimiento</dt><dd>Más de diez moléculas nuevas incorporadas en 2025, con Centro de Desarrollo propio</dd></div></div>
-          <div class="nd"><b>No verificable desde fuera</b>Mezcla público-privado, contribución por familia y claves ganadas en el fallo 2027-2028. La segregación obligatoria entre betalactámicos y hormonales significa que la capacidad no es intercambiable entre plantas.</div>
-        </div><div class="lob">
-          <div class="hd"><span class="n num">L6</span><div><h4>Biotecnológicos</h4><span class="sub">Planta confirmada, portafolio comercial no verificable</span></div><span class="flag mix">Público y privado</span></div>
-          <div class="bd"><div class="row"><dt>Entidad</dt><dd>PiSA Biotec</dd></div><div class="row"><dt>Dónde</dt><dd>Zona Industrial de Guadalajara, planta inaugurada en 2011</dd></div><div class="row"><dt>Posicionamiento</dt><dd>En marzo de 2026 PiSA se presentó ante Cofepris como productora de genéricos y biosimilares</dd></div><div class="row"><dt>Dirección</dt><dd>William Rodríguez-Limas, Dirección de Biotecnología e Innovación</dd></div></div>
-          <div class="nd"><b>No verificable desde fuera</b>No identificamos públicamente ningún biosimilar de PiSA con registro sanitario vigente. La línea existe como planta y como discurso; su portafolio comercial no es verificable desde fuera.</div>
-        </div><div class="lob">
-          <div class="hd"><span class="n num">L7</span><div><h4>Dispositivos médicos y material de curación</h4><span class="sub">La unidad que ya recorrió un ciclo serio de excelencia operativa</span></div><span class="flag mix">Público y privado</span></div>
-          <div class="bd"><div class="row"><dt>Unidad</dt><dd>PyMPSA, iniciada en 1998</dd></div><div class="row"><dt>Reconocimiento</dt><dd>Shingo Silver Medallion en 2014</dd></div><div class="row"><dt>Portafolio</dt><dd>Equipos y material de curación; cerca de 80 dispositivos y equipos de exportación en terapia respiratoria y diálisis</dd></div><div class="row"><dt>EE. UU.</dt><dd>PiSA BioPharm listó dispositivos en el GUDID de la FDA entre 2019 y 2020</dd></div></div>
-          <div class="nd"><b>No verificable desde fuera</b>Ubicación exacta y razón social. No aparece en el listado oficial de ubicaciones del grupo, pese a ser la unidad con el reconocimiento de excelencia operativa más alto del portafolio.</div>
-        </div><div class="lob">
-          <div class="hd"><span class="n num">L8</span><div><h4>Salud Animal</h4><span class="sub">Otro regulador, otro canal, otro ciclo de cobro</span></div><span class="flag com">Canal comercial</span></div>
-          <div class="bd"><div class="row"><dt>Unidad</dt><dd>PiSA Salud Animal, antes PiSA Agropecuaria, fundada en 1995</dd></div><div class="row"><dt>Portafolio</dt><dd>Más de 250 productos en más de 20 líneas, en tres especialidades: pecuarios, animales de compañía y bioseguridad</dd></div><div class="row"><dt>Dónde</dt><dd>Complejo Tlajomulco, más de 10,000 m² y 7 líneas de producción</dd></div><div class="row"><dt>Capacidad publicada</dt><dd>Frascos de vidrio: más de 500,000 al mes · Frascos de plástico: más de 250,000 al mes · Líquidos orales: más de 320,000 al mes</dd></div><div class="row"><dt>Canal</dt><dd>Red de distribución en todos los estados y en Sudamérica, con más de 1,000 clientes</dd></div><div class="row"><dt>Regulador</dt><dd>SENASICA, no Cofepris</dd></div></div>
-          <div class="nd"><b>No verificable desde fuera</b>Es la única unidad del grupo que publica capacidad instalada. Su certificado BPM de SENASICA, con vigencia hasta el 14 de abril de 2026, no tiene renovación verificable públicamente.</div>
-        </div><div class="lob">
-          <div class="hd"><span class="n num">L9</span><div><h4>Electrolit México</h4><span class="sub">La línea con mayor margen y el cambio fiscal más reciente</span></div><span class="flag com">Canal comercial</span></div>
-          <div class="bd"><div class="row"><dt>Dónde</dt><dd>Línea de producción propia en el Complejo Tlajomulco; en 2017 se instalaban dos líneas adicionales</dd></div><div class="row"><dt>Escala histórica</dt><dd>240 millones de unidades vendidas en 2016 según reporte de prensa</dd></div><div class="row"><dt>Cambio con fecha cierta</dt><dd>Desde el 1 de enero de 2026 paga IEPS de 3.0818 pesos por litro, tras años de exención de IVA e IEPS por su registro como medicamento. La exención se conserva solo para fórmula tipo OMS</dd></div><div class="row"><dt>Unidad de planeación</dt><dd>SKU por sabor y canal, con horizonte semanal y calendario promocional</dd></div></div>
-          <div class="nd"><b>No verificable desde fuera</b>Volumen, margen por canal y efecto real del IEPS nueve meses después de su entrada en vigor. Las cifras de venta que circulan provienen de un debate legislativo y de estimaciones de banca de inversión citadas por prensa, no de estados financieros.</div>
-        </div><div class="lob">
-          <div class="hd"><span class="n num">L10</span><div><h4>Electrolit Estados Unidos</h4><span class="sub">Un segundo centro de gravedad, con otro decisor y otra moneda</span></div><span class="flag com">Canal comercial</span></div>
-          <div class="bd"><div class="row"><dt>Estructura</dt><dd>Dirección propia: Caridad Ochoa, President & CEO de Electrolit USA desde octubre de 2020. Sede reportada en Houston</dd></div><div class="row"><dt>Socio</dt><dd>Keurig Dr Pepper vende y distribuye la marca en EE. UU. desde octubre de 2023. Es acuerdo de distribución, no de capital</dd></div><div class="row"><dt>Escala</dt><dd>Más de 505 millones de dólares al menudeo en los doce meses a septiembre de 2024, según Circana</dd></div><div class="row"><dt>Inversión</dt><dd>Planta de Waco, Texas: 400 millones de dólares, más de 600,000 pies cuadrados, más de 200 empleos, operación continua, 26 sabores</dd></div><div class="row"><dt>Cambio de socio</dt><dd>KDP anunció el 23 de junio de 2026 su separación en dos compañías, prevista para principios de 2027</dd></div></div>
-          <div class="nd"><b>No verificable desde fuera</b>Si la planta arrancó y en qué punto de su curva está. El listado oficial de ubicaciones de PiSA no incluye Estados Unidos, lo que sugiere que este negocio se gobierna fuera de la estructura de PiSA Farmacéutica.</div>
-        </div><div class="lob">
-          <div class="hd"><span class="n num">L11</span><div><h4>Distribución, logística y maquila</h4><span class="sub">La capacidad que sostiene a las otras diez</span></div><span class="flag mix">Transversal</span></div>
-          <div class="bd"><div class="row"><dt>Entidades</dt><dd>DIMESA y Servicios de Farmacia Prefarma, con la logística operada bajo la denominación CAB Logistics</dd></div><div class="row"><dt>Red</dt><dd>Siete centros de distribución declarados, uno totalmente automatizado, más cruces de plataforma</dd></div><div class="row"><dt>Promesa</dt><dd>Entrega de pedidos públicos y privados en todo México dentro de las primeras 24 horas</dd></div><div class="row"><dt>Flota</dt><dd>Más de 250 unidades de distintos tonelajes, con capacidad de recibir más de 100 vehículos diarios</dd></div><div class="row"><dt>Maquila</dt><dd>El sitio oficial mantiene secciones de maquila de producto y de hospitales; PiSA BioPharm ofrece llenado y acondicionamiento por contrato en Albany, Nueva York</dd></div><div class="row"><dt>Dirección</dt><dd>Sigmund González Contreras, Director de Logística Pharma</dd></div></div>
-          <div class="nd"><b>No verificable desde fuera</b>Si la red vende servicio logístico a terceros o opera solo como brazo del portafolio propio. El listado público nombra con claridad seis centros de los siete declarados.</div>
-        </div><div class="lob">
-          <div class="hd"><span class="n num">L12</span><div><h4>Suplementos por venta directa</h4><span class="sub">El modelo comercial más ajeno al resto del grupo</span></div><span class="flag com">Canal comercial</span></div>
-          <div class="bd"><div class="row"><dt>Unidad</dt><dd>Bodylogic, planta inaugurada en Tlajomulco en 2017</dd></div><div class="row"><dt>Modelo</dt><dd>Red de mercadeo, persona a persona. No es B2B ni licitación</dd></div><div class="row"><dt>Presencia declarada</dt><dd>México, Estados Unidos, Perú, Bolivia, Panamá y El Salvador</dd></div></div>
-          <div class="nd"><b>No verificable desde fuera</b>Prácticamente todo: escala, número de distribuidores y desempeño. Es la línea con menos información pública del grupo. La ausencia de evidencia indica opacidad, no ausencia de relevancia.</div>
-        </div>
+        </article>
+        <article class="lob mix">
+          <div class="hd">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3c0 5 10 5 10 10S7 18 7 21"/><path d="M17 3c0 5-10 5-10 10s10 5 10 8"/><path d="M8.6 7h6.8M8.6 17h6.8M7.6 12h8.8"/></svg></span>
+            <div class="ti"><span class="n num">L6</span><h4>Biotecnológicos</h4><span class="sub">Planta confirmada, portafolio comercial no verificable</span></div>
+          </div>
+          <span class="flag mix">Público y privado</span>
+          <div class="bd"><div class="row"><dt>Entidad</dt><dd>PiSA Biotec</dd></div><div class="row"><dt>Dónde</dt><dd>Zona Industrial de Guadalajara, planta inaugurada en 2011</dd></div><div class="row"><dt>Posición</dt><dd>En marzo de 2026 PiSA se presentó ante Cofepris como productora de genéricos y biosimilares</dd></div><div class="row"><dt>Dirección</dt><dd>William Rodríguez-Limas, Dirección de Biotecnología e Innovación</dd></div><div class="row"><dt>Brecha</dt><dd>No identificamos públicamente ningún biosimilar de PiSA con registro sanitario vigente: la línea existe como planta y como discurso</dd></div></div>
+        </article>
+        <article class="lob mix">
+          <div class="hd">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="13" height="10" rx="2"/><path d="M16 10h3l2 2-2 2h-3"/><path d="M7 12h5"/><path d="M9.5 9.5v5"/></svg></span>
+            <div class="ti"><span class="n num">L7</span><h4>Dispositivos médicos y material de curación</h4><span class="sub">La unidad que ya recorrió un ciclo serio de excelencia operativa</span></div>
+          </div>
+          <span class="flag mix">Público y privado</span>
+          <div class="bd"><div class="row"><dt>Unidad</dt><dd>PyMPSA, iniciada en 1998</dd></div><div class="row"><dt>Reconocimiento</dt><dd>Shingo Silver Medallion en 2014</dd></div><div class="row"><dt>Portafolio</dt><dd>Equipos y material de curación; cerca de 80 dispositivos y equipos de exportación en terapia respiratoria y diálisis</dd></div><div class="row"><dt>EE. UU.</dt><dd>PiSA BioPharm listó dispositivos en el GUDID de la FDA entre 2019 y 2020</dd></div><div class="row"><dt>Brecha</dt><dd>No aparece en el listado oficial de ubicaciones del grupo, pese a ser la unidad con el reconocimiento de excelencia operativa más alto</dd></div></div>
+        </article>
+        <article class="lob com">
+          <div class="hd">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="7" cy="9" rx="2" ry="2.6"/><ellipse cx="12" cy="7" rx="2" ry="2.6"/><ellipse cx="17" cy="9" rx="2" ry="2.6"/><path d="M12 12c3 0 5.5 2.2 5.5 4.6S15 21 12 21s-5.5-1.9-5.5-4.4S9 12 12 12z"/></svg></span>
+            <div class="ti"><span class="n num">L8</span><h4>Salud Animal</h4><span class="sub">Otro regulador, otro canal, otro ciclo de cobro</span></div>
+          </div>
+          <span class="flag com">Canal comercial</span>
+          <div class="bd"><div class="row"><dt>Unidad</dt><dd>PiSA Salud Animal, antes PiSA Agropecuaria, fundada en 1995</dd></div><div class="row"><dt>Portafolio</dt><dd>Más de 250 productos en más de 20 líneas, en tres especialidades: pecuarios, animales de compañía y bioseguridad</dd></div><div class="row"><dt>Dónde</dt><dd>Complejo Tlajomulco, más de 10,000 m² y 7 líneas de producción</dd></div><div class="row"><dt>Capacidad</dt><dd>Frascos de vidrio: más de 500,000 al mes · Frascos de plástico: más de 250,000 al mes · Líquidos orales: más de 320,000 al mes</dd></div><div class="row"><dt>Canal</dt><dd>Red de distribución en todos los estados y en Sudamérica, con más de 1,000 clientes. Regulador: SENASICA, no Cofepris</dd></div></div>
+        </article>
+        <article class="lob com">
+          <div class="hd">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2h4v3.2l1.6 2.1A4 4 0 0 1 16.4 10v9a3 3 0 0 1-3 3h-2.8a3 3 0 0 1-3-3v-9a4 4 0 0 1 .8-2.7L10 5.2V2z"/><path d="M7.6 13h8.8"/></svg></span>
+            <div class="ti"><span class="n num">L9</span><h4>Electrolit México</h4><span class="sub">La línea con mayor margen y el cambio fiscal más reciente</span></div>
+          </div>
+          <span class="flag com">Canal comercial</span>
+          <div class="bd"><div class="row"><dt>Dónde</dt><dd>Línea de producción propia en el Complejo Tlajomulco; en 2017 se instalaban dos líneas adicionales</dd></div><div class="row"><dt>Escala</dt><dd>240 millones de unidades vendidas en 2016 según reporte de prensa</dd></div><div class="row"><dt>Forzador</dt><dd>Desde el 1 de enero de 2026 paga IEPS de 3.0818 pesos por litro, tras años de exención de IVA e IEPS por su registro como medicamento. La exención se conserva solo para fórmula tipo OMS</dd></div><div class="row"><dt>Planeación</dt><dd>SKU por sabor y canal, con horizonte semanal y calendario promocional</dd></div><div class="row"><dt>Brecha</dt><dd>Las cifras de venta que circulan provienen de un debate legislativo y de estimaciones de banca de inversión citadas por prensa, no de estados financieros</dd></div></div>
+        </article>
+        <article class="lob com">
+          <div class="hd">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"/></svg></span>
+            <div class="ti"><span class="n num">L10</span><h4>Electrolit Estados Unidos</h4><span class="sub">Un segundo centro de gravedad, con otro decisor y otra moneda</span></div>
+          </div>
+          <span class="flag com">Canal comercial</span>
+          <div class="bd"><div class="row"><dt>Estructura</dt><dd>Dirección propia: Caridad Ochoa, President &amp; CEO de Electrolit USA desde octubre de 2020. Sede reportada en Houston</dd></div><div class="row"><dt>Socio</dt><dd>Keurig Dr Pepper vende y distribuye la marca en EE. UU. desde octubre de 2023. Es acuerdo de distribución, no de capital</dd></div><div class="row"><dt>Escala</dt><dd>Más de 505 millones de dólares al menudeo en los doce meses a septiembre de 2024, según Circana</dd></div><div class="row"><dt>Inversión</dt><dd>Planta de Waco, Texas: 400 millones de dólares, más de 600,000 pies cuadrados, más de 200 empleos, operación continua, 26 sabores</dd></div><div class="row"><dt>Cambio</dt><dd>KDP anunció el 23 de junio de 2026 su separación en dos compañías, prevista para principios de 2027</dd></div></div>
+        </article>
+        <article class="lob mix">
+          <div class="hd">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h11v10H2z"/><path d="M13 9h4l4 3.4V16h-8"/><circle cx="6.5" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></span>
+            <div class="ti"><span class="n num">L11</span><h4>Distribución, logística y maquila</h4><span class="sub">La capacidad que sostiene a las otras once</span></div>
+          </div>
+          <span class="flag mix">Transversal</span>
+          <div class="bd"><div class="row"><dt>Entidades</dt><dd>DIMESA y Servicios de Farmacia Prefarma, con la logística operada bajo la denominación CAB Logistics</dd></div><div class="row"><dt>Red</dt><dd>Siete centros de distribución declarados, uno totalmente automatizado, más cruces de plataforma</dd></div><div class="row"><dt>Promesa</dt><dd>Entrega de pedidos públicos y privados en todo México dentro de las primeras 24 horas</dd></div><div class="row"><dt>Flota</dt><dd>Más de 250 unidades de distintos tonelajes, con capacidad de recibir más de 100 vehículos diarios</dd></div><div class="row"><dt>Dirección</dt><dd>Sigmund González Contreras, Director de Logística Pharma. El sitio oficial mantiene además secciones de maquila de producto y de hospitales</dd></div></div>
+        </article>
+        <article class="lob com">
+          <div class="hd">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4C9 4 4 9 4 16a6 6 0 0 0 .6 2.6"/><path d="M20 4c0 10-5 15-11 15a6 6 0 0 1-4.4-1.8"/><path d="M14 8c-4 2-7 5-9.4 10.6"/></svg></span>
+            <div class="ti"><span class="n num">L12</span><h4>Suplementos por venta directa</h4><span class="sub">El modelo comercial más ajeno al resto del grupo</span></div>
+          </div>
+          <span class="flag com">Canal comercial</span>
+          <div class="bd"><div class="row"><dt>Unidad</dt><dd>Bodylogic, planta inaugurada en Tlajomulco en 2017</dd></div><div class="row"><dt>Modelo</dt><dd>Red de mercadeo, persona a persona. No es B2B ni licitación</dd></div><div class="row"><dt>Presencia</dt><dd>México, Estados Unidos, Perú, Bolivia, Panamá y El Salvador</dd></div><div class="row"><dt>Brecha</dt><dd>Es la línea con menos información pública del grupo: no hay escala, número de distribuidores ni desempeño verificable</dd></div></div>
+        </article>
       </div>
 
       <h3 class="sub">Por qué esto es un problema de planeación y no de catálogo</h3>
@@ -1192,58 +1363,39 @@ td.nd{color:var(--n400);font-style:italic}
     <p class="eyebrow"><span class="num">06</span> Huella industrial y logística</p>
     <h2 class="sec">Casi todo lo que PiSA fabrica sale de dos nodos en Jalisco</h2>
     <p class="lede">
-      Mapeamos cada dirección que PiSA publica en su propio listado de ubicaciones. El resultado no es solo un
-      inventario: es la explicación geográfica de por qué la promesa de entregar en todo México en 24 horas es
-      tan exigente, y dónde se concentra el riesgo.
+      Mapeamos las 26 direcciones que PiSA publica en su propio listado de ubicaciones. Selecciona cualquier punto
+      para ver su ficha operativa, acerca con la rueda o los controles, y usa los accesos rápidos para enfocar una
+      región. Los puntos agrupados se separan al acercarte.
     </p>
 
     <div class="body">
-      <div class="mapbox">
-        <svg viewBox="-12 -12 1024 646" role="img" aria-label="Esquema de la huella de PiSA en México">
-        <path class="land" d="M27.5 15.3 L35.0 37.5 L40.0 55.5 L53.1 84.8 L68.8 112.6 L91.3 168.1 L118.7 186.0 L143.7 205.6 L168.8 221.9 L182.8 274.1 L218.8 313.3 L252.5 330.2 L260.0 313.3 L240.6 287.2 L220.3 261.1 L207.8 238.2 L196.9 212.1 L184.4 186.0 L162.5 163.2 L153.1 137.1 L139.1 117.5 L115.6 84.8 L103.1 52.2 L100.0 32.6 L102.5 15.3 Z"/>
-        <path class="land" d="M102.5 15.3 L217.2 54.5 L305.9 54.5 L305.9 39.8 L358.4 39.8 L408.7 107.7 L465.6 130.5 L490.6 101.2 L518.7 105.4 L562.5 159.9 L578.1 179.5 L590.6 215.4 L643.7 230.1 L632.8 293.7 L631.3 352.4 L659.4 391.6 L675.0 427.5 L718.8 466.6 L734.4 484.6 L762.5 474.8 L796.9 469.9 L828.1 468.3 L846.9 430.7 L856.3 398.1 L862.5 381.8 L890.6 372.0 L931.2 372.0 L965.6 373.6 L976.6 391.6 L968.8 424.2 L954.7 447.1 L945.3 473.2 L928.1 473.5 L901.6 491.1 L901.6 556.4 L860.9 552.5 L829.7 552.5 L806.2 578.2 L809.4 602.1 L765.6 567.8 L725.0 548.2 L712.5 549.2 L671.9 565.5 L625.0 544.9 L565.6 527.0 L514.1 501.2 L453.1 476.4 L427.2 455.2 L399.1 404.0 L397.5 374.0 L387.5 349.2 L361.9 320.1 L328.1 280.6 L279.7 241.5 L268.7 208.8 L221.9 165.8 L200.0 143.6 L175.0 110.9 L156.2 78.3 L139.7 55.1 L102.5 15.3 Z"/>
-        <path class="lead" d="M310 404 L438 401"/>
-        <path class="lead" d="M652 434 L618 442"/>
-<circle class="mk office" cx="79.1" cy="12.1" r="4.5"><title>Mexicali · oficina comercial</title></circle>
-        <circle class="mk office" cx="30.6" cy="15.7" r="4.5"><title>Tijuana · oficina comercial</title></circle>
-        <circle class="mk office" cx="361.9" cy="42.7" r="4.5"><title>Ciudad Juárez · oficina comercial</title></circle>
-        <circle class="mk office" cx="372.8" cy="142.6" r="4.5"><title>Chihuahua · oficina comercial</title></circle>
-        <circle class="mk office" cx="455.9" cy="243.4" r="4.5"><title>Torreón · oficina comercial</title></circle>
-        <circle class="mk office" cx="331.6" cy="267.6" r="4.5"><title>Culiacán · oficina comercial</title></circle>
-        <circle class="mk office" cx="531.9" cy="354.1" r="4.5"><title>San Luis Potosí · oficina comercial</title></circle>
-        <circle class="mk office" cx="510.0" cy="387.7" r="4.5"><title>León · oficina comercial</title></circle>
-        <circle class="mk office" cx="525.3" cy="434.0" r="4.5"><title>Morelia · oficina comercial</title></circle>
-        <circle class="mk office" cx="618.7" cy="455.5" r="4.5"><title>Puebla · oficina comercial</title></circle>
-        <circle class="mk office" cx="684.1" cy="453.3" r="4.5"><title>Boca del Río, Veracruz · oficina comercial</title></circle>
-        <circle class="mk office" cx="887.8" cy="392.6" r="4.5"><title>Mérida · oficina comercial</title></circle>
-        <circle class="mk office" cx="777.5" cy="530.3" r="4.5"><title>Tuxtla Gutiérrez · oficina comercial</title></circle>
-        <circle class="mk cedis" cx="220.0" cy="128.2" r="7.5"><title>CDR Hermosillo, Sonora · centro de distribución regional</title></circle>
-        <circle class="mk cedis" cx="548.1" cy="239.2" r="7.5"><title>CDR Monterrey · Santa Catarina, Nuevo León</title></circle>
-        <circle class="mk cedis" cx="783.4" cy="489.8" r="7.5"><title>CDR Villahermosa, Tabasco</title></circle>
-        <circle class="mk cedis" cx="588" cy="430" r="7.5"><title>CDR San Martín Obispo · Cuautitlán Izcalli, Edomex</title></circle>
-        <circle class="mk cedis" cx="617" cy="452" r="7.5"><title>Nodo Pantitlán · Agrícola Pantitlán, Iztacalco, CDMX</title></circle>
-        <circle class="mk cedis" cx="476" cy="401" r="7.5"><title>CDR Juan de Barrera · Álamo Industrial, Guadalajara</title></circle>
-        <circle class="mk cedis" cx="466" cy="422" r="7.5"><title>Centro de Distribución Nacional · Complejo Tlajomulco. El único CEDIS automatizado del grupo</title></circle>
-        <circle class="mk plant" cx="450" cy="394" r="10"><title>Zona Industrial, Guadalajara · inyectables de pequeño y gran volumen, cefalosporínicos, penicilínicos, hormonales, PiSA Biotec y planta piloto</title></circle>
-        <circle class="mk plant" cx="447" cy="415" r="10"><title>Complejo Industrial Tlajomulco · diálisis e inyectables, veterinaria, sólidos y liofilizados, FLEXOVAL y ampolletas, Electrolit, Bodylogic y empaque de marca propia</title></circle>
-        <circle class="mk plant" cx="593" cy="451" r="10"><title>Planta de oncológicos, polvos inyectables y orales · Av. Miguel Ángel de Quevedo 555, Coyoacán, CDMX</title></circle>
-        <circle class="mk plant" cx="567" cy="452" r="10"><title>Toluca, Edomex · centro de preparación de mezclas y oficina comercial</title></circle>
-        <circle class="mk corp" cx="471" cy="387" r="8.5"><title>Corporativo CAB de Grupo PiSA · Av. España 1840, Col. Moderna, Guadalajara. Sede del grupo</title></circle>
-        <circle class="mk corp" cx="605" cy="439" r="8.5"><title>Corporativo CDMX · Ventas Gobierno · Paseo de la Reforma 180, Col. Juárez</title></circle>
-        <text class="mlab" x="228" y="400">Jalisco</text><text class="msub" x="228" y="416">2 nodos industriales · CDN</text><text class="mlab" x="660" y="428">Valle de México</text><text class="msub" x="660" y="444">1 planta · 2 CEDIS · Ventas Gobierno</text>
-      </svg>
-        <div class="maplegend">
-          <span><i class="plant"></i> Nodo de manufactura</span>
-          <span><i class="cedis"></i> Centro de distribución</span>
-          <span><i class="corp"></i> Corporativo</span>
-          <span><i class="office"></i> Oficina comercial</span>
+      <div class="gmap">
+        <div class="gmap-stage" id="gmStage">
+          <svg id="gmSvg" viewBox="0 0 1000.0 630.91" role="application" aria-label="Mapa interactivo de las instalaciones de PiSA en México">
+            <g id="gmWorld"></g>
+            <g id="gmNodes" class="gm-g"></g>
+          </svg>
+          <div class="gm-quick">
+            <button class="gm-chip" type="button" data-q="nac" aria-pressed="true">Nacional</button>
+            <button class="gm-chip" type="button" data-q="jal" aria-pressed="false">Jalisco</button>
+            <button class="gm-chip" type="button" data-q="vdm" aria-pressed="false">Valle de México</button>
+            <button class="gm-chip" type="button" data-q="reg" aria-pressed="false">Red regional</button>
+          </div>
+          <div class="gm-zoom">
+            <button type="button" id="gmIn" aria-label="Acercar">+</button>
+            <button type="button" id="gmOut" aria-label="Alejar">&minus;</button>
+            <button type="button" id="gmRst" class="rs" aria-label="Restablecer vista">Vista<br>inicial</button>
+          </div>
+          <div class="gm-tip" id="gmTip" role="status"></div>
         </div>
+        <aside class="gm-panel" id="gmPanel" aria-live="polite"></aside>
       </div>
       <p class="cap">
-        <b>Esquema cartográfico simplificado, no un mapa a escala.</b> El contorno es una silueta aproximada de
-        México y las posiciones son las coordenadas de las ciudades donde PiSA publica una dirección. Pasa el
-        cursor sobre cada punto para ver qué hay ahí. Fuente única: listado oficial de ubicaciones de
-        pisa.com.mx, consultado en octubre de 2026.
+        <b>Cartografía real, ubicación de nodos a nivel de colonia, municipio o ciudad.</b> Las fronteras estatales
+        provienen de un GeoJSON público de los 32 estados, simplificado y proyectado en Mercator. Los marcadores se
+        colocan sobre el centroide de la colonia, el municipio o la ciudad que PiSA publica: la ficha de cada nodo
+        declara cuál de los tres se usó y ninguno es una coordenada geocodificada ni levantada en campo. Jalisco,
+        Ciudad de México y Estado de México aparecen resaltados por concentrar 12 de las 26 ubicaciones.
       </p>
 
       <div class="g4">
@@ -1258,9 +1410,9 @@ td.nd{color:var(--n400);font-style:italic}
           <span class="lab">Hecho</span>
           <h4>Nodo 1 · Zona Industrial de Guadalajara</h4>
           <p>
-            Seis instalaciones: inyectables de pequeño y gran volumen, antibióticos cefalosporínicos,
-            antibióticos penicilínicos, hormonales, PiSA Biotec y la planta piloto de desarrollo. Es el nodo con
-            mayor segregación regulatoria obligatoria, porque betalactámicos, hormonales y biotecnológicos exigen
+            Seis instalaciones: inyectables de pequeño y gran volumen, antibióticos cefalosporínicos, antibióticos
+            penicilínicos, hormonales, PiSA Biotec y la planta piloto de desarrollo. Es el nodo con mayor
+            segregación regulatoria obligatoria, porque betalactámicos, hormonales y biotecnológicos exigen
             instalaciones físicamente separadas. A pocos kilómetros, el centro de distribución regional Juan de
             Barrera.
           </p>
@@ -1271,9 +1423,9 @@ td.nd{color:var(--n400);font-style:italic}
           <h4>Nodo 2 · Complejo Industrial Tlajomulco</h4>
           <p>
             El corazón del grupo. Alberga diálisis e inyectables, veterinaria, sólidos orales, liofilizados, la
-            línea FLEXOVAL y de ampolletas, Electrolit, Bodylogic, el empaque de marca propia y el único centro
-            de distribución automatizado. En 2017 un recorrido periodístico reportó más de 172,000 m² con 29
-            naves industriales; la superficie declarada en 2025 supera los 300,000 m².
+            línea FLEXOVAL y de ampolletas, Electrolit, Bodylogic, el empaque de marca propia y el único centro de
+            distribución automatizado. En 2017 un recorrido periodístico reportó más de 172,000 m² con 29 naves
+            industriales; la superficie declarada en 2025 supera los 300,000 m².
           </p>
           <p class="src">El Universal, 24 de marzo de 2017; superficie declarada en material corporativo de 2025.</p>
         </div>
@@ -1318,11 +1470,13 @@ td.nd{color:var(--n400);font-style:italic}
 
       <div class="note">
         <b>Una inconsistencia que no resolvimos.</b> PiSA declara siete centros de distribución; el listado
-        público nombra seis con claridad. No es contradicción: el inventario público simplemente está incompleto.
-        Lo mismo ocurre con la capacidad del centro automatizado, que aparece reportada con cifras distintas en
-        2017 y en materiales posteriores. No construimos ninguna serie con esos datos.
+        público nombra seis con claridad, más el nodo Pantitlán sin función especificada. No es contradicción: el
+        inventario público simplemente está incompleto. Lo mismo ocurre con la superficie del Complejo Tlajomulco,
+        reportada con cifras distintas en 2017 y en materiales posteriores. No construimos ninguna serie con esos
+        datos.
       </div>
     </div>
+
     <div class="foot">
       <button class="bar-btn" data-go="hub">&#8592; Volver al índice</button>
       <button class="bar-btn nav-next foot-next"><span class="nx"></span> &#8594;</button>
@@ -1346,90 +1500,57 @@ td.nd{color:var(--n400);font-style:italic}
     <h2 class="sec">Dos capas: una familia que aprueba y un equipo profesional que opera</h2>
     <p class="lede">
       Reconstruimos el organigrama con fuentes públicas fechadas de 2026. Lo marcamos con honestidad: confirmado
-      significa que existe una fuente directa del cargo; inferido significa que la línea de reporte es lógica
-      pero no está documentada; pendiente significa que no encontramos al titular.
+      significa que existe una fuente directa del cargo; pendiente significa que no encontramos al titular;
+      vacante significa que la posición se publicó este año.
     </p>
 
     <div class="body">
-      <div class="org">
-        <div class="orow">
-          <div class="onode owner">
-            <div class="rolo">Propiedad · confirmado</div>
-            <div class="nm">Carlos Álvarez Bermejillo · Presidente</div>
-            <div class="mt">Hijo del fundador. Más de cinco décadas en la empresa. Veto y aprobación final; no es punto de entrada.</div>
+      <div class="otree-wrap">
+        <div class="otree">
+          <div class="oband">
+            <div class="oband-lb">Capa de propiedad · familia Álvarez</div>
+            <div class="oband-row">
+              <div class="onode owner"><div class="rolo">Presidente · confirmado</div><div class="nm">Carlos Álvarez Bermejillo</div><div class="mt">Hijo del fundador. Más de cinco décadas en la empresa. Veto y aprobación final; no es punto de entrada.</div></div>
+              <div class="onode owner"><div class="rolo">Vicepresidente Ejecutivo · confirmado marzo 2026</div><div class="nm">Santiago Álvarez Vega</div><div class="mt">Interlocutor del grupo ante Cofepris y miembro del Consejo Mexicano de Negocios. Patrocinador final de cualquier inversión de escala.</div></div>
+              <div class="onode owner"><div class="rolo">Vicepresidente · confirmado</div><div class="nm">Esteban Álvarez Vega</div><div class="mt">Sin mandato funcional visible en fuentes públicas.</div></div>
+            </div>
           </div>
+          <div class="odrop"></div>
+          <ul class="olevel">
+            <li>
+              <div class="onode dg"><div class="rolo">Director General · confirmado por cuatro fuentes de 2026</div><div class="nm">Heriberto Castañeda</div><div class="mt">Ejecutivo profesional con origen en Operaciones y Cadena de Suministro. Antes Director Ejecutivo de Operaciones. Es el dueño del resultado afectado por el calendario de 2027.</div></div>
+              <ul>
+                <li>
+                  <div class="onode hot"><div class="rolo">Chief Corporate Officer · confirmado</div><div class="nm">Alejandro Troya</div><div class="mt">CFO de 2014 a 2022, Deputy CEO y CHRO en 2022, Chief Talent, Transformation &amp; Technology Officer hasta 2024. Mandato explícito de transformación.</div></div>
+                  <ul>
+                    <li><div class="onode "><div class="rolo">CIO · confirmado</div><div class="nm">Luis Dávalos</div><div class="mt">Más de 18 años en la función. Arquitectura empresarial de cadena de suministro y manufactura. Guardián técnico de todo lo que toque SAP.</div></div></li>
+                    <li><div class="onode "><div class="rolo">Recursos Humanos · confirmado julio 2026</div><div class="nm">Alexis Valencia</div><div class="mt">En marzo de 2026 el área ejecutó un cascadeo formal de objetivos corporativos.</div></div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="onode "><div class="rolo">Dirección Comercial · confirmado junio 2026</div><div class="nm">Felipe Ríos</div><div class="mt">Director Comercial de PiSA Farmacéutica.</div></div>
+                </li>
+                <li>
+                  <div class="onode open"><div class="rolo">Operaciones y Cadena de Suministro · pendiente</div><div class="nm">Titular no identificado</div><div class="mt">No encontramos al titular tras el ascenso de Castañeda a la dirección general.</div></div>
+                  <ul>
+                    <li><div class="onode "><div class="rolo">Logística Pharma · confirmado julio 2026</div><div class="nm">Sigmund González Contreras</div><div class="mt">CAB Logistics. Responsable del centro de distribución que surte al sector público.</div></div></li>
+                    <li><div class="onode open hot"><div class="rolo">Abastecimientos · vacante publicada 2026</div><div class="nm">Dirección de Abastecimientos</div><div class="mt">Posición de dirección publicada hacia mayo de 2026. No pudimos verificar si fue cubierta.</div></div></li>
+                    <li><div class="onode open hot"><div class="rolo">Planeación · vacantes publicadas 2026</div><div class="nm">Planeación Nacional y Plan Maestro</div><div class="mt">Gerencias descritas como balancear demanda contra capacidad operativa y desarrollar el plan maestro alineado a demanda y capacidad instalada.</div></div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="onode soft"><div class="rolo">Unidades con dirección propia</div><div class="nm">Fuera de la línea de PiSA Farmacéutica</div><div class="mt">Negocios que reportan por separado, con mandato, moneda y ciclo distintos.</div></div>
+                  <ul>
+                    <li><div class="onode "><div class="rolo">Electrolit USA · confirmado</div><div class="nm">Caridad Ochoa</div><div class="mt">President &amp; CEO desde octubre de 2020. Sede reportada en Houston.</div></div></li>
+                    <li><div class="onode "><div class="rolo">Biotecnología e Innovación · confirmado</div><div class="nm">William Rodríguez-Limas</div><div class="mt">Dirección de Biotecnología e Innovación.</div></div></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
-        <div class="conn"></div>
-        <div class="orow r2">
-          <div class="onode">
-            <div class="rolo">Confirmado · marzo de 2026</div>
-            <div class="nm">Santiago Álvarez Vega</div>
-            <div class="mt">Vicepresidente Ejecutivo de PiSA Farmacéutica. Interlocutor del grupo ante Cofepris y miembro del Consejo Mexicano de Negocios. Patrocinador final de cualquier inversión de escala.</div>
-          </div>
-          <div class="onode">
-            <div class="rolo">Confirmado · área no publicada</div>
-            <div class="nm">Esteban Álvarez Vega</div>
-            <div class="mt">Vicepresidente. Sin mandato funcional visible en fuentes públicas.</div>
-          </div>
-        </div>
-        <div class="conn"></div>
-        <div class="orow">
-          <div class="onode dg">
-            <div class="rolo">Confirmado · cuatro fuentes independientes de 2026</div>
-            <div class="nm">Heriberto Castañeda · Director General</div>
-            <div class="mt">Ejecutivo profesional con origen en Operaciones y Cadena de Suministro. Antes Director Ejecutivo de Operaciones. Es el dueño del resultado afectado por el calendario de 2027.</div>
-          </div>
-        </div>
-        <div class="conn"></div>
-        <div class="orow r3">
-          <div class="onode hot">
-            <div class="rolo">Confirmado · corporativo</div>
-            <div class="nm">Alejandro Troya</div>
-            <div class="mt">Chief Corporate Officer. Trayectoria publicada: CFO de 2014 a 2022, Deputy CEO y CHRO en 2022, Chief Talent, Transformation &amp; Technology Officer hasta 2024. Es el ejecutivo con mandato explícito de transformación.</div>
-          </div>
-          <div class="onode">
-            <div class="rolo">Confirmado · junio de 2026</div>
-            <div class="nm">Felipe Ríos</div>
-            <div class="mt">Director Comercial de PiSA Farmacéutica.</div>
-          </div>
-          <div class="onode open">
-            <div class="rolo">Pendiente de identificar</div>
-            <div class="nm">Operaciones y Cadena de Suministro</div>
-            <div class="mt">No encontramos al titular tras el ascenso de Castañeda a la dirección general.</div>
-          </div>
-          <div class="onode">
-            <div class="rolo">Confirmado · julio de 2026</div>
-            <div class="nm">Sigmund González Contreras</div>
-            <div class="mt">Director de Logística Pharma, CAB Logistics. Responsable del centro de distribución que surte al sector público.</div>
-          </div>
-          <div class="onode">
-            <div class="rolo">Confirmado · perfil propio</div>
-            <div class="nm">Luis Dávalos</div>
-            <div class="mt">CIO. Más de 18 años en la función; trabaja en arquitectura empresarial de cadena de suministro y manufactura. Guardián técnico de cualquier iniciativa que toque SAP.</div>
-          </div>
-          <div class="onode">
-            <div class="rolo">Confirmado · julio de 2026</div>
-            <div class="nm">Alexis Valencia</div>
-            <div class="mt">Directora de Recursos Humanos. En marzo de 2026 el área ejecutó un cascadeo formal de objetivos corporativos.</div>
-          </div>
-          <div class="onode open hot">
-            <div class="rolo">Vacante publicada en 2026</div>
-            <div class="nm">Dirección de Abastecimientos</div>
-            <div class="mt">Posición de dirección publicada hacia mayo de 2026. No pudimos verificar si fue cubierta.</div>
-          </div>
-          <div class="onode open hot">
-            <div class="rolo">Vacantes publicadas en 2026</div>
-            <div class="nm">Planeación Nacional y Plan Maestro</div>
-            <div class="mt">Gerencias descritas como balancear demanda contra capacidad operativa y desarrollar el plan maestro de producción alineado a demanda y capacidad instalada.</div>
-          </div>
-          <div class="onode">
-            <div class="rolo">Confirmado · unidad propia</div>
-            <div class="nm">Caridad Ochoa</div>
-            <div class="mt">President &amp; CEO de Electrolit USA desde octubre de 2020. Mandato, moneda y ciclo distintos a los de México.</div>
-          </div>
-        </div>
-        <div class="orlbl">Las posiciones marcadas con borde lima son las que, por su mandato o por estar abiertas, concentran la agenda de este análisis.</div>
       </div>
+      <p class="scrollhint">Desliza el organigrama horizontalmente si no cabe en tu pantalla. Los recuadros con borde lima concentran la agenda de este análisis; los de borde punteado son posiciones pendientes o vacantes.</p>
 
       <h3 class="sub">Lo que la dirección ya dijo en público</h3>
 
@@ -2126,7 +2247,6 @@ td.nd{color:var(--n400);font-style:italic}
         <div class="case">
           <div class="top">
             <img src="data:image/png;base64,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" alt="Pharmatycsa">
-            <div class="roi nd"><div class="v">Caso publicado sin cifra de ROI</div></div>
           </div>
           <div class="bd">
             <p><b>Por qué este caso.</b> Distribución, comercialización y representación de medicamentos y desarrollo de proyectos de soluciones integrales para la salud, con el canal público como centro de gravedad.</p>
@@ -2533,6 +2653,304 @@ td.nd{color:var(--n400);font-style:italic}
     list.appendChild(b);
   });
   render(0);
+})();
+</script>
+
+
+<script>
+(function(){
+  "use strict";
+  var MD = {"W":1000.0,"H":630.91,"states":[{"n":"Zacatecas","d":"M554.12 294.34 L549.59 301.15 L546.35 301.7 L544.08 306.51 L539.19 309.02 L538.14 313.4 L539.42 314.9 L536.53 320.61 L530.55 322.63 L526.17 329.16 L518.8 332.93 L517.05 336.07 L513.34 336.8 L510.41 335.62 L508.49 338.0 L509.93 345.01 L508.4 353.6 L516.26 359.75 L520.53 360.91 L523.56 366.02 L529.25 365.16 L536.72 358.41 L540.11 361.63 L535.69 372.99 L536.98 379.98 L533.24 388.08 L522.47 381.64 L518.0 380.49 L515.82 374.81 L506.64 368.2 L504.63 370.98 L496.63 374.89 L489.68 388.47 L492.73 392.88 L493.44 398.04 L496.95 400.3 L495.13 405.38 L487.71 410.85 L484.06 410.84 L482.85 414.09 L480.86 415.22 L478.7 414.68 L474.37 416.24 L470.7 414.19 L466.67 413.82 L464.78 410.62 L461.62 409.84 L467.98 405.48 L467.68 403.45 L464.37 403.2 L463.3 400.05 L467.61 397.08 L467.79 391.68 L473.71 386.84 L480.38 383.59 L482.77 375.48 L478.78 374.26 L479.22 371.26 L476.47 371.04 L474.11 371.97 L473.71 373.65 L475.28 375.65 L471.08 380.24 L464.14 380.88 L463.53 379.47 L468.35 370.17 L467.59 367.71 L464.03 365.39 L458.9 366.96 L458.9 375.91 L458.43 377.38 L456.96 377.16 L455.43 374.9 L455.48 370.68 L461.05 360.75 L458.77 359.47 L452.67 361.89 L454.93 369.59 L453.64 371.09 L451.02 371.92 L451.68 367.33 L447.77 368.81 L447.32 372.66 L445.6 372.23 L444.24 373.76 L442.79 372.0 L444.0 364.62 L449.65 360.09 L448.87 347.49 L451.37 343.57 L453.11 333.84 L459.59 327.1 L458.95 315.62 L457.48 311.61 L460.83 310.29 L472.08 298.23 L479.82 299.46 L484.06 298.57 L488.69 300.56 L489.65 299.41 L499.44 298.97 L498.98 297.11 L500.2 296.45 L498.92 291.37 L497.39 290.8 L498.41 284.58 L493.92 280.32 L493.61 275.84 L501.21 273.8 L513.08 274.57 L519.45 277.98 L524.64 283.99 L527.97 283.87 L528.75 288.4 L536.35 286.64 L540.09 287.11 L545.82 294.59 L548.46 295.62 L551.45 293.75 L554.12 294.34 Z"},{"n":"Yucatán","d":"M974.25 399.72 L974.66 406.46 L972.78 412.54 L974.33 417.84 L969.45 428.7 L959.72 435.22 L952.96 435.09 L951.07 438.59 L951.39 441.37 L948.49 439.29 L946.86 442.84 L937.07 447.28 L935.04 450.19 L932.74 449.76 L930.87 451.68 L926.3 452.25 L921.48 455.35 L917.01 455.56 L914.93 461.68 L913.39 456.73 L907.91 449.02 L903.04 446.35 L896.35 434.5 L893.71 436.47 L890.55 435.43 L889.33 432.87 L884.12 432.22 L884.32 422.95 L883.31 422.61 L885.04 417.2 L893.44 410.95 L900.71 408.02 L933.09 402.73 L939.44 400.3 L940.14 398.53 L951.16 397.36 L955.7 395.03 L964.84 397.31 L966.75 399.07 L974.25 399.72 Z"},{"n":"Veracruz","d":"M662.51 399.91 L660.93 403.56 L660.4 401.84 L662.51 399.91 Z M650.17 373.73 L653.72 393.75 L657.22 400.48 L659.79 401.0 L659.94 404.87 L669.59 427.57 L692.7 455.16 L694.98 464.63 L696.9 467.33 L697.51 472.96 L702.69 476.68 L704.72 481.23 L707.76 481.66 L710.06 488.28 L714.51 490.42 L714.52 491.35 L711.24 490.12 L712.18 491.35 L711.38 493.01 L714.7 492.05 L714.98 490.54 L720.67 492.96 L732.7 493.26 L737.22 497.72 L744.22 498.88 L750.25 507.14 L750.95 510.18 L754.32 511.8 L768.28 509.02 L765.99 509.91 L767.68 521.29 L772.6 525.59 L778.32 528.22 L779.94 537.77 L781.8 539.31 L774.03 544.93 L737.96 542.71 L737.57 538.99 L728.98 529.85 L731.38 526.71 L729.65 525.63 L719.16 530.78 L711.48 531.08 L708.52 523.05 L711.99 515.91 L710.06 510.53 L703.54 509.44 L701.13 510.5 L697.89 506.4 L692.02 503.88 L690.44 499.26 L691.18 497.64 L688.46 495.73 L686.34 502.52 L684.0 499.77 L680.75 498.72 L677.79 501.08 L675.98 500.95 L673.85 496.02 L667.97 493.68 L667.51 488.47 L670.03 483.99 L669.53 475.79 L676.29 475.92 L676.49 475.03 L675.76 472.66 L665.67 468.74 L664.2 462.67 L672.29 443.64 L663.37 440.48 L658.76 445.57 L656.93 443.06 L653.5 442.64 L652.84 434.53 L654.32 433.57 L656.35 434.75 L658.24 431.6 L653.8 427.57 L654.06 425.44 L651.74 424.54 L653.3 423.57 L653.32 421.3 L649.25 421.22 L645.59 428.96 L642.7 428.21 L630.79 438.36 L627.57 433.98 L629.04 425.04 L633.28 420.52 L635.56 422.28 L637.39 421.99 L637.8 417.03 L640.11 414.32 L636.96 409.58 L634.4 408.79 L631.65 409.84 L627.76 406.82 L626.52 398.04 L624.84 397.76 L623.71 393.55 L629.34 389.61 L625.51 384.25 L628.64 383.22 L628.57 379.13 L633.1 378.15 L630.76 372.71 L622.19 371.01 L621.15 369.51 L628.64 367.9 L631.67 369.46 L634.17 368.9 L634.41 367.13 L637.62 366.77 L638.53 368.42 L643.68 370.65 L647.65 375.51 L650.17 373.73 Z M655.76 387.86 L664.7 397.41 L661.38 406.78 L663.08 398.22 L655.67 389.59 L655.76 387.86 Z"},{"n":"Tlaxcala","d":"M625.15 467.84 L622.31 465.07 L632.54 462.83 L635.41 459.42 L641.01 460.54 L643.74 457.91 L650.43 463.67 L650.06 465.6 L653.25 465.45 L657.95 470.02 L656.56 472.17 L652.12 472.42 L648.8 476.44 L645.25 475.29 L640.29 478.88 L635.16 476.04 L627.5 467.93 L625.15 467.84 Z"},{"n":"Tamaulipas","d":"M661.15 270.47 L658.14 279.52 L658.05 276.64 L661.15 270.47 Z M650.17 373.73 L647.65 375.51 L643.68 370.65 L638.53 368.42 L637.62 366.77 L634.41 367.13 L634.17 368.9 L631.67 369.46 L628.64 367.9 L617.24 369.86 L614.85 368.35 L613.96 369.36 L606.25 369.24 L601.32 360.93 L595.64 356.79 L593.65 359.36 L580.06 355.19 L579.95 345.92 L578.05 343.47 L576.58 336.82 L578.41 335.81 L581.5 336.44 L581.27 330.58 L584.38 323.55 L587.3 321.98 L591.42 322.66 L594.52 319.38 L597.36 319.95 L590.67 308.72 L591.76 300.13 L590.17 296.79 L587.57 296.56 L588.09 294.52 L594.58 290.56 L596.23 287.86 L598.44 287.99 L601.77 284.04 L602.73 285.8 L604.14 285.23 L607.51 280.08 L605.91 276.78 L609.66 273.25 L611.07 274.79 L614.61 275.08 L616.81 271.05 L624.57 268.43 L630.52 261.42 L626.24 259.23 L626.38 246.43 L625.21 243.28 L614.15 244.65 L611.83 240.93 L606.18 238.94 L607.31 238.52 L606.58 235.13 L603.97 235.88 L602.57 232.56 L600.78 232.71 L596.92 224.31 L594.55 224.02 L593.48 221.61 L590.52 220.54 L591.4 214.81 L587.32 213.05 L587.14 211.62 L590.24 206.83 L589.71 202.78 L588.26 201.34 L588.23 196.46 L586.63 195.36 L587.79 192.27 L582.23 191.63 L583.12 188.39 L586.63 187.37 L589.07 184.75 L593.09 185.74 L595.76 188.53 L595.28 190.72 L596.78 191.39 L595.1 197.6 L597.97 199.78 L597.96 207.75 L603.04 213.56 L606.61 224.78 L609.05 226.97 L608.46 228.57 L609.68 229.87 L618.26 230.92 L622.23 234.94 L629.64 236.02 L637.35 241.95 L649.7 241.7 L654.08 243.11 L661.66 249.42 L663.57 249.08 L664.32 246.22 L670.64 245.44 L668.99 256.54 L661.86 270.59 L660.87 270.27 L662.84 264.81 L658.38 262.25 L657.11 263.61 L658.9 264.86 L657.62 266.91 L658.46 268.72 L657.48 269.07 L657.1 267.33 L656.05 268.11 L655.57 265.94 L653.39 266.2 L651.19 269.63 L654.03 272.73 L651.43 279.46 L654.46 281.19 L651.73 283.97 L652.84 291.25 L651.74 296.62 L650.92 294.17 L648.02 295.43 L650.28 301.18 L651.39 298.22 L650.84 310.44 L649.62 310.76 L650.75 311.31 L650.79 320.28 L651.91 320.87 L650.96 324.41 L651.63 325.37 L652.0 321.6 L650.93 352.37 L646.84 361.74 L648.08 362.67 L647.63 367.48 L650.17 373.73 Z"},{"n":"Tabasco","d":"M818.46 495.18 L820.69 501.06 L824.63 503.75 L825.86 503.27 L830.51 513.6 L835.99 518.37 L842.32 520.44 L846.08 519.48 L846.41 514.6 L849.94 514.44 L854.55 515.45 L859.57 519.4 L865.45 520.87 L865.16 541.37 L851.83 541.59 L853.47 539.93 L852.08 537.66 L844.7 534.62 L845.65 531.24 L844.04 527.04 L840.81 525.44 L840.14 521.85 L835.63 521.85 L833.25 520.25 L832.35 522.59 L827.66 522.01 L827.04 526.17 L822.89 527.67 L809.34 538.09 L806.45 533.9 L802.64 533.15 L803.02 530.78 L799.94 526.82 L801.82 521.06 L798.83 521.35 L793.39 517.68 L790.61 518.8 L789.66 527.8 L785.65 532.65 L785.58 534.7 L782.38 538.73 L780.34 538.17 L778.32 528.22 L772.6 525.59 L767.68 521.29 L765.99 509.91 L773.91 507.11 L774.09 508.69 L777.45 508.09 L778.72 505.82 L782.92 505.98 L783.53 503.67 L789.05 502.41 L795.85 502.12 L796.96 502.64 L796.22 504.47 L799.16 504.31 L797.33 502.65 L805.15 502.04 L811.83 496.47 L818.46 495.18 Z"},{"n":"Sonora","d":"M192.23 128.49 L192.5 131.92 L195.02 136.23 L191.44 146.07 L182.84 141.45 L185.68 138.8 L185.19 134.68 L186.84 129.79 L192.23 128.49 Z M245.36 195.52 L247.24 198.32 L245.35 197.17 L245.36 195.52 Z M290.46 232.61 L289.16 232.46 L289.89 231.79 L290.46 232.61 Z M303.19 51.65 L304.52 52.97 L303.33 54.6 L306.37 62.66 L305.77 66.58 L303.74 67.45 L307.19 70.81 L307.3 73.88 L308.61 75.06 L307.91 78.13 L311.67 89.3 L310.44 93.53 L312.28 95.2 L309.92 106.14 L311.79 107.98 L312.86 116.54 L311.96 129.38 L309.85 130.89 L309.72 134.3 L307.85 135.9 L308.01 143.74 L306.26 148.77 L306.78 154.92 L311.57 158.31 L305.21 162.98 L301.36 161.17 L296.34 162.87 L295.02 164.64 L297.24 166.77 L296.49 170.26 L301.92 175.87 L301.51 181.08 L305.72 184.07 L309.8 193.69 L307.92 205.35 L312.4 207.68 L317.18 207.39 L317.21 208.47 L312.84 214.59 L313.21 217.75 L310.86 218.45 L308.8 222.81 L303.1 224.6 L302.37 228.86 L294.54 233.24 L293.39 230.89 L291.28 230.7 L290.61 228.57 L289.95 231.25 L286.81 224.7 L280.73 217.65 L279.34 217.06 L278.24 219.53 L274.41 220.02 L270.26 217.53 L266.92 206.12 L264.73 204.37 L262.46 205.54 L254.87 203.11 L249.27 198.37 L249.25 195.27 L246.92 194.57 L244.55 186.32 L246.41 184.1 L245.47 183.94 L245.44 179.56 L247.41 178.15 L238.34 174.61 L236.23 176.07 L236.72 178.2 L233.96 176.37 L233.69 174.57 L230.34 175.18 L227.22 173.04 L224.02 169.96 L218.29 159.94 L210.31 156.43 L208.64 151.67 L202.96 145.44 L204.32 144.62 L204.99 146.1 L205.77 144.5 L200.21 142.03 L198.11 138.68 L195.69 137.98 L195.95 132.85 L193.92 130.38 L193.82 125.8 L188.5 124.78 L189.22 119.51 L182.84 111.13 L180.17 104.61 L177.56 103.69 L176.75 92.52 L174.29 90.12 L172.79 83.83 L166.98 76.0 L165.54 70.83 L167.76 62.91 L166.6 57.13 L162.73 54.35 L161.21 54.97 L149.89 51.86 L148.85 45.76 L141.72 41.43 L139.51 40.98 L136.93 45.82 L133.33 45.69 L119.34 35.97 L115.01 35.06 L106.75 29.9 L105.54 28.7 L106.95 19.05 L105.18 16.53 L109.05 8.46 L112.25 8.35 L230.49 51.77 L303.19 51.65 Z M117.85 35.9 L118.84 36.87 L116.99 36.35 L117.85 35.9 Z M113.13 33.6 L116.98 37.25 L117.28 39.49 L112.96 36.94 L113.13 33.6 Z"},{"n":"Sinaloa","d":"M323.19 277.08 L325.63 278.95 L326.06 284.96 L323.22 280.79 L323.19 277.08 Z M317.12 274.47 L323.44 281.44 L324.41 284.64 L317.12 274.47 Z M289.16 232.46 L291.04 233.09 L290.4 234.72 L291.79 235.58 L293.18 234.33 L290.83 231.49 L290.61 228.57 L291.28 230.7 L293.39 230.89 L294.54 233.24 L302.37 228.86 L303.1 224.6 L308.26 223.35 L310.86 218.45 L313.21 217.75 L312.84 214.59 L317.18 207.39 L324.2 207.6 L324.35 211.28 L326.67 211.26 L328.0 214.23 L327.91 222.07 L329.28 222.72 L333.71 232.0 L335.25 237.94 L347.07 240.64 L350.72 246.84 L351.47 250.95 L355.16 255.13 L351.67 259.86 L353.12 261.53 L351.43 265.61 L350.69 274.61 L355.02 281.53 L354.61 283.36 L359.7 284.31 L360.82 287.62 L362.49 288.01 L368.72 303.23 L373.21 302.69 L377.57 298.67 L384.5 301.38 L389.37 307.7 L393.14 321.2 L397.82 327.35 L399.36 335.81 L402.76 344.21 L407.18 343.71 L409.85 346.49 L405.54 355.55 L408.52 361.01 L408.06 364.83 L401.33 362.43 L400.11 357.16 L400.25 366.09 L395.54 358.71 L389.54 353.68 L378.37 341.74 L378.6 340.62 L377.21 341.19 L374.11 334.57 L365.19 325.58 L362.64 319.08 L353.15 310.24 L354.28 308.63 L352.66 309.39 L333.83 296.44 L343.07 302.22 L344.0 300.13 L342.79 296.59 L340.2 295.6 L340.34 297.36 L338.92 297.66 L337.54 295.85 L335.47 296.29 L333.18 293.21 L328.11 291.39 L325.45 286.54 L327.76 287.67 L328.63 286.17 L327.08 282.56 L327.8 280.11 L325.51 275.97 L322.41 275.13 L319.64 271.92 L317.56 271.92 L317.69 270.49 L316.12 269.75 L315.33 272.38 L313.01 269.63 L306.19 266.2 L306.37 264.78 L304.7 265.22 L302.78 262.28 L303.63 260.59 L301.08 259.11 L298.96 259.29 L299.57 261.28 L298.09 262.96 L296.78 261.08 L294.61 262.65 L292.3 259.94 L296.69 258.71 L298.41 257.02 L297.98 255.36 L295.31 256.12 L294.21 258.44 L291.24 258.35 L288.59 254.93 L288.75 256.41 L285.51 256.25 L286.84 255.9 L286.93 253.41 L282.44 251.15 L282.2 243.89 L288.17 232.71 L286.4 237.9 L287.33 238.38 L289.16 232.46 Z"},{"n":"San Luis Potosí","d":"M576.73 339.51 L579.95 345.92 L579.82 354.31 L581.44 356.36 L593.65 359.36 L595.64 356.79 L601.32 360.93 L606.25 369.24 L613.96 369.36 L614.85 368.35 L631.59 373.63 L633.1 378.15 L628.57 379.13 L628.64 383.22 L625.51 384.25 L629.34 389.61 L623.71 393.55 L624.84 397.76 L626.52 398.04 L626.69 402.28 L624.57 402.25 L620.9 408.35 L619.48 407.55 L616.67 409.76 L613.54 405.32 L609.57 405.94 L603.48 397.33 L600.9 397.56 L599.56 401.07 L593.24 400.94 L589.79 396.42 L583.98 400.45 L581.1 399.33 L578.32 400.23 L571.25 394.22 L566.34 392.6 L564.98 393.53 L564.38 397.28 L559.0 398.08 L549.25 391.55 L535.24 387.98 L533.77 387.12 L537.44 377.9 L535.69 372.99 L540.15 362.53 L537.62 358.35 L534.87 359.31 L529.25 365.16 L524.29 366.25 L520.53 360.91 L516.26 359.75 L508.4 353.6 L509.93 345.01 L508.49 338.0 L509.59 335.87 L517.05 336.07 L518.8 332.93 L526.17 329.16 L530.55 322.63 L536.53 320.61 L539.42 314.9 L538.14 313.4 L539.19 309.02 L544.08 306.51 L546.35 301.7 L549.59 301.15 L553.44 294.88 L555.6 297.83 L558.69 298.22 L558.89 300.97 L557.37 302.96 L564.08 314.8 L563.82 320.35 L565.18 323.33 L563.73 330.45 L565.39 339.35 L568.86 342.12 L571.8 338.57 L576.73 339.51 Z"},{"n":"Quintana Roo","d":"M999.88 429.98 L997.08 435.14 L991.42 440.69 L990.73 436.1 L993.62 431.34 L996.43 431.78 L999.88 429.98 Z M987.51 396.2 L984.73 398.41 L982.19 398.86 L981.6 397.71 L987.51 396.2 Z M923.45 518.74 L923.13 515.61 L926.93 510.4 L926.7 500.56 L924.66 494.15 L925.39 484.44 L927.28 483.0 L927.68 475.73 L923.31 469.37 L914.93 461.68 L916.31 456.18 L921.48 455.35 L926.3 452.25 L930.87 451.68 L932.74 449.76 L935.04 450.19 L937.07 447.28 L946.86 442.84 L948.49 439.29 L951.39 441.37 L951.07 438.59 L952.96 435.09 L959.72 435.22 L969.45 428.7 L974.33 417.84 L972.78 412.54 L974.66 406.46 L974.25 399.72 L980.49 401.56 L985.3 401.3 L987.71 400.23 L988.02 396.41 L990.96 397.35 L994.84 402.54 L996.06 407.69 L997.73 402.43 L997.36 409.89 L999.12 411.98 L992.44 425.35 L983.25 433.85 L977.94 442.27 L976.15 447.33 L976.89 454.17 L975.56 456.44 L973.0 457.01 L970.95 460.46 L967.93 461.97 L967.64 463.41 L970.72 466.57 L971.85 464.97 L974.61 465.36 L975.31 463.85 L978.17 464.59 L977.24 467.77 L974.73 470.2 L974.25 469.16 L971.15 471.04 L970.37 473.19 L969.91 476.81 L971.68 476.75 L974.25 473.21 L977.06 473.19 L974.26 476.54 L964.61 510.11 L962.89 509.5 L963.45 505.18 L961.59 503.7 L961.83 502.4 L957.21 499.83 L959.62 492.25 L957.5 488.1 L950.43 500.43 L944.46 500.43 L943.3 501.48 L937.45 514.73 L932.89 519.19 L933.02 521.23 L927.38 516.78 L923.45 518.74 Z"},{"n":"Querétaro","d":"M610.69 406.27 L609.07 410.25 L603.88 411.88 L602.36 410.98 L600.26 412.8 L598.96 419.0 L595.02 424.31 L595.82 426.87 L586.05 431.31 L584.78 439.62 L583.27 442.34 L581.02 442.12 L582.08 445.54 L579.18 448.32 L575.63 447.89 L564.17 433.7 L564.18 430.27 L561.97 426.19 L563.69 419.57 L574.81 418.78 L575.93 416.89 L576.96 417.5 L577.68 413.62 L580.52 409.38 L582.45 408.67 L584.63 410.88 L588.55 408.51 L589.5 405.2 L586.37 404.43 L587.96 399.38 L586.58 398.04 L588.52 397.56 L588.4 396.38 L591.19 397.1 L594.23 401.15 L599.56 401.07 L600.9 397.56 L603.48 397.33 L610.69 406.27 Z"},{"n":"Puebla","d":"M686.34 502.52 L682.89 507.98 L679.88 508.62 L675.41 512.06 L668.99 511.3 L663.47 518.06 L657.56 508.92 L659.24 506.69 L658.35 505.02 L654.37 506.14 L651.8 511.64 L655.33 514.69 L653.18 517.33 L648.02 515.08 L641.82 515.85 L635.71 519.8 L631.65 516.27 L626.24 517.58 L626.09 516.22 L620.78 513.95 L621.86 512.01 L617.79 511.96 L616.24 509.1 L612.84 506.82 L613.27 504.84 L619.65 499.18 L623.77 502.38 L624.47 501.46 L622.84 492.81 L626.35 482.52 L625.15 467.84 L627.5 467.93 L635.16 476.04 L640.29 478.88 L645.25 475.29 L648.8 476.44 L652.12 472.42 L657.6 471.48 L657.95 470.02 L654.0 465.94 L650.06 465.6 L650.43 463.67 L644.35 457.99 L641.01 460.54 L638.41 460.06 L637.47 455.51 L640.49 444.04 L639.91 441.26 L637.24 441.86 L636.35 440.07 L640.92 437.73 L645.68 432.77 L646.0 426.76 L649.25 421.22 L653.32 421.3 L653.3 423.57 L651.74 424.54 L654.06 425.44 L653.8 427.57 L658.24 431.6 L656.35 434.75 L654.32 433.57 L652.84 434.53 L653.5 442.64 L656.93 443.06 L658.76 445.57 L663.37 440.48 L672.29 443.64 L664.2 462.67 L665.67 468.74 L675.76 472.66 L676.49 475.03 L676.29 475.92 L669.53 475.79 L670.03 483.99 L667.51 488.47 L667.97 493.68 L673.85 496.02 L675.98 500.95 L677.79 501.08 L680.75 498.72 L684.0 499.77 L686.34 502.52 Z"},{"n":"Oaxaca","d":"M774.03 544.93 L771.67 554.4 L768.15 557.42 L765.19 565.72 L766.66 570.53 L766.17 575.61 L761.51 576.17 L758.29 573.18 L756.08 575.0 L757.47 577.01 L762.98 577.43 L766.63 581.15 L756.95 577.37 L747.83 575.93 L747.39 575.12 L750.26 574.22 L751.7 571.96 L748.69 570.89 L745.01 573.85 L744.24 573.17 L745.63 571.97 L742.79 568.68 L740.69 569.24 L739.04 572.07 L737.47 572.04 L735.24 575.27 L744.17 575.81 L733.85 576.65 L729.69 578.22 L724.82 583.55 L707.99 588.58 L699.21 593.26 L689.24 594.1 L679.71 591.45 L668.63 585.45 L650.83 583.66 L636.78 575.22 L626.06 572.4 L631.92 567.9 L632.5 565.34 L637.69 560.78 L637.92 559.06 L641.79 556.76 L642.95 553.11 L640.15 549.37 L639.73 545.46 L636.12 543.82 L637.51 540.14 L636.75 534.32 L633.3 526.61 L635.71 519.8 L641.82 515.85 L648.02 515.08 L653.18 517.33 L655.33 514.69 L651.8 511.64 L654.37 506.14 L658.35 505.02 L659.24 506.69 L657.56 508.92 L663.47 518.06 L668.99 511.3 L675.41 512.06 L679.88 508.62 L682.89 507.98 L687.82 499.75 L688.46 495.73 L691.18 497.64 L690.44 499.26 L692.02 503.88 L697.89 506.4 L701.13 510.5 L703.54 509.44 L710.72 511.09 L711.71 517.5 L708.52 523.05 L711.48 531.08 L719.16 530.78 L729.65 525.63 L731.38 526.71 L728.98 529.85 L737.57 538.99 L737.96 542.71 L774.03 544.93 Z"},{"n":"Nuevo León","d":"M589.07 184.75 L586.63 187.37 L583.12 188.39 L582.23 191.63 L587.79 192.27 L586.63 195.36 L588.23 196.46 L588.26 201.34 L589.71 202.78 L590.24 206.83 L587.14 211.62 L587.32 213.05 L591.4 214.81 L590.52 220.54 L593.48 221.61 L594.55 224.02 L596.92 224.31 L600.78 232.71 L602.57 232.56 L603.97 235.88 L606.58 235.13 L607.31 238.52 L606.18 238.94 L611.83 240.93 L614.15 244.65 L625.21 243.28 L626.38 246.43 L626.24 259.23 L630.52 261.42 L624.57 268.43 L616.81 271.05 L614.61 275.08 L611.07 274.79 L609.66 273.25 L605.91 276.78 L607.51 280.08 L604.14 285.23 L602.73 285.8 L601.77 284.04 L598.44 287.99 L596.23 287.86 L594.58 290.56 L588.44 293.89 L587.57 296.56 L590.17 296.79 L591.76 300.13 L590.67 308.72 L597.36 319.95 L594.52 319.38 L591.42 322.66 L587.3 321.98 L584.38 323.55 L581.27 330.58 L581.5 336.44 L577.59 335.95 L576.73 339.51 L571.8 338.57 L568.86 342.12 L565.82 340.08 L564.69 337.25 L563.73 330.45 L565.18 323.33 L563.82 320.35 L564.08 314.8 L557.37 302.96 L558.89 300.97 L558.69 298.22 L555.6 297.83 L553.44 294.88 L555.39 290.21 L552.69 284.91 L552.73 282.34 L556.23 281.29 L554.99 274.83 L557.13 270.74 L559.39 270.02 L559.02 268.99 L562.41 268.82 L564.06 270.76 L570.82 271.91 L572.38 269.07 L570.15 266.44 L565.6 265.64 L566.25 264.31 L561.07 260.84 L559.92 256.05 L554.78 254.93 L553.4 249.54 L554.19 245.04 L551.3 243.48 L549.97 239.54 L540.58 230.4 L546.28 221.57 L550.71 221.22 L554.0 219.06 L558.05 219.12 L560.81 215.35 L561.86 212.51 L561.34 206.0 L557.96 204.03 L556.32 208.06 L552.77 205.42 L552.44 201.18 L556.26 196.08 L564.03 194.93 L563.83 192.02 L567.02 184.75 L573.08 183.62 L580.05 184.79 L586.32 181.07 L589.07 184.75 Z"},{"n":"Nayarit","d":"M400.76 362.72 L402.9 375.79 L398.86 364.93 L401.19 365.96 L400.76 362.72 Z M383.48 404.83 L382.69 406.33 L382.11 405.43 L383.48 404.83 Z M370.11 392.57 L373.42 393.45 L374.57 396.85 L370.81 395.72 L370.11 392.57 Z M442.53 368.49 L442.79 372.0 L444.47 374.38 L442.9 380.59 L443.48 384.43 L445.57 383.77 L449.16 385.96 L450.37 391.46 L456.05 392.22 L460.3 401.12 L459.3 407.53 L451.86 411.24 L446.76 411.54 L444.87 422.35 L443.27 423.39 L445.91 430.05 L436.0 419.85 L432.11 418.85 L428.69 416.1 L423.09 419.47 L418.05 419.88 L413.04 426.59 L411.5 424.37 L409.79 425.21 L406.0 423.95 L412.52 414.98 L414.72 414.57 L415.57 409.46 L414.69 404.53 L416.44 401.12 L415.25 398.46 L414.08 398.86 L408.2 394.83 L401.85 381.74 L401.96 376.42 L402.96 375.94 L407.2 379.85 L407.59 377.92 L403.01 374.92 L400.92 362.65 L408.06 364.83 L408.81 363.61 L405.54 355.55 L408.09 351.59 L408.79 347.26 L409.85 346.49 L412.63 349.84 L416.58 347.76 L418.5 349.99 L422.43 350.75 L423.56 354.08 L425.66 354.51 L425.07 357.21 L420.78 360.55 L423.56 366.37 L427.16 362.07 L437.71 371.93 L442.53 368.49 Z M376.94 399.3 L379.42 400.56 L378.6 402.01 L375.21 400.23 L376.94 399.3 Z"},{"n":"Morelos","d":"M616.29 481.1 L618.7 484.16 L621.92 485.36 L626.35 482.52 L622.87 491.51 L623.77 502.38 L619.65 499.18 L612.9 505.26 L610.0 502.3 L603.04 501.41 L600.49 498.02 L597.16 497.28 L597.65 493.52 L605.18 481.35 L606.86 481.05 L608.34 482.53 L610.98 481.0 L612.12 482.02 L616.29 481.1 Z"},{"n":"Michoacán","d":"M569.01 439.98 L576.43 448.48 L577.47 453.39 L575.07 458.81 L571.73 459.18 L573.82 468.97 L567.86 480.98 L564.32 483.23 L558.69 490.73 L557.43 488.68 L555.45 491.07 L557.37 500.45 L560.95 505.26 L559.97 506.55 L552.7 502.28 L550.11 503.52 L548.5 500.37 L539.77 498.98 L532.46 500.75 L528.86 497.39 L524.78 497.13 L523.34 498.76 L520.6 498.92 L520.83 507.83 L511.65 511.42 L511.34 515.17 L512.79 518.98 L511.18 519.65 L474.18 508.07 L469.37 505.13 L467.13 499.9 L463.51 497.06 L462.0 493.6 L465.21 489.94 L465.16 487.67 L466.93 487.72 L471.24 484.37 L474.11 484.73 L476.9 482.57 L479.53 484.81 L489.39 476.52 L491.13 475.6 L494.05 476.35 L498.09 470.23 L497.25 467.38 L493.01 467.48 L493.8 464.19 L491.39 458.85 L492.98 456.88 L492.21 454.07 L487.33 452.07 L483.25 452.36 L482.63 451.29 L483.77 446.38 L485.4 446.31 L485.79 444.84 L490.78 447.02 L501.57 439.5 L511.59 437.55 L517.33 438.2 L518.44 442.95 L520.03 443.64 L521.51 442.74 L526.06 443.49 L528.6 439.94 L533.85 439.26 L536.92 442.5 L534.81 442.17 L536.0 449.12 L541.48 450.37 L543.02 449.7 L542.76 448.35 L547.98 447.72 L548.63 451.42 L559.1 452.53 L562.83 450.69 L563.83 452.67 L565.36 449.89 L569.45 448.08 L569.01 439.98 Z"},{"n":"México","d":"M622.31 465.07 L625.15 467.84 L626.2 476.93 L626.35 482.52 L623.13 484.65 L618.7 484.16 L616.29 481.1 L615.91 475.29 L608.73 465.76 L605.74 471.06 L601.74 474.55 L605.18 481.35 L597.34 494.79 L595.28 495.26 L590.61 493.1 L591.07 495.29 L588.84 495.7 L588.29 497.68 L579.04 498.95 L579.46 501.46 L576.55 502.09 L573.85 504.97 L572.06 505.27 L570.09 501.65 L565.68 500.74 L568.09 497.52 L565.28 493.01 L567.54 485.2 L567.16 481.47 L573.82 468.97 L571.73 459.18 L575.44 458.16 L577.47 453.39 L576.43 448.48 L579.65 448.09 L582.08 445.54 L581.33 441.73 L583.27 442.34 L584.78 439.62 L589.59 443.28 L595.45 444.16 L598.34 449.18 L597.45 450.45 L600.29 454.46 L600.5 459.12 L602.2 458.06 L602.41 455.22 L605.1 456.5 L605.97 455.53 L606.64 450.77 L615.74 447.73 L614.93 454.88 L612.46 456.31 L613.54 459.7 L614.66 459.84 L616.83 456.57 L624.17 455.79 L622.31 465.07 Z"},{"n":"Jalisco","d":"M492.73 392.88 L495.31 391.46 L500.63 391.94 L505.57 395.03 L510.98 393.63 L515.1 388.49 L520.51 385.99 L518.03 383.27 L518.0 380.49 L522.47 381.64 L531.53 387.52 L529.99 389.16 L530.92 390.21 L529.41 391.94 L527.64 399.86 L528.81 403.38 L527.97 405.12 L525.57 405.71 L523.63 410.92 L520.49 413.34 L518.81 417.28 L513.1 423.8 L517.86 429.66 L515.13 437.53 L501.57 439.5 L490.78 447.02 L485.79 444.84 L485.4 446.31 L483.77 446.38 L483.25 452.36 L487.33 452.07 L492.21 454.07 L492.98 456.88 L491.39 458.85 L493.8 464.19 L493.01 467.48 L498.02 468.25 L498.09 470.23 L494.05 476.35 L491.13 475.6 L489.39 476.52 L479.53 484.81 L476.9 482.57 L474.11 484.73 L470.05 484.86 L468.95 480.42 L470.2 472.5 L467.56 470.28 L466.18 464.71 L458.95 469.91 L453.07 469.76 L449.16 472.71 L440.67 473.21 L433.8 476.96 L428.4 475.65 L428.88 473.56 L426.31 473.99 L423.77 472.63 L421.39 470.44 L419.59 464.74 L414.05 460.62 L407.51 451.29 L405.04 446.66 L404.87 442.3 L400.44 436.17 L402.96 434.08 L412.32 432.61 L415.06 429.17 L413.04 426.59 L418.05 419.88 L423.09 419.47 L428.69 416.1 L432.11 418.85 L436.0 419.85 L445.91 430.05 L443.27 423.39 L444.87 422.35 L446.76 411.54 L451.86 411.24 L459.8 406.48 L460.0 399.25 L456.05 392.22 L450.37 391.46 L449.16 385.96 L445.57 383.77 L443.48 384.43 L443.1 383.21 L444.24 373.76 L445.6 372.23 L447.32 372.66 L447.77 368.81 L452.35 367.81 L451.36 372.54 L454.93 369.59 L452.67 361.89 L457.54 359.44 L461.05 360.75 L455.48 370.68 L455.43 374.9 L457.69 377.54 L458.9 375.91 L458.9 366.96 L464.03 365.39 L467.59 367.71 L468.29 371.64 L463.53 379.47 L464.14 380.88 L471.08 380.24 L475.28 375.65 L473.71 373.65 L474.11 371.97 L476.47 371.04 L479.22 371.26 L478.78 374.26 L482.77 375.48 L480.38 383.59 L473.71 386.84 L467.79 391.68 L467.61 397.08 L463.3 400.05 L464.37 403.2 L467.68 403.45 L467.98 405.48 L461.62 409.84 L464.78 410.62 L466.67 413.82 L470.7 414.19 L474.37 416.24 L478.7 414.68 L480.86 415.22 L482.85 414.09 L484.06 410.84 L487.71 410.85 L495.13 405.38 L496.95 400.3 L493.44 398.04 L492.73 392.88 Z"},{"n":"Hidalgo","d":"M626.69 402.28 L628.14 403.45 L627.76 406.82 L630.06 409.0 L636.96 409.58 L640.11 414.32 L637.8 417.03 L637.39 421.99 L635.56 422.28 L633.28 420.52 L629.04 425.04 L627.57 433.98 L629.05 437.27 L630.79 438.36 L643.76 427.75 L645.59 428.96 L645.68 432.77 L640.92 437.73 L636.35 440.07 L637.24 441.86 L639.91 441.26 L640.49 444.04 L637.53 454.05 L638.6 459.8 L635.41 459.42 L632.54 462.83 L622.31 465.07 L624.17 455.79 L616.83 456.57 L614.66 459.84 L613.54 459.7 L612.46 456.31 L614.93 454.88 L615.74 447.73 L606.64 450.77 L605.97 455.53 L605.1 456.5 L602.41 455.22 L602.2 458.06 L600.5 459.12 L600.8 456.16 L597.45 450.45 L598.34 449.18 L596.43 445.21 L589.59 443.28 L584.78 439.62 L586.05 431.31 L595.82 426.87 L595.02 424.31 L598.96 419.0 L600.26 412.8 L602.36 410.98 L603.88 411.88 L609.07 410.25 L610.69 406.27 L612.6 405.48 L616.67 409.76 L618.03 409.71 L619.48 407.55 L620.9 408.35 L624.57 402.25 L626.69 402.28 Z"},{"n":"Guerrero","d":"M597.34 494.79 L597.71 497.72 L600.49 498.02 L603.04 501.41 L610.0 502.3 L617.79 511.96 L621.86 512.01 L620.78 513.95 L626.09 516.22 L626.24 517.58 L631.65 516.27 L635.71 519.8 L633.3 526.61 L636.75 534.32 L637.51 540.14 L636.12 543.82 L639.73 545.46 L640.15 549.37 L642.95 553.11 L641.79 556.76 L637.92 559.06 L637.69 560.78 L632.5 565.34 L631.92 567.9 L626.06 572.4 L619.13 564.64 L614.96 565.32 L601.56 561.26 L590.52 559.71 L584.35 556.11 L584.84 554.74 L583.13 555.64 L580.61 552.89 L547.04 540.84 L542.46 535.82 L534.58 532.48 L533.73 530.03 L528.5 527.78 L523.47 520.71 L515.88 517.15 L513.22 518.42 L511.67 517.13 L511.65 511.42 L520.83 507.83 L520.6 498.92 L523.34 498.76 L524.78 497.13 L528.86 497.39 L532.46 500.75 L539.77 498.98 L548.5 500.37 L550.11 503.52 L552.7 502.28 L559.97 506.55 L560.95 505.26 L557.37 500.45 L555.45 491.07 L557.43 488.68 L558.69 490.73 L564.32 483.23 L567.16 481.47 L567.54 485.2 L565.28 493.01 L568.09 497.52 L565.68 500.74 L570.09 501.65 L572.06 505.27 L579.46 501.46 L578.6 499.71 L580.32 498.32 L588.29 497.68 L588.84 495.7 L591.07 495.29 L590.61 493.1 L595.28 495.26 L597.34 494.79 Z"},{"n":"Guanajuato","d":"M587.33 398.76 L587.82 402.01 L586.37 404.43 L589.5 405.2 L588.55 408.51 L584.63 410.88 L582.45 408.67 L580.52 409.38 L577.68 413.62 L576.96 417.5 L575.93 416.89 L574.81 418.78 L563.69 419.57 L562.79 421.35 L562.15 427.15 L564.18 430.27 L564.17 433.7 L569.01 439.98 L568.7 446.35 L569.74 447.18 L567.95 449.54 L565.36 449.89 L563.83 452.67 L562.83 450.69 L559.1 452.53 L548.63 451.42 L547.98 447.72 L542.76 448.35 L543.02 449.7 L541.48 450.37 L536.0 449.12 L534.81 442.17 L536.92 442.5 L533.85 439.26 L528.6 439.94 L526.06 443.49 L521.51 442.74 L520.03 443.64 L518.44 442.95 L518.05 438.82 L515.13 437.53 L517.86 429.66 L513.1 423.8 L518.81 417.28 L520.49 413.34 L523.63 410.92 L525.57 405.71 L527.97 405.12 L528.81 403.38 L527.64 399.86 L529.41 391.94 L530.92 390.21 L529.99 389.16 L531.53 387.52 L532.75 388.33 L533.77 387.12 L549.25 391.55 L559.0 398.08 L564.38 397.28 L564.98 393.53 L566.34 392.6 L571.25 394.22 L578.32 400.23 L581.1 399.33 L583.98 400.45 L587.33 398.76 Z"},{"n":"Durango","d":"M458.17 217.53 L464.38 220.83 L468.32 225.06 L470.06 230.11 L469.73 235.59 L471.85 240.61 L471.56 246.03 L473.07 251.69 L468.44 259.4 L471.88 263.43 L467.31 265.73 L468.11 269.73 L474.17 277.08 L475.64 282.13 L481.59 285.67 L488.63 287.32 L488.99 281.77 L493.57 277.91 L495.47 282.49 L498.41 284.58 L497.39 290.8 L498.92 291.37 L500.2 296.45 L498.98 297.11 L499.44 298.97 L489.65 299.41 L488.69 300.56 L484.06 298.57 L479.82 299.46 L471.38 298.45 L460.83 310.29 L457.79 311.21 L459.59 327.1 L453.11 333.84 L451.37 343.57 L448.87 347.49 L449.65 360.09 L445.28 362.7 L442.53 368.49 L437.71 371.93 L427.16 362.07 L424.43 366.4 L422.76 365.31 L420.78 360.55 L425.82 356.08 L422.43 350.75 L418.5 349.99 L416.58 347.76 L412.63 349.84 L407.18 343.71 L402.76 344.21 L399.36 335.81 L397.82 327.35 L393.14 321.2 L390.78 311.68 L386.99 303.46 L382.67 300.16 L377.57 298.67 L373.21 302.69 L368.72 303.23 L362.49 288.01 L360.82 287.62 L359.7 284.31 L354.61 283.36 L355.02 281.53 L350.69 274.61 L351.43 265.61 L353.12 261.53 L351.67 259.86 L355.36 256.07 L354.57 253.66 L356.79 252.65 L359.24 255.19 L361.27 254.92 L366.53 258.06 L372.12 252.81 L374.8 248.48 L372.81 244.08 L376.14 238.69 L375.68 235.96 L377.47 235.71 L377.47 233.99 L381.47 231.05 L379.89 228.47 L382.87 217.25 L385.09 216.53 L386.32 214.21 L392.52 217.27 L395.68 221.37 L398.14 221.66 L402.32 224.77 L404.69 224.73 L405.79 226.8 L413.01 227.19 L416.38 224.26 L422.06 225.23 L427.92 229.41 L432.84 228.2 L432.86 225.52 L435.24 221.61 L438.6 219.0 L441.76 218.5 L441.85 217.23 L439.3 216.24 L440.61 214.89 L446.83 217.95 L453.89 216.31 L458.17 217.53 Z"},{"n":"Ciudad de México","d":"M616.29 481.1 L612.12 482.02 L610.98 481.0 L608.34 482.53 L606.86 481.05 L605.18 481.35 L601.86 475.79 L608.73 465.76 L615.91 475.29 L616.29 481.1 Z"},{"n":"Colima","d":"M470.05 484.86 L466.93 487.72 L465.16 487.67 L465.21 489.94 L462.0 493.6 L455.04 488.07 L443.42 482.82 L444.37 480.9 L442.41 479.48 L440.09 480.68 L431.85 477.4 L435.38 476.54 L436.82 474.53 L438.96 475.0 L440.67 473.21 L449.16 472.71 L453.07 469.76 L458.95 469.91 L466.18 464.71 L467.56 470.28 L470.2 472.5 L468.95 480.42 L470.05 484.86 Z"},{"n":"Coahuila","d":"M585.37 181.29 L580.05 184.79 L568.44 183.94 L564.2 191.03 L564.03 194.93 L556.26 196.08 L554.76 197.4 L552.44 201.18 L552.77 205.42 L556.32 208.06 L557.96 204.03 L561.34 206.0 L561.86 212.51 L560.81 215.35 L558.05 219.12 L554.0 219.06 L550.71 221.22 L546.28 221.57 L540.81 229.26 L540.58 230.4 L549.97 239.54 L551.3 243.48 L554.66 245.86 L553.4 249.54 L554.78 254.93 L559.92 256.05 L561.07 260.84 L566.25 264.31 L565.6 265.64 L570.15 266.44 L572.38 269.07 L570.82 271.91 L564.06 270.76 L562.41 268.82 L560.22 268.6 L557.13 270.74 L554.99 274.83 L556.23 281.29 L552.73 282.34 L552.69 284.91 L555.39 290.21 L554.12 294.34 L551.45 293.75 L548.46 295.62 L545.82 294.59 L540.09 287.11 L536.35 286.64 L528.75 288.4 L527.97 283.87 L524.64 283.99 L519.45 277.98 L512.15 274.39 L502.34 273.69 L494.4 275.16 L493.57 277.91 L488.99 281.77 L488.98 286.66 L487.76 287.59 L478.92 284.61 L475.64 282.13 L474.17 277.08 L468.11 269.73 L467.31 265.73 L471.88 263.43 L468.44 259.4 L473.07 251.69 L469.1 226.71 L462.84 219.32 L459.08 218.33 L454.09 212.79 L453.82 209.85 L458.89 207.63 L459.4 205.68 L456.41 203.81 L455.88 191.58 L453.02 182.81 L454.4 181.34 L453.15 175.5 L455.97 174.42 L455.36 172.57 L453.94 172.34 L453.96 170.37 L456.95 170.78 L461.5 160.39 L460.4 158.58 L463.97 152.4 L467.82 150.21 L470.0 145.13 L471.94 145.09 L473.05 143.09 L470.58 141.31 L473.44 136.04 L481.91 137.53 L485.69 130.5 L489.79 128.9 L488.52 127.5 L489.28 124.24 L491.37 122.38 L491.68 118.0 L495.48 110.76 L504.31 109.18 L507.07 105.06 L513.57 108.21 L522.79 107.56 L528.29 109.55 L530.81 108.12 L531.85 107.91 L531.82 109.39 L534.32 108.32 L537.27 113.24 L539.27 113.73 L538.92 115.66 L539.68 116.23 L540.95 114.27 L540.9 118.12 L546.81 120.3 L548.44 123.5 L555.19 128.05 L555.85 130.71 L558.86 132.99 L559.8 138.85 L563.44 143.96 L564.57 149.1 L567.83 151.91 L568.17 154.42 L569.74 154.89 L568.76 155.62 L571.19 162.98 L573.75 165.9 L577.71 167.63 L582.28 173.47 L585.37 181.29 Z"},{"n":"Chihuahua","d":"M473.44 136.04 L470.58 141.31 L473.05 143.09 L471.94 145.09 L470.0 145.13 L467.82 150.21 L463.97 152.4 L461.1 157.2 L460.4 158.58 L461.5 160.39 L456.95 170.78 L453.96 170.37 L453.94 172.34 L455.36 172.57 L455.97 174.42 L453.15 175.5 L454.4 181.34 L453.02 182.81 L455.88 191.58 L456.41 203.81 L459.4 205.68 L458.89 207.63 L453.82 209.85 L454.09 212.79 L458.17 217.53 L453.89 216.31 L446.83 217.95 L440.61 214.89 L439.3 216.24 L441.85 217.23 L441.76 218.5 L438.6 219.0 L435.24 221.61 L432.86 225.52 L432.84 228.2 L427.92 229.41 L422.06 225.23 L416.38 224.26 L413.01 227.19 L405.79 226.8 L404.69 224.73 L402.32 224.77 L398.14 221.66 L395.68 221.37 L392.52 217.27 L386.32 214.21 L385.09 216.53 L382.87 217.25 L379.89 228.47 L381.47 231.05 L377.47 233.99 L377.47 235.71 L375.68 235.96 L376.14 238.69 L372.81 244.08 L374.8 248.48 L372.12 252.81 L366.53 258.06 L361.27 254.92 L359.24 255.19 L357.48 252.68 L354.17 254.49 L347.07 240.64 L335.25 237.94 L333.71 232.0 L329.28 222.72 L327.91 222.07 L328.0 214.23 L326.67 211.26 L324.35 211.28 L324.2 207.6 L312.4 207.68 L307.92 205.35 L309.8 193.69 L305.72 184.07 L301.51 181.08 L301.92 175.87 L296.49 170.26 L297.24 166.77 L295.02 164.64 L296.34 162.87 L301.36 161.17 L305.21 162.98 L311.57 158.31 L306.78 154.92 L306.26 148.77 L308.01 143.74 L307.85 135.9 L309.72 134.3 L309.85 130.89 L311.96 129.38 L312.86 116.54 L311.79 107.98 L309.92 106.14 L312.28 95.2 L310.44 93.53 L311.67 89.3 L307.91 78.13 L308.61 75.06 L307.3 73.88 L307.19 70.81 L303.74 67.45 L305.77 66.58 L306.37 62.66 L303.33 54.6 L304.52 52.97 L303.19 51.65 L320.99 51.6 L320.99 34.9 L374.09 34.9 L377.36 36.1 L384.34 46.75 L392.23 50.49 L397.89 57.63 L403.39 60.93 L404.92 64.37 L409.24 67.57 L409.73 69.32 L418.81 73.26 L425.6 79.88 L426.93 86.45 L431.59 91.89 L432.59 104.15 L437.05 112.71 L441.92 117.24 L445.59 118.21 L448.76 122.65 L452.34 125.03 L458.63 126.69 L465.1 131.22 L468.06 131.18 L473.44 136.04 Z"},{"n":"Chiapas","d":"M766.63 581.15 L767.28 579.83 L768.24 581.29 L766.63 581.15 Z M766.17 575.61 L766.66 570.53 L765.08 566.8 L767.48 558.79 L771.67 554.4 L774.6 543.99 L781.8 539.31 L785.58 534.7 L785.65 532.65 L789.66 527.8 L790.61 518.8 L793.39 517.68 L798.83 521.35 L801.82 521.06 L799.94 526.82 L803.02 530.78 L802.64 533.15 L806.45 533.9 L809.34 538.09 L822.89 527.67 L827.04 526.17 L827.66 522.01 L832.35 522.59 L833.25 520.25 L835.63 521.85 L839.4 521.16 L840.81 525.44 L844.04 527.04 L845.65 531.24 L844.7 534.62 L850.18 536.14 L853.47 539.93 L851.01 541.67 L851.73 542.92 L856.15 544.25 L863.01 553.41 L873.99 559.09 L876.17 565.96 L880.76 567.6 L881.25 569.06 L883.41 569.06 L884.03 570.54 L882.15 576.12 L883.16 577.48 L882.52 580.59 L841.94 580.24 L826.48 607.01 L831.36 613.37 L828.58 616.21 L828.75 619.37 L827.42 621.13 L828.58 626.57 L826.11 630.91 L806.47 609.97 L784.5 590.91 L772.0 583.21 L774.46 583.05 L774.12 581.29 L767.35 578.83 L766.17 575.61 Z"},{"n":"Campeche","d":"M848.08 490.86 L847.85 492.63 L845.82 492.18 L843.74 494.73 L843.05 493.88 L840.01 495.71 L837.95 495.12 L848.08 490.86 Z M884.32 422.95 L884.12 432.22 L889.33 432.87 L890.55 435.43 L893.71 436.47 L896.35 434.5 L903.04 446.35 L907.91 449.02 L913.39 456.73 L915.56 462.71 L927.13 474.21 L927.28 483.0 L925.39 484.44 L924.66 494.15 L926.7 500.56 L927.04 509.24 L923.13 515.61 L923.42 522.97 L865.42 522.96 L865.45 520.87 L859.57 519.4 L854.55 515.45 L849.94 514.44 L846.41 514.6 L846.08 519.48 L842.32 520.44 L835.99 518.37 L830.51 513.6 L826.9 507.03 L827.27 505.06 L819.89 499.9 L818.46 495.18 L832.83 493.54 L834.83 493.7 L837.82 496.5 L837.05 498.0 L835.12 496.31 L833.34 496.86 L833.44 499.66 L835.32 497.97 L837.97 500.0 L846.55 502.12 L855.09 498.24 L857.36 492.46 L855.68 490.3 L854.52 491.22 L853.07 490.44 L854.66 486.51 L849.13 490.47 L852.29 487.22 L866.93 478.19 L873.07 472.43 L874.11 460.85 L882.17 451.31 L880.93 447.86 L880.6 433.12 L884.32 422.95 Z"},{"n":"Baja California Sur","d":"M114.61 504.36 L116.11 504.45 L115.88 505.35 L114.21 505.56 L114.61 504.36 Z M99.54 176.56 L101.27 177.51 L101.15 178.18 L99.54 176.56 Z M197.05 269.36 L195.1 280.21 L195.94 281.9 L194.34 284.11 L199.3 294.91 L195.65 290.96 L196.89 289.7 L195.73 287.1 L191.62 286.12 L197.05 269.36 Z M239.94 253.9 L240.5 257.86 L238.93 255.75 L239.94 253.9 Z M231.68 253.85 L232.37 255.44 L231.43 255.83 L231.68 253.85 Z M133.27 174.59 L175.01 174.71 L182.41 185.39 L189.83 188.87 L194.4 200.89 L197.68 203.55 L202.66 205.08 L200.7 209.36 L205.16 214.43 L204.09 218.52 L208.17 223.91 L209.43 224.87 L211.39 223.12 L207.04 218.57 L205.9 212.79 L206.82 212.19 L215.04 219.24 L215.24 224.41 L218.67 225.49 L217.96 229.12 L220.58 232.53 L220.23 234.81 L222.73 241.36 L221.47 245.18 L223.12 251.8 L226.11 254.32 L228.99 260.43 L232.23 260.82 L235.71 273.73 L240.4 278.4 L243.59 285.5 L241.02 291.89 L242.84 301.11 L246.99 306.39 L254.0 307.45 L250.93 307.93 L251.19 309.79 L253.31 309.62 L254.83 307.33 L253.76 303.29 L255.01 301.36 L256.98 301.63 L258.86 304.84 L264.17 308.1 L264.79 311.95 L269.86 311.46 L269.79 316.47 L273.88 320.48 L273.92 325.13 L281.21 329.06 L282.61 332.73 L282.23 339.73 L279.11 344.26 L273.49 346.9 L268.99 351.56 L265.56 352.45 L263.79 351.29 L261.69 348.44 L259.18 337.37 L253.71 328.46 L245.89 324.3 L231.19 309.65 L214.76 299.52 L212.06 293.85 L206.81 295.6 L206.08 291.16 L202.95 287.15 L202.26 288.04 L197.88 286.51 L197.51 279.46 L196.73 285.42 L195.82 285.42 L195.36 280.22 L197.31 277.52 L196.46 274.07 L198.79 269.12 L199.24 257.66 L195.07 244.21 L191.44 241.29 L188.26 235.2 L185.45 235.69 L179.71 232.76 L167.45 222.52 L164.29 215.73 L163.83 217.06 L161.92 216.18 L164.92 213.98 L164.41 208.78 L163.18 213.7 L161.59 214.02 L160.63 217.37 L156.02 215.35 L156.38 214.45 L154.57 214.72 L152.26 218.45 L150.32 218.64 L146.41 215.66 L144.38 210.97 L142.09 209.28 L139.3 208.56 L137.95 209.5 L133.59 204.27 L124.23 202.21 L122.55 200.38 L121.44 193.38 L114.75 189.96 L110.24 183.63 L109.47 184.84 L106.09 182.91 L103.74 178.35 L104.75 177.84 L106.09 178.99 L122.02 180.99 L126.82 179.58 L127.6 177.25 L128.69 177.61 L128.03 180.75 L128.99 182.36 L135.15 186.72 L136.5 184.24 L139.16 185.15 L142.26 189.08 L143.01 187.6 L141.02 185.55 L141.53 179.84 L139.31 178.01 L138.26 181.86 L134.24 183.39 L132.17 181.82 L133.79 177.04 L133.27 174.59 Z M253.01 295.06 L255.24 297.07 L254.06 299.66 L252.08 296.92 L253.01 295.06 Z M162.3 218.04 L164.95 220.45 L161.25 219.03 L162.3 218.04 Z M201.57 295.36 L205.51 295.56 L209.13 298.31 L210.37 302.46 L201.57 295.36 Z M266.58 300.61 L270.18 308.65 L267.79 307.16 L266.58 300.61 Z M230.84 241.43 L230.29 244.82 L228.95 244.59 L225.59 250.1 L227.24 242.36 L230.84 241.43 Z M242.09 275.18 L246.29 278.47 L246.99 283.28 L243.66 280.69 L241.68 276.98 L242.09 275.18 Z M204.78 192.3 L205.66 193.16 L204.49 193.21 L204.78 192.3 Z M198.37 199.3 L199.71 200.57 L199.28 202.11 L198.37 199.3 Z M233.18 487.91 L235.36 490.13 L234.29 492.89 L231.27 490.1 L233.18 487.91 Z"},{"n":"Baja California","d":"M172.96 148.5 L177.39 151.62 L176.7 152.21 L172.96 148.5 Z M151.99 116.95 L157.13 120.26 L158.47 123.07 L157.88 125.64 L163.86 126.46 L164.08 132.34 L166.37 134.98 L165.94 137.39 L155.59 126.97 L153.86 126.64 L150.98 122.12 L151.99 116.95 Z M99.56 159.37 L101.36 167.93 L100.55 171.72 L99.09 171.89 L97.5 169.7 L95.02 170.04 L98.56 165.21 L98.01 162.3 L99.56 159.37 Z M134.09 174.59 L129.63 176.92 L129.51 175.0 L133.4 170.23 L134.09 174.59 Z M183.65 146.59 L183.74 148.7 L182.27 148.75 L181.83 146.76 L183.65 146.59 Z M112.25 8.35 L109.05 8.46 L105.31 15.92 L106.95 19.05 L105.54 28.7 L112.73 33.57 L113.3 40.85 L110.95 45.76 L109.83 57.88 L112.34 62.28 L111.65 63.94 L115.24 66.28 L115.88 77.36 L118.04 82.49 L116.88 93.62 L121.12 101.78 L125.07 105.02 L125.6 108.53 L127.19 109.85 L129.1 108.92 L131.39 109.9 L149.45 126.67 L149.27 130.29 L152.55 134.81 L151.97 138.66 L152.99 140.81 L155.92 138.66 L157.73 140.2 L158.37 144.05 L161.4 142.69 L162.76 143.47 L166.29 154.73 L169.54 156.59 L172.63 155.84 L174.49 157.79 L173.6 162.52 L176.09 166.08 L176.92 177.21 L175.01 174.71 L134.99 174.57 L134.78 171.6 L135.86 173.14 L136.69 172.1 L134.82 170.85 L134.38 168.67 L136.3 164.88 L134.02 163.72 L136.49 157.11 L135.79 154.43 L132.89 152.44 L132.24 149.32 L129.47 149.2 L126.98 146.42 L124.73 141.22 L119.05 137.82 L117.92 133.44 L115.77 133.28 L114.44 130.33 L107.93 123.85 L100.38 121.44 L98.43 118.24 L91.91 114.27 L90.41 114.59 L84.34 109.18 L84.31 104.58 L80.89 101.78 L81.01 90.42 L76.52 84.3 L75.48 85.0 L73.22 83.34 L73.15 72.08 L66.32 65.22 L64.37 65.47 L64.98 58.18 L58.26 47.97 L55.77 46.86 L52.93 42.88 L54.22 42.22 L54.26 39.49 L51.3 36.35 L53.88 37.36 L55.21 36.14 L55.45 32.86 L51.19 30.53 L50.06 27.71 L47.72 27.22 L45.77 18.79 L41.91 16.22 L39.25 7.04 L115.25 0.0 L112.41 3.83 L112.25 8.35 Z M3.27 130.02 L2.64 133.0 L4.29 134.52 L4.58 138.21 L2.79 141.14 L0.08 131.52 L3.27 130.02 Z"},{"n":"Aguascalientes","d":"M492.73 392.88 L489.68 388.47 L496.63 374.89 L504.63 370.98 L507.56 367.99 L510.21 371.46 L515.82 374.81 L518.03 383.27 L520.51 385.99 L515.1 388.49 L511.88 392.99 L505.57 395.03 L500.63 391.94 L495.31 391.46 L492.73 392.88 Z"}],"nodes":[{"id":"zig","k":"plant","nm":"Zona Industrial de Guadalajara","city":"Guadalajara","st":"Jalisco","addr":"Calle 7 #1308 y Calle 6 #2676, #2819 y #2924, Zona Industrial","fn":"Seis instalaciones productivas: inyectables de pequeño y gran volumen, antibióticos cefalosporínicos, antibióticos penicilínicos, hormonales, PiSA Biotec y planta piloto de desarrollo. Es el nodo con mayor segregación regulatoria obligatoria del grupo.","ex":"Inyectables · Cefalosporínicos · Penicilínicos · Hormonales · Biotec · Planta piloto","lon":-103.332,"lat":20.65,"basis":"colonia","ok":1,"x":475.12,"y":428.05},{"id":"tlaj","k":"plant","nm":"Complejo Industrial Tlajomulco","city":"Santa Cruz de las Flores, Tlajomulco de Zúñiga","st":"Jalisco","addr":"Complejo Industrial PiSA, Santa Cruz de las Flores","fn":"El corazón industrial del grupo. Diálisis e inyectables, veterinaria, sólidos orales y liofilizados, línea FLEXOVAL y ampolletas, Electrolit, Bodylogic y empaque de marca propia. Superficie declarada superior a 300,000 m².","ex":"Diálisis · Veterinaria · Sólidos y liofilizados · FLEXOVAL · Electrolit · Bodylogic","lon":-103.47,"lat":20.527,"basis":"municipio","ok":1,"x":470.76,"y":432.2},{"id":"coy","k":"plant","nm":"Planta de oncológicos y polvos inyectables","city":"Coyoacán, Ciudad de México","st":"Ciudad de México","addr":"Av. Miguel Ángel de Quevedo 555","fn":"Oncológicos, polvos inyectables y orales. Única planta farmacéutica confirmada en operación fuera de Jalisco.","ex":"Oncológicos · Polvos inyectables · Polvos orales","lon":-99.172,"lat":19.346,"basis":"colonia","ok":1,"x":606.59,"y":471.91},{"id":"tol","k":"plant","nm":"Centro de preparación de mezclas","city":"Toluca","st":"Estado de México","addr":"Parque industrial, Toluca","fn":"Preparación de mezclas y nutrición parenteral. Es la única instalación del grupo cuya demanda es diaria y no pronosticable: la unidad de planeación es la prescripción por paciente.","ex":"Nutrición parenteral · Mezclas farmacéuticas y oncológicas","lon":-99.654,"lat":19.292,"basis":"ciudad","ok":0,"pend":"El listado oficial también registra una oficina comercial en Toluca. No pudimos confirmar si comparten domicilio.","x":591.36,"y":473.71},{"id":"cdn","k":"cedis","nm":"Centro de Distribución Nacional","city":"Tlajomulco de Zúñiga","st":"Jalisco","addr":"Complejo Industrial PiSA","fn":"El único centro de distribución automatizado del grupo. Nodo del que depende la promesa declarada de entrega en 24 horas a todo México.","ex":"Automatizado · Capacidad declarada de recibir más de 100 vehículos diarios","lon":-103.462,"lat":20.52,"basis":"municipio","ok":1,"x":471.02,"y":432.44},{"id":"jdb","k":"cedis","nm":"CDR Juan de Barrera","city":"Álamo Industrial, Guadalajara","st":"Jalisco","addr":"Juan de Barrera, Álamo Industrial","fn":"Centro de distribución regional del área metropolitana de Guadalajara.","ex":"","lon":-103.33,"lat":20.615,"basis":"colonia","ok":1,"x":475.19,"y":429.23},{"id":"smo","k":"cedis","nm":"CDR San Martín Obispo","city":"Cuautitlán Izcalli","st":"Estado de México","addr":"San Martín Obispo","fn":"Centro de distribución regional que da servicio al Valle de México y al centro del país.","ex":"","lon":-99.23,"lat":19.636,"basis":"colonia","ok":1,"x":604.76,"y":462.18},{"id":"pan","k":"cedis","nm":"Nodo Pantitlán","city":"Agrícola Pantitlán, Iztacalco, Ciudad de México","st":"Ciudad de México","addr":"Agrícola Pantitlán, Iztacalco","fn":"Instalación registrada en el listado oficial de ubicaciones.","ex":"","lon":-99.073,"lat":19.404,"basis":"colonia","ok":0,"pend":"El listado oficial no especifica su función. No lo contamos como centro de distribución confirmado.","x":609.72,"y":469.96},{"id":"mty","k":"cedis","nm":"CDR Monterrey","city":"Santa Catarina","st":"Nuevo León","addr":"Santa Catarina","fn":"Centro de distribución regional del noreste.","ex":"","lon":-100.459,"lat":25.674,"basis":"ciudad","ok":1,"x":565.92,"y":255.28},{"id":"hmo","k":"cedis","nm":"CDR Hermosillo","city":"Hermosillo","st":"Sonora","addr":"Hermosillo","fn":"Centro de distribución regional del noroeste.","ex":"","lon":-110.956,"lat":29.073,"basis":"ciudad","ok":1,"x":234.18,"y":134.29},{"id":"vsa","k":"cedis","nm":"CDR Villahermosa","city":"Villahermosa","st":"Tabasco","addr":"Villahermosa","fn":"Centro de distribución regional del sureste.","ex":"","lon":-92.93,"lat":17.989,"basis":"ciudad","ok":1,"x":803.86,"y":517.17},{"id":"cab","k":"corp","nm":"Corporativo CAB de Grupo PiSA","city":"Col. Moderna, Guadalajara","st":"Jalisco","addr":"Av. España 1840, Col. Moderna","fn":"Sede del grupo. Desde aquí operan la dirección general y el corporativo.","ex":"","lon":-103.36,"lat":20.657,"basis":"colonia","ok":1,"x":474.24,"y":427.81},{"id":"ref","k":"corp","nm":"Corporativo CDMX · Ventas Gobierno","city":"Col. Juárez, Ciudad de México","st":"Ciudad de México","addr":"Paseo de la Reforma 180, Col. Juárez","fn":"Sede ejecutiva dedicada al canal público. Es la oficina más cercana a Birmex y a las instituciones compradoras.","ex":"","lon":-99.157,"lat":19.432,"basis":"colonia","ok":1,"x":607.07,"y":469.02},{"id":"mxl","k":"office","nm":"Oficina comercial Mexicali","city":"Mexicali","st":"Baja California","addr":"","fn":"Oficina comercial registrada en el listado oficial de ubicaciones de PiSA.","ex":"","lon":-115.454,"lat":32.627,"basis":"ciudad","ok":1,"x":92.03,"y":3.42},{"id":"tij","k":"office","nm":"Oficina comercial Tijuana","city":"Tijuana","st":"Baja California","addr":"","fn":"Oficina comercial registrada en el listado oficial de ubicaciones de PiSA.","ex":"","lon":-117.038,"lat":32.514,"basis":"ciudad","ok":1,"x":41.97,"y":7.66},{"id":"cjs","k":"office","nm":"Oficina comercial Ciudad Juárez","city":"Ciudad Juárez","st":"Chihuahua","addr":"","fn":"Oficina comercial registrada en el listado oficial de ubicaciones de PiSA.","ex":"","lon":-106.424,"lat":31.69,"basis":"ciudad","ok":1,"x":377.41,"y":38.4},{"id":"chi","k":"office","nm":"Oficina comercial Chihuahua","city":"Chihuahua","st":"Chihuahua","addr":"","fn":"Oficina comercial registrada en el listado oficial de ubicaciones de PiSA.","ex":"","lon":-106.077,"lat":28.633,"basis":"ciudad","ok":1,"x":388.37,"y":150.16},{"id":"trc","k":"office","nm":"Oficina comercial Torreón","city":"Torreón","st":"Coahuila","addr":"","fn":"Oficina comercial registrada en el listado oficial de ubicaciones de PiSA.","ex":"","lon":-103.407,"lat":25.541,"basis":"ciudad","ok":1,"x":472.75,"y":259.94},{"id":"cul","k":"office","nm":"Oficina comercial Culiacán","city":"Culiacán","st":"Sinaloa","addr":"","fn":"Oficina comercial registrada en el listado oficial de ubicaciones de PiSA.","ex":"","lon":-107.394,"lat":24.8,"basis":"ciudad","ok":1,"x":346.75,"y":285.82},{"id":"slp","k":"office","nm":"Oficina comercial San Luis Potosí","city":"San Luis Potosí","st":"San Luis Potosí","addr":"","fn":"Oficina comercial registrada en el listado oficial de ubicaciones de PiSA.","ex":"","lon":-100.985,"lat":22.157,"basis":"ciudad","ok":1,"x":549.3,"y":376.89},{"id":"leo","k":"office","nm":"Oficina comercial León","city":"León","st":"Guanajuato","addr":"","fn":"Oficina comercial registrada en el listado oficial de ubicaciones de PiSA.","ex":"","lon":-101.674,"lat":21.129,"basis":"ciudad","ok":1,"x":527.52,"y":411.85},{"id":"mor","k":"office","nm":"Oficina comercial Morelia","city":"Morelia","st":"Michoacán","addr":"","fn":"Oficina comercial registrada en el listado oficial de ubicaciones de PiSA.","ex":"","lon":-101.195,"lat":19.706,"basis":"ciudad","ok":1,"x":542.66,"y":459.83},{"id":"pue","k":"office","nm":"Oficina comercial Puebla","city":"Puebla","st":"Puebla","addr":"","fn":"Oficina comercial registrada en el listado oficial de ubicaciones de PiSA.","ex":"","lon":-98.206,"lat":19.041,"basis":"ciudad","ok":1,"x":637.12,"y":482.11},{"id":"ver","k":"office","nm":"Oficina comercial Boca del Río","city":"Boca del Río","st":"Veracruz","addr":"","fn":"Oficina comercial registrada en el listado oficial de ubicaciones de PiSA.","ex":"","lon":-96.108,"lat":19.107,"basis":"ciudad","ok":1,"x":703.43,"y":479.91},{"id":"mid","k":"office","nm":"Oficina comercial Mérida","city":"Mérida","st":"Yucatán","addr":"","fn":"Oficina comercial registrada en el listado oficial de ubicaciones de PiSA.","ex":"","lon":-89.592,"lat":20.967,"basis":"ciudad","ok":1,"x":909.35,"y":417.33},{"id":"tgz","k":"office","nm":"Oficina comercial Tuxtla Gutiérrez","city":"Tuxtla Gutiérrez","st":"Chiapas","addr":"","fn":"Oficina comercial registrada en el listado oficial de ubicaciones de PiSA.","ex":"","lon":-93.116,"lat":16.753,"basis":"ciudad","ok":1,"x":797.98,"y":558.1}]};
+  var svg=document.getElementById("gmSvg"); if(!svg) return;
+  var gWorld=document.getElementById("gmWorld"), gNodes=document.getElementById("gmNodes");
+  var panel=document.getElementById("gmPanel"), tip=document.getElementById("gmTip");
+  var stage=document.getElementById("gmStage");
+  var VW=MD.W, VH=MD.H, TH=30, MINS=1, MAXS=48, FITMAX=12, SPR=54;
+  var view={s:1,tx:0,ty:0}, sel=null, spider=null;
+  var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var KIND={plant:"Manufactura",cedis:"Centro de distribución",corp:"Corporativo",office:"Oficina comercial"};
+  var BASIS={colonia:"Centroide de la colonia o parque industrial publicado en el listado oficial.",
+             municipio:"Centroide del municipio o localidad publicada en el listado oficial.",
+             ciudad:"Centroide de la ciudad publicada en el listado oficial."};
+  var R={plant:9.5,cedis:7.5,corp:8.5,office:5};
+  var PRIO={plant:0,corp:1,cedis:2,office:3};
+
+  // ---------- estados ----------
+  var HL={"Jalisco":1,"Ciudad de México":1,"México":1};
+  MD.states.forEach(function(s){
+    var p=document.createElementNS("http://www.w3.org/2000/svg","path");
+    p.setAttribute("d",s.d); p.setAttribute("class","gm-st"+(HL[s.n]?" hl":""));
+    var t=document.createElementNS("http://www.w3.org/2000/svg","title"); t.textContent=s.n; p.appendChild(t);
+    gWorld.appendChild(p);
+  });
+
+  function clampView(){
+    view.s=Math.max(MINS,Math.min(MAXS,view.s));
+    var w=VW*view.s,h=VH*view.s;
+    view.tx=Math.min(VW*0.35,Math.max(VW-w-VW*0.35,view.tx));
+    view.ty=Math.min(VH*0.35,Math.max(VH-h-VH*0.35,view.ty));
+  }
+  function apply(){ gWorld.setAttribute("transform","translate("+view.tx+" "+view.ty+") scale("+view.s+")"); draw(); }
+  function sx(n){ return n.x*view.s+view.tx; }
+  function sy(n){ return n.y*view.s+view.ty; }
+
+  function animTo(t){
+    if(reduce){ view.s=t.s;view.tx=t.tx;view.ty=t.ty; clampView(); apply(); return; }
+    var f={s:view.s,tx:view.tx,ty:view.ty}, t0=performance.now(), D=340;
+    (function step(now){
+      var k=Math.min(1,(now-t0)/D), e=1-Math.pow(1-k,3);
+      view.s=f.s+(t.s-f.s)*e; view.tx=f.tx+(t.tx-f.tx)*e; view.ty=f.ty+(t.ty-f.ty)*e;
+      clampView(); apply();
+      if(k<1) requestAnimationFrame(step);
+    })(t0);
+  }
+  function fit(nodes,pad){
+    pad=pad||90;
+    var x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;
+    nodes.forEach(function(n){x0=Math.min(x0,n.x);y0=Math.min(y0,n.y);x1=Math.max(x1,n.x);y1=Math.max(y1,n.y);});
+    var w=Math.max(x1-x0,0.6), h=Math.max(y1-y0,0.6);
+    var s=Math.max(MINS,Math.min(FITMAX,Math.min((VW-pad*2)/w,(VH-pad*2)/h)));
+    var cx=(x0+x1)/2, cy=(y0+y1)/2;
+    animTo({s:s,tx:VW/2-s*cx,ty:VH/2-s*cy});
+  }
+
+  // ---------- agrupación dinámica ----------
+  function cluster(){
+    var skip={};
+    if(spider) spiderSet().items.forEach(function(n){ skip[n.id]=1; });
+    var ns=MD.nodes.filter(function(n){return !skip[n.id];})
+                   .sort(function(a,b){return PRIO[a.k]-PRIO[b.k];});
+    var out=[];
+    ns.forEach(function(n){
+      var X=sx(n),Y=sy(n),hit=null;
+      for(var i=0;i<out.length;i++){
+        var c=out[i];
+        if(Math.hypot(X-c.X,Y-c.Y)<TH){hit=c;break;}
+      }
+      if(hit){ hit.items.push(n); }
+      else out.push({X:X,Y:Y,items:[n]});
+    });
+    return out;
+  }
+
+  function el(t,a){ var e=document.createElementNS("http://www.w3.org/2000/svg",t);
+    for(var k in a) e.setAttribute(k,a[k]); return e; }
+
+  function draw(){
+    while(gNodes.firstChild) gNodes.removeChild(gNodes.firstChild);
+    var cs=cluster(), showLabel=view.s>=3.2;
+    cs.forEach(function(c){
+      if(c.X<-40||c.X>VW+40||c.Y<-40||c.Y>VH+40) return;
+      var g=el("g",{"class":"gm-hit",tabindex:"0",role:"button"});
+      if(c.items.length>1){
+        var kinds=c.items.map(function(i){return i.k;});
+        var hp=kinds.indexOf("plant")>=0;
+        g.appendChild(el("circle",{cx:c.X,cy:c.Y,r:14,"class":"gm-cl"+(hp?" hasplant":"")}));
+        var tx=el("text",{x:c.X,y:c.Y,"class":"gm-cn"}); tx.textContent=c.items.length; g.appendChild(tx);
+        g.setAttribute("aria-label",c.items.length+" instalaciones agrupadas. Acercar para separarlas.");
+        g.addEventListener("click",function(ev){ ev.stopPropagation(); openCluster(c.items); });
+        g.addEventListener("keydown",function(e){ if(e.key==="Enter"||e.key===" "){e.preventDefault();openCluster(c.items);} });
+        g.addEventListener("mousemove",function(e){ showTip(e,"<b>"+c.items.length+" instalaciones</b><span>Clic para separarlas</span>"); });
+      }else{
+        nodeMark(g,c.items[0],c.X,c.Y,showLabel);
+      }
+      g.addEventListener("mouseleave",hideTip);
+      g.addEventListener("blur",hideTip);
+      gNodes.appendChild(g);
+    });
+    if(spider) drawSpider();
+  }
+
+  function nodeMark(g,n,X,Y,showLabel){
+    if(sel===n.id) g.classList.add("on");
+    g.appendChild(el("circle",{cx:X,cy:Y,r:R[n.k],"class":"gm-dot "+n.k}));
+    g.setAttribute("aria-label",n.nm+". "+KIND[n.k]+". "+n.city);
+    if(showLabel&&n.k!=="office"){
+      var lb=el("text",{x:X,y:Y-R[n.k]-7,"class":"gm-lb"}); lb.textContent=n.nm; g.appendChild(lb);
+    }
+    g.addEventListener("click",function(ev){ ev.stopPropagation(); select(n.id); });
+    g.addEventListener("keydown",function(e){ if(e.key==="Enter"||e.key===" "){e.preventDefault();select(n.id);} });
+    g.addEventListener("mousemove",function(e){ showTip(e,"<b>"+n.nm+"</b><span>"+KIND[n.k]+" · "+n.city+"</span>"); });
+  }
+
+  // separación radial para puntos que quedan a menos de un kilómetro entre sí
+  function minPair(items){
+    var m=1e9;
+    for(var i=0;i<items.length;i++) for(var j=i+1;j<items.length;j++)
+      m=Math.min(m,Math.hypot(items[i].x-items[j].x,items[i].y-items[j].y));
+    return m;
+  }
+  function openCluster(items){
+    var need=(TH*1.35)/Math.max(minPair(items),1e-6);
+    if(need>FITMAX){ spider={seed:items}; fit(items,260); }
+    else { spider=null; fit(items,160); }
+  }
+  function spiderSet(){
+    var seed=spider.seed, cx=0, cy=0;
+    seed.forEach(function(p){ cx+=sx(p); cy+=sy(p); });
+    cx/=seed.length; cy/=seed.length;
+    var items=MD.nodes.filter(function(n){ return Math.hypot(sx(n)-cx,sy(n)-cy)<SPR+22; });
+    seed.forEach(function(n){ if(items.indexOf(n)<0) items.push(n); });
+    items.sort(function(a,b){ return PRIO[a.k]-PRIO[b.k]; });
+    return {cx:cx,cy:cy,items:items};
+  }
+  function drawSpider(){
+    var S=spiderSet(), it=S.items, n=it.length;
+    gNodes.appendChild(el("circle",{cx:S.cx,cy:S.cy,r:SPR+18,"class":"gm-halo"}));
+    gNodes.appendChild(el("circle",{cx:S.cx,cy:S.cy,r:3,"class":"gm-pin"}));
+    it.forEach(function(p,i){
+      var a=-Math.PI/2+i*2*Math.PI/n;
+      var X=S.cx+Math.cos(a)*SPR, Y=S.cy+Math.sin(a)*SPR;
+      gNodes.appendChild(el("line",{x1:S.cx,y1:S.cy,x2:X,y2:Y,"class":"gm-spoke"}));
+      var g=el("g",{"class":"gm-hit",tabindex:"0",role:"button"});
+      nodeMark(g,p,X,Y,false);
+      radialLabel(g,p,X,Y,Math.cos(a),Math.sin(a));
+      g.addEventListener("mouseleave",hideTip);
+      gNodes.appendChild(g);
+    });
+  }
+  function radialLabel(g,n,X,Y,ca,sa){
+    var r=R[n.k]+9, a={"class":"gm-lb"};
+    if(ca>0.35){ a.x=X+r; a.y=Y+4; a["text-anchor"]="start"; }
+    else if(ca<-0.35){ a.x=X-r; a.y=Y+4; a["text-anchor"]="end"; }
+    else { a.x=X; a["text-anchor"]="middle"; a.y = sa<0 ? Y-r : Y+r+9; }
+    var t=el("text",a); t.textContent=n.nm; g.appendChild(t);
+  }
+
+  function showTip(e,html){
+    var r=stage.getBoundingClientRect();
+    tip.innerHTML=html; tip.classList.add("on");
+    tip.style.left=(e.clientX-r.left)+"px"; tip.style.top=(e.clientY-r.top-6)+"px";
+  }
+  function hideTip(){ tip.classList.remove("on"); }
+
+  // ---------- panel ----------
+  function esc(s){ return String(s).replace(/[&<>]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c];}); }
+  function select(id){
+    var n=null; MD.nodes.forEach(function(x){ if(x.id===id) n=x; });
+    if(!n) return;
+    sel=id;
+    var tags=n.ex?'<div class="gm-f"><dt>Instalaciones y líneas en el sitio</dt><dd><div class="gm-tags">'+
+      n.ex.split(" · ").map(function(t){return "<span>"+esc(t)+"</span>";}).join("")+'</div></dd></div>':"";
+    var addr=n.addr?'<div class="gm-f"><dt>Dirección publicada</dt><dd>'+esc(n.addr)+'</dd></div>':
+      '<div class="gm-f"><dt>Dirección publicada</dt><dd class="mono">El listado oficial no detalla domicilio para este punto.</dd></div>';
+    var val=n.ok
+      ? '<div class="gm-val ok"><b>Dato confirmado</b>La instalación y su función aparecen en el listado oficial de ubicaciones de PiSA o en comunicación corporativa fechada.</div>'
+      : '<div class="gm-val pd"><b>Pendiente de validación</b>'+esc(n.pend||"No pudimos confirmar la función operativa de este punto en fuentes públicas.")+'</div>';
+    panel.innerHTML=
+      '<button class="gm-close" type="button" id="gmClose">Cerrar</button>'+
+      '<div class="gm-ph"><span class="kind '+n.k+'">'+KIND[n.k]+'</span>'+
+      '<h4>'+esc(n.nm)+'</h4><p class="loc">'+esc(n.city)+' · '+esc(n.st)+'</p></div>'+
+      '<div class="gm-pb">'+addr+
+      '<div class="gm-f"><dt>Función operativa</dt><dd>'+esc(n.fn)+'</dd></div>'+tags+val+
+      '<div class="gm-f"><dt>Base de la coordenada</dt><dd class="mono">'+BASIS[n.basis]+' No es un punto geocodificado ni levantado en campo.</dd></div>'+
+      '<p class="gm-src">Fuente: listado oficial de ubicaciones de pisa.com.mx, consultado en octubre de 2026. Cartografía: fronteras estatales de México en GeoJSON público, simplificadas y proyectadas en Mercator.</p>'+
+      '</div>';
+    panel.classList.add("open");
+    var c=document.getElementById("gmClose");
+    if(c) c.addEventListener("click",function(){ panel.classList.remove("open"); sel=null; summary(); draw(); });
+    draw();
+  }
+
+  function summary(){
+    var t={plant:0,cedis:0,corp:0,office:0};
+    MD.nodes.forEach(function(n){ t[n.k]++; });
+    panel.innerHTML='<div class="gm-empty">'+
+      '<p><b>26 ubicaciones</b> publicadas por PiSA en su propio listado oficial. Selecciona cualquier punto del mapa para ver su ficha, o usa los accesos rápidos para enfocar una región.</p>'+
+      '<div class="gm-tally">'+
+        ['plant','cedis','corp','office'].map(function(k){
+          return '<button type="button" data-k="'+k+'"><i class="'+k+'"></i><span class="tl">'+KIND[k]+'</span><span class="tn num">'+t[k]+'</span></button>';
+        }).join("")+
+      '</div>'+
+      '<p style="font-size:12.4px;color:var(--n500)">Los puntos se colocan sobre el centroide de la colonia, el municipio o la ciudad que PiSA publica. La ficha de cada nodo declara cuál de los tres se usó.</p>'+
+      '</div>';
+    panel.classList.remove("open");
+    panel.querySelectorAll("[data-k]").forEach(function(b){
+      b.addEventListener("click",function(){
+        var k=b.getAttribute("data-k");
+        fit(MD.nodes.filter(function(n){return n.k===k;}),110);
+      });
+    });
+  }
+
+  // ---------- accesos rápidos ----------
+  function clearSpider(){ if(spider){ spider=null; draw(); } }
+  var QUICK={
+    nac:function(){ spider=null; animTo({s:1,tx:0,ty:0}); },
+    jal:function(){ spider=null; fit(MD.nodes.filter(function(n){return n.st==="Jalisco";}),150); },
+    vdm:function(){ spider=null; fit(MD.nodes.filter(function(n){return n.st==="Ciudad de México"||n.st==="Estado de México";}),150); },
+    reg:function(){ spider=null; fit(MD.nodes.filter(function(n){return n.st!=="Jalisco"&&n.st!=="Ciudad de México"&&n.st!=="Estado de México";}),80); }
+  };
+  document.querySelectorAll("[data-q]").forEach(function(b){
+    b.addEventListener("click",function(){
+      document.querySelectorAll("[data-q]").forEach(function(o){o.setAttribute("aria-pressed","false");});
+      b.setAttribute("aria-pressed","true");
+      QUICK[b.getAttribute("data-q")]();
+    });
+  });
+  document.getElementById("gmIn").addEventListener("click",function(){ zoomAt(VW/2,VH/2,1.6); });
+  document.getElementById("gmOut").addEventListener("click",function(){ zoomAt(VW/2,VH/2,1/1.6); });
+  document.getElementById("gmRst").addEventListener("click",function(){
+    document.querySelectorAll("[data-q]").forEach(function(o){o.setAttribute("aria-pressed",o.getAttribute("data-q")==="nac"?"true":"false");});
+    sel=null; spider=null; summary(); animTo({s:1,tx:0,ty:0});
+  });
+
+  function zoomAt(px,py,f){
+    var t={s:view.s*f};
+    t.s=Math.max(MINS,Math.min(MAXS,t.s));
+    var r=t.s/view.s;
+    t.tx=px-(px-view.tx)*r; t.ty=py-(py-view.ty)*r;
+    animTo(t);
+  }
+
+  // ---------- pan / wheel / pinch ----------
+  function toVB(e){
+    var r=svg.getBoundingClientRect();
+    return {x:(e.clientX-r.left)/r.width*VW, y:(e.clientY-r.top)/r.height*VH};
+  }
+  var ptrs={}, last=null, pinch0=null;
+  svg.addEventListener("pointerdown",function(e){
+    ptrs[e.pointerId]=e; svg.setPointerCapture(e.pointerId);
+    var k=Object.keys(ptrs);
+    if(k.length===1){ last=toVB(e); svg.classList.add("drag"); }
+    else if(k.length===2){
+      var a=ptrs[k[0]],b=ptrs[k[1]];
+      pinch0={d:Math.hypot(a.clientX-b.clientX,a.clientY-b.clientY),s:view.s};
+    }
+  });
+  svg.addEventListener("pointermove",function(e){
+    if(!ptrs[e.pointerId]) return;
+    ptrs[e.pointerId]=e;
+    var k=Object.keys(ptrs);
+    if(k.length===2&&pinch0){
+      var a=ptrs[k[0]],b=ptrs[k[1]];
+      var d=Math.hypot(a.clientX-b.clientX,a.clientY-b.clientY);
+      var ns=Math.max(MINS,Math.min(MAXS,pinch0.s*d/pinch0.d));
+      var r=svg.getBoundingClientRect();
+      var cx=((a.clientX+b.clientX)/2-r.left)/r.width*VW, cy=((a.clientY+b.clientY)/2-r.top)/r.height*VH;
+      var f=ns/view.s;
+      view.tx=cx-(cx-view.tx)*f; view.ty=cy-(cy-view.ty)*f; view.s=ns;
+      clampView(); apply(); return;
+    }
+    if(k.length===1&&last){
+      var p=toVB(e);
+      view.tx+=p.x-last.x; view.ty+=p.y-last.y; last=p;
+      if(spider) spider=null;
+      clampView(); apply(); hideTip();
+    }
+  });
+  function up(e){ delete ptrs[e.pointerId]; if(!Object.keys(ptrs).length){last=null;pinch0=null;svg.classList.remove("drag");} }
+  svg.addEventListener("pointerup",up); svg.addEventListener("pointercancel",up);
+  svg.addEventListener("wheel",function(e){
+    e.preventDefault();
+    var p=toVB(e), f=e.deltaY<0?1.16:1/1.16;
+    spider=null;
+    var ns=Math.max(MINS,Math.min(MAXS,view.s*f)), r=ns/view.s;
+    view.tx=p.x-(p.x-view.tx)*r; view.ty=p.y-(p.y-view.ty)*r; view.s=ns;
+    clampView(); apply();
+  },{passive:false});
+
+  summary(); clampView(); apply();
 })();
 </script>
 
